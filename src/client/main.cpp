@@ -10,6 +10,7 @@ void testSFML() {
 // Fin test SFML
 
 #include <state.h>
+#include <cstring>
 
 using namespace std;
 using namespace state;
@@ -19,7 +20,17 @@ int main(int argc,char* argv[])
     Exemple exemple;
     exemple.setX(53);
 
-    cout << "It works !" << endl;
+
+    if (argc > 1) {
+
+        if (strcmp(argv[1], "hello") == 0) {
+
+            cout << "Bonjour le monde !" << endl;
+        } else {
+            cout << "It works !" << endl;
+        }
+    }
+    else {cout << "It works !" << endl;}
 
     return 0;
 }
