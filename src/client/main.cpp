@@ -13,7 +13,7 @@ void testSFML() {
 #include <cstring>
 
 using namespace std;
-using namespace state;
+//using namespace state;
 
 int main(int argc,char* argv[])
 {
