@@ -43,7 +43,7 @@ endif(WIN32)
 file(GLOB_RECURSE main_sources src/*.c)
 
 # Executables
-add_executable(dia2code ${main_sources})
+add_executable(dia2code ${main_sources} ../../src/client/client.h)
 target_link_libraries(dia2code ${LIBXML2_LIBRARIES})
 
 
