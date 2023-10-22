@@ -9,11 +9,11 @@ void testSFML() {
 
 // Fin test SFML
 
-#include <Exemple.h>
+#include <state.h>
 #include <cstring>
 
 using namespace std;
-using namespace Exemple;
+using namespace state;
 
 int main(int argc,char* argv[])
 {
