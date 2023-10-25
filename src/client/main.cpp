@@ -9,7 +9,7 @@ void testSFML() {
 
 // Fin test SFML
 
-#include <client.h>
+#include <state.h>
 #include <cstring>
 
 using namespace std;
