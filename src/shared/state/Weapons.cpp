@@ -2,7 +2,7 @@
 
 namespace state{
     Weapons::Weapons():
-    idWeapons("")
+    idWeapon("")
     {}
 
     Weapons::~Weapons(){}
