@@ -7,8 +7,9 @@
 namespace state{
 
 
-    Clues::Clues()  
-    
+    Clues::Clues()  :
+    isRevealed(false),
+    cluesType("")
     {
 
     }
