@@ -3,23 +3,26 @@
 //
 
 #include "Players.h"
+#include "RoleType.h"
 
 namespace state{
 
     Players::Players():
     idPlayer(""),
-    playerPublicRole(""),
+    role(SIMPLE),
     playerSecretRole(""),
     Equipments({}),
     realClues({}),
-    announcedClues({})
+    announcedClues({}),
+    haveVoted(false),
+    vote(false)
     {}
 
     Players::~Players(){}
 
     void Players::voteFinal() {}
 
-    void Players::voteRound() {}
+
 
     void Players::giveEquipments() {}
 
