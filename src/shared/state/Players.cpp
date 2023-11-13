@@ -1,7 +1,9 @@
 //
 // Created by imade on 11/6/23.
 //
+
 #include "Players.h"
+
 namespace state{
 
     Players::Players():
@@ -11,14 +13,7 @@ namespace state{
     Equipments({}),
     realClues({}),
     announcedClues({})
-
-
-
-
-
-    {
-
-    }
+    {}
 
     Players::~Players(){}
 
@@ -27,8 +22,5 @@ namespace state{
     void Players::voteRound() {}
 
     void Players::giveEquipments() {}
-
-
-
 
 }
