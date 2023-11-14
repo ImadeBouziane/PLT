@@ -26,4 +26,36 @@ namespace state{
 
     void Players::giveEquipments() {}
 
+    std::string Players::getIdPlayer() {
+        return idPlayer;
+    }
+
+
+    std::string Players::getplayerSecretRole() {
+        return playerSecretRole;
+    }
+    std::vector<state::Cards> Players::getEquipments() {
+        return Equipments;
+    }
+    std::vector<state::Cards> Players::getrealClues() {
+        return realClues;
+    }
+    std::vector<state::Cards> Players::getannouncedClues() {
+        return announcedClues;
+    }
+    bool Players::gethaveVoted() {
+        return haveVoted;
+    }
+    bool Players::getvote() {
+        return vote;
+    }
+
+    RoleType Players::getrole() {
+        return role;
+    }
+
+
+
+
+
 }

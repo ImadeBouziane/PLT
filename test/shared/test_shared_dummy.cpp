@@ -29,39 +29,26 @@ BOOST_AUTO_TEST_CASE(TestDefuse) {
         BOOST_CHECK_NO_THROW(myGame->defuse());
         delete myGame;
 }
-/*
-BOOST_AUTO_TEST_CASE(TestGameAttributes) {
-        Game* myGame = new Game();
 
-        // Test initial state of attributes
-        BOOST_CHECK_EQUAL(myGame->nbPlayers, 0);
-        BOOST_CHECK(myGame->listPlayers.empty());
-        BOOST_CHECK_EQUAL(myGame->turnPlayer, 0);
-        BOOST_CHECK_EQUAL(myGame->isEndGame, false);
-        BOOST_CHECK(myGame->listWeapons.empty());
-        BOOST_CHECK(myGame->listPlaces.empty());
-        BOOST_CHECK(myGame->listCards.empty());
-        BOOST_CHECK(myGame->publicRole.empty());
-        BOOST_CHECK(myGame->secretRole.empty());
+BOOST_AUTO_TEST_CASE(TestPlayerAttributes) {
+        state::Players myPlayer;
 
 
+        BOOST_CHECK_EQUAL(myPlayer.getIdPlayer(), "");
+        BOOST_CHECK_EQUAL(myPlayer.getplayerSecretRole(), "");
+        BOOST_CHECK_EQUAL(myPlayer.gethaveVoted(), false);
+        BOOST_CHECK_EQUAL(myPlayer.getvote(), false);
 
-        delete myGame;
+        // Test role
+        BOOST_CHECK_EQUAL(myPlayer.getrole(), state::RoleType::SIMPLE);
+
+        // Test vectors
+        BOOST_CHECK(myPlayer.getEquipments().empty());
+        BOOST_CHECK(myPlayer.getrealClues().empty());
+        BOOST_CHECK(myPlayer.getannouncedClues().empty());
+
+        ;
 }
-BOOST_AUTO_TEST_CASE(TestPlayersAttributes) {
-        Players* myPlayers = new Players();
 
-        // Test initial state of attributes
-        BOOST_CHECK_EQUAL(myPlayers->idPlayer, "");
-        BOOST_CHECK_EQUAL(myPlayers->playerPublicRole, "");
-        BOOST_CHECK_EQUAL(myPlayers->playerSecretRole, "");
-        BOOST_CHECK(myPlayers->Equipments.empty());
-        BOOST_CHECK(myPlayers->realClues.empty());
-        BOOST_CHECK(myPlayers->announcedClues.empty());
 
-        // Vous pouvez ajouter plus de tests ici après avoir modifié les attributs
-
-        delete myPlayers;
-}
-*/
 BOOST_AUTO_TEST_SUITE_END()
