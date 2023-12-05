@@ -1,11 +1,9 @@
 #include <iostream>
 
-// Les lignes suivantes ne servent qu'à vérifier que la compilation avec SFML fonctionne
+
 #include <SFML/Graphics.hpp>
 
-void testSFML() {
-    sf::Texture texture;
-}
+
 
 // Fin test SFML
 #include <render.h>
@@ -32,11 +30,18 @@ int main(int argc,char* argv[])
     }
     else {cout << "It works !" << endl;}*/
 
-// Créer la fenêtre SFML
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Mon Jeu");
+// Créer une fenêtre
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Mon jeu vidéo testtt");
 
-    // Créer une instance de GameBoard
-    render::GameBoard gameBoard;
+    // Charger une image
+    sf::Texture texture;
+    if (!texture.loadFromFile("téléchargement.jpg")) {
+        // Gérer l'erreur
+    }
+
+    // Créer un sprite
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
 
     // Boucle de jeu
     while (window.isOpen()) {
@@ -46,9 +51,13 @@ int main(int argc,char* argv[])
                 window.close();
         }
 
+        // Effacer l'écran
         window.clear();
-        window.draw(gameBoard.GetBackground());
-        // Dessiner d'autres éléments ici si nécessaire
+
+        // Dessiner le sprite
+        window.draw(sprite);
+
+        // Mettre à jour la fenêtre
         window.display();
     }
 

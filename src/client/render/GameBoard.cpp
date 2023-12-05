@@ -12,10 +12,6 @@ GameBoard::GameBoard() {
     Background.setTexture(BackgroundTexture);
 }
 
-GameBoard::~GameBoard() {
-    // Code de nettoyage
-}
-
 sf::Sprite GameBoard::GetBackground() {
     return Background;
 }
