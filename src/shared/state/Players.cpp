@@ -20,11 +20,11 @@ namespace state{
 
     Players::~Players(){}
 
-    void Players::voteFinal() {}
+    void Players::voteFinal() { return;}
 
 
 
-    void Players::giveEquipments() {}
+    void Players::giveEquipments() { return;}
 
     std::string Players::getIdPlayer() {
         return idPlayer;

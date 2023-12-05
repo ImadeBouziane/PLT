@@ -15,6 +15,15 @@ namespace state{
     }
 
 
+    std::string Cards::getIdCard() {
+        return idCard;
+    }
+
+    std::string Cards::getCardsType() {
+        return cardsType;
+    }
+
+
     Cards::~Cards()
     {
 

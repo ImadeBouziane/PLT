@@ -7,4 +7,8 @@ namespace state{
 
     Weapons::~Weapons(){}
 
+    std::string Weapons::getIdWeapon() {
+        return idWeapon;
+    }
+
 }
