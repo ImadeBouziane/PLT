@@ -21,4 +21,17 @@ namespace state{
 
     }
 
+    int Equipments::getEquipementValue() {
+        return equipmentValue;
+    }
+
+    bool Equipments::getIsTriangle() {
+        return isTriangle;
+    }
+
+
+    bool Equipments::getIsCircle() {
+        return isCircle;
+    }
+
 }

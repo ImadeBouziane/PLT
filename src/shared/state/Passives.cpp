@@ -21,4 +21,17 @@ namespace state{
 
     }
 
+
+    int Passives::getLifePoint() {
+        return lifePoint;
+    }
+
+    int Passives::getTempestPoint() {
+        return tempestPoint;
+    }
+
+    bool Passives::getIsAlive() {
+        return isAlive;
+    }
+
 }
