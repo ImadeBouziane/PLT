@@ -1,10 +1,11 @@
 #include "GameBoard.h"
+#include <SFML/Graphics.hpp>
 
 namespace render {
 
 GameBoard::GameBoard() {
     // Charger la texture
-    if (!BackgroundTexture.loadFromFile("téléchargement.jpg")) {
+    if (!BackgroundTexture.loadFromFile("role_secret.jpg")) {
         // Gestion des erreurs
     }
 

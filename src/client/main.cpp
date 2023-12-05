@@ -31,11 +31,11 @@ int main(int argc,char* argv[])
     else {cout << "It works !" << endl;}*/
 
 // Créer une fenêtre
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Mon jeu vidéo testtt");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Mon jeu video test");
 
     // Charger une image
     sf::Texture texture;
-    if (!texture.loadFromFile("téléchargement.jpg")) {
+    if (!texture.loadFromFile("role_secret.jpg")) {
         // Gérer l'erreur
     }
 
