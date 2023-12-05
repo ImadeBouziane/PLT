@@ -35,7 +35,7 @@ int main(int argc,char* argv[])
 
     // Charger une image
     sf::Texture texture;
-    if (!texture.loadFromFile("role_secret.jpg")) {
+    if (!texture.loadFromFile("../graphic ressources/plateau.jpg")) {
         // Gérer l'erreur
     }
 
