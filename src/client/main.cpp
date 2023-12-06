@@ -12,50 +12,40 @@
 
 using namespace std;
 //using namespace client;
+using namespace render; 
+int main() {
+    // Créer une instance de GameBoard
+    GameBoard gameBoard;
 
-int main(int argc,char* argv[])
-{
-    //Exemple exemple;
-    //exemple.setX(53);
+    // Créer une fenêtre SFML
+    sf::RenderWindow window(sf::VideoMode(GameBoard::WINDOW_WIDTH, GameBoard::WINDOW_HEIGHT), "Gamy");
 
-/*
-    if (argc > 1) {
 
-        if (strcmp(argv[1], "hello") == 0) {
+  
+    window.setVerticalSyncEnabled(false);
 
-            cout << "Bonjour le monde !" << endl;
-        } else {
-            cout << "It works !" << endl;
-        }
-    }
-    else {cout << "It works !" << endl;}*/
-
-// Créer une fenêtre
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Mon jeu video test");
-
-    // Charger une image
-    sf::Texture texture;
-    if (!texture.loadFromFile("../graphic ressources/plateau.jpg")) {
-        // Gérer l'erreur
-    }
-
-    // Créer un sprite
-    sf::Sprite sprite;
-    sprite.setTexture(texture);
-
-    // Boucle de jeu
+    // Boucle principale
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed) {
                 window.close();
+            }
         }
 
         // Effacer l'écran
         window.clear();
 
-        // Dessiner le sprite
-        window.draw(sprite);
+        // Dessiner le fond
+        window.draw(gameBoard.GetBackground());
+
+        // Dessiner les emplacements des cartes
+        for (const auto& cardSlot : gameBoard.getCardSlots()) {
+            window.draw(cardSlot);
+        }
+
+        // Dessiner le titre
+        window.draw(gameBoard.getTitle());
 
         // Mettre à jour la fenêtre
         window.display();
@@ -63,3 +53,4 @@ int main(int argc,char* argv[])
 
     return 0;
 }
+  
