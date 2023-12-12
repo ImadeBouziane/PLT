@@ -1,4 +1,4 @@
-# Rapport de Projet Logiciel Transversal "CLUEDO CONSPIRATON"
+![image](https://github.com/ImadeBouziane/PLT/assets/105629167/7d9a0f14-56bc-48f5-87ff-41be4a82b7eb)# Rapport de Projet Logiciel Transversal "CLUEDO CONSPIRATON"
 
 ![Boitedejeu](ImagesRapport/Boitedejeu.png)
 
@@ -48,8 +48,16 @@ Mr. Corail est tué par les pièges , le jeu passe alors à l’accusation final
 
 ![Indices](ImagesRapport/Indices.png)
 
-Elle détermine quel joueur choisit en premier son personnage au début du tour.
+**Les cartes équipements:**
+
+![Equipement](ImagesRapport/Equipement.png)
+
+**Les cartes pièges:**
+
+![Pieges](ImagesRapport/Pieges.png)
+
 ### Règles du jeu
+
 **Mise en place:**
 Au début d'une partie, chaque joueur reçoit 2 pièces d'or, 4 cartes quartiers puis on attribut la couronne à un joueur aléatoirement choisi.
 
