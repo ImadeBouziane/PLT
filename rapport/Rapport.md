@@ -150,68 +150,11 @@ Les cartes : Les cartes seront constituées en 3 types. Les Équipements, les Tr
 
 ### 3.1 Stratégie de rendu d'un état <a id="3.1"></a>
 
-Pour le rendu d'un état, nous créons un module dédié à l'affichage graphique à destination des utilisateurs (joueurs).
-Notre statégie de rendu est classique pour une application.
-En effet, nous allons "peindre" à une fréquence fixe notre écran. Nous ne cherchons pas à peindre uniquement ce qui bouge ou déplacer des éléments car les processeurs graphiques sont fait pour tavailler avec des images et repeindre systématiquement l'écran.
-A ce stade, l'interface est fixe et des animations ne sont pas prévues.
-
-
-Nous définissons notre écran d'abord uniquement graphiquement sous forme d'esquisse (sans échelle).
-
-![Esquisse d'interface](images/esquisse.png)
-
-Nous prenons ensuite le temps de définir plus précisément notre interface.
-Cette étape n'est toutefois pas encore un cahier des charges mais une ligne conductrice.
-
-**Une description plus formelle**
-
-Nous choisissons de garder les proportions 16/9 (standard des écrans moderne) donc nous aurons une fenêtre rectangulaire.
-Nous choisissons ainsi une fenêtre de 1600x900.
-Une image de fond n’est pas nécessaire pour le fonctionnement du jeu mais sera présente pour des raisons esthétiques.
-
-
-SFML n'ayant pas de police par défaut, nous en choisissons des cohérentes avec le style de la version physique de notre jeu.
- 
-La police d’écriture est [Old London](https://www.dafont.com/fr/old-london.font).
-C’est notre police dite de titre car elle rend tous les textes courts.
-Notre police de texte est [Garet](https://www.dafont.com/fr/garet.font).
-
-Elles sont toutes les deux libres de droit et d’utilisation commerciale ou non.
-
-***Les éléments visuels***
-
-Les proportions des cartes semblent être du 11*17.
-L’écran doit pouvoir tenir au moins 15 cartes sur une même ligne, nous souhaitons les afficher convenablement et avec des espaces donc nous décidons que l’écran doit pouvoir afficher 20 cartes côte à côte horizontalement.
-Donc les cartes affichées le seront en 80*124.
-Cette taille peut sembler faible mais elles peuvent être agrandi en passant la souris dessus.
-
-
-Les logos seront en 40*40 par conséquence du choix de la taille de la carte (un peu moins d’un tiers de carte).
-Les autres éléments ont une taille devant s’inscrire dans une carte.
-
-
-Les boards sont simplement des formes simples. Les cartes non présentes sont affichées par des rectangles en pointillé.
-
-Le bouton fin de tour est une forme circulaire rendue interactive.
-
-***Les Popups***
-Nous avons des affichages ponctuels qui seront utilisés dans l'application pour afficher des informations supplémentaires.
-Nous en avons deux, un bouton d'aide pour afficher des informations sur l'application et un pour afficher la main d'un joueur qui prendrait tout l'écran sinon.
-Enfin, le centre de l'écran est utilisé pour afficher les cartes en grand quand on passe la sourie sur une carte.
-
+à compléter
 
 ### 3.2 Conception logiciel <a id="3.2"></a>
 
-Pour le code, les boutons n’existant pas dans SMFL, nous proposons de les créer nous même.
-Nous concevons alors les éléments suivants :
-- Une classe abstraite élément interactif qui contient la partie graphique de l'élément ainsi que les méthodes de base pour l'interaction.
-- Une classe concrète bouton qui hérite de la précédente pour les boutons de type pioche, aide …
-- Une classe concrète carte qui hérite également pour implémenter le onHoverAction() pour zoomer sur la carte.
-- Il existe deux types de boutons, les boutons moteurs communiquent des informations au moteur du jeu, les boutons afficheurs qui déclenchent l’affichage.
-- Une classe d'état de l'interface pour permettre de déclencher les mises à jour graphiques dues à l'interaction avec un élément interactif.
-- Une classe utilitaire playerRender qui s’occupe de l’affichage des données joueurs.
-- Des Enumérations pour permettre de gérer les valeurs limitées.
-- Une classe principale appelée Scène qui est le point d'entrée de ce module.
+à compléter
 
 ![RenderDia](images/RenderDia.png)
 
@@ -221,23 +164,11 @@ Les changements d’état ne suivent pas d’horloge globale, chaque état sera 
 
 ### 4.1 Changements extérieurs <a id="4.1"></a>
 
-Les changements extérieurs sont provoqués par des commandes extérieures, comme la pression sur une touche ou un ordre provenant du réseau :
-
-Commande pioche (DrawCommand) : pioche de cartes par un joueur après clique sur le bouton pioche.
-Commande pièces (GainGoldCommand) : pioche de deux pièces par un joueur après clique sur le bouton pièces.
-Commande fin du tour (EndOfTurnCommand) : fin de tour du joueur après clique sur le bouton fin du tour.
-Commande de Choix de personnage (ChooseCharacterCommand): Le joueur doit choisir parmis les personnages qui lui sont proposé. Le premier joueur a 8 choix. Il choisit son personnage et discard un personnage. Le second joueur a 6 choix, le troisème en a 5 et le dernier 4.
-Commande Pouvoir du personnage (UseCharacterAbilityCommand) : Le joueur utilise la capacité spéciale de son personnage.
-Commande récupréation de Gold des building (ClaimBuildingGold) : La joueur (si son personnage le lui permet) peut récupérer des Golds des Batiment qu'il a posés.
+à compléter
 
 ### 4.2 Changements autonomes <a id="4.2"></a>
 
-Le jeu s'articule en 2 pahses prinipales une phase de choix de personnage (le momoent où les joueur selectionne leur personnage pour préarer leur tour) et une phase d'appel des personnages (le momment où les joueurs jouent leur tours)
-
-StartCommand : Cette command permet d'initialiser les parametre et veiller à ce que la connexion est bien établie.
-HandleChoosingCharacterPhaseCommand permet d'afficher à chaque joueur la liste des personnages qu'il peut selectionner.
-HandleCallingCharcaterPhaseCommand : L'engine va appeeler les personnages dans l'ordre. Si le personnage d'un joueur est appelé alors c'est à ce joueur de jouer son tour.
-ChangPhaseCommand : Une command de changemnt de phase.
+à compléter
 
 ### 4.3 Conception logiciel <a id="4.3"></a>
 
@@ -247,13 +178,18 @@ ChangPhaseCommand : Une command de changemnt de phase.
 
 ### 5.1 Stratégies <a id="5.1"></a>
 
+à compléter
+
 ### 5.2 Conception logiciel <a id="5.2"></a>
 
+à compléter
 
 ## 6. Modularisation <a id="6"></a>
 
 ### 6.1 Organisation des modules <a id="6.1"></a>
 
+à compléter
+
 ### 6.2 Conception logiciel <a id="6.2"></a>
 
-test
+à compléter
