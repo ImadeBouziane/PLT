@@ -7,7 +7,8 @@
 # Sommaire
 
 ## [1. Présentation Générale](#1)
-### [1.1 Archétype] (#1.1)
+#### [1.1 Archétype](#1.1)
+##### [1.2 Archétype](#1.2)
 
 ## 1. Présentation Générale <a id="1"></a>
 
@@ -15,7 +16,8 @@
 
 L’objectif du projet est la réalisation du jeu « Cluedo : Conspiration» Il s’agit d’un jeu de rôle  qui mêle supercherie et déduction. C’est un jeu conçu pour 4 à 10 joueurs. Les joueurs incarnent des personnages du Cluedo classique et jouent des rôles secrets dans des équipes adverses. L’équipe des Amis cherchent à sauver M. Corail et à révéler le complot des conspirateurs. L’équipe des Conspirateurs tentent secrètement de saboter les plans des Amis et de mettre à exécution le complot de meurtre.
 
-### 1.2 Règles du jeu
+### 1.2 Règles du jeu <a id="1.2"></a>
+
 Les joueurs ont été invités à l’Hôtel Resort la Vipère Noire dirigé par Carl Corail. Alors qu’une tempête se lève, les joueurs découvrent une série de pièges mortels dans l’hôtel. L’un des joueurs veut tuer Mr. Corail. Les joueurs doivent résoudre ce mystère sans savoir à qui faire confiance.
 	
 Une fois le jeu installé, chaque joueur choisit un personnage et se voit assigner un rôle secret. Les joueurs peuvent alors être un membre conspirateur qui veut tuer Mr. Corail ou un ami qui veut le maintenir en vie. Pendant la révélation du complot, tous les joueurs ferment les yeux sauf  les membres conspirateurs qui peuvent alors s’identifier secrètement les uns les autres et le conspirateur en chef montre les cartes lieux et armes à ses complices :  la conspiration est activé et la partie peut commencer. 
