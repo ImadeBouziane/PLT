@@ -38,7 +38,7 @@ Mr. Corail est tué par les pièges , le jeu passe alors à l’accusation final
 
 **Role Secret:**
 
-![RoleSecret](ImagesRapport/RoleSecret.png)
+![RoleSecret](ImagesRapport/Rolesecret.png)
 
 **Les cartes Joueurs/Identités:**
 
