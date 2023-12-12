@@ -7,18 +7,22 @@
 # Sommaire
 
 ## [1. Présentation Générale](#1)
+
 ### [1.1 Archétype](#1.1)
 ### [1.2 Règles du jeu](#1.2)
 ### [1.3 Ressources](#1.3)
 
 ## [2 Description et conception des états](#2)
-### [2.1 Description des états](#2.1)
-#### [2.1.1 Élément Places :](#2.1.1)
-#### [2.1.2 Elément Players :](#2.1.2)
-#### [2.1.3 Elément Cards :](#2.1.3)
-#### [2.1.4 Élément Passives :](#2.1.4)
-#### [2.1.5 Element Conspiracy ](#2.1.5)
 
+### [2.1 Description des états](#2.1)
+
+#### [2.1.1 Élément Places](#2.1.1)
+#### [2.1.2 Elément Players](#2.1.2)
+#### [2.1.3 Elément Cards](#2.1.3)
+#### [2.1.4 Élément Passives](#2.1.4)
+#### [2.1.5 Element Conspiracy](#2.1.5)
+
+### [2.2 Conception logiciel : extension pour le rendu](#2.2)
 
 ## 1. Présentation Générale <a id="1"></a>
 
