@@ -13,7 +13,7 @@ We also use [SFML](https://www.sfml-dev.org/index-fr.php) for the graphic part.
 The application is a client base application and the players use their client.
 This repository holds both the server and the client.
 
-School report can be found in [Rapport](https://github.com/GuillaumeChamp/PLT/tree/master/rapport) as Markdown files.
+School report can be found in [Rapport](https://github.com/ImadeBouziane/PLT/tree/master/rapport) as Markdown files.
 
 This project came with a CMake which generate the headers from dia2code.
 Code coverage is ensure with BOOTS.
