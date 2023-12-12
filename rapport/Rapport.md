@@ -17,12 +17,17 @@
 ### [2.1 Description des états](#2.1)
 
 #### [2.1.1 Élément Places](#2.1.1)
-#### [2.1.2 Elément Players](#2.1.2)
-#### [2.1.3 Elément Cards](#2.1.3)
+#### [2.1.2 Élément Players](#2.1.2)
+#### [2.1.3 Élément Cards](#2.1.3)
 #### [2.1.4 Élément Passives](#2.1.4)
-#### [2.1.5 Element Conspiracy](#2.1.5)
+#### [2.1.5 Élément Conspiracy](#2.1.5)
 
 ### [2.2 Conception logiciel : extension pour le rendu](#2.2)
+
+## [3 Rendu: Stratégie et Conception](#3)
+
+### [3.1 Stratégie de rendu d'un état](#3.1)
+### [3.2 Conception logiciel](#3.2)
 
 ## 1. Présentation Générale <a id="1"></a>
 
@@ -125,9 +130,9 @@ Les cartes : Les cartes seront constituées en 3 types. Les Équipements, les Tr
 
 ![StateDia](ImagesRapport/StateDia.png)
 
-## Rendu: Stratégie et Conception
+## 3 Rendu: Stratégie et Conception <a id="3"></a>
 
-### Stratégie de rendu d'un état
+### 3.1 Stratégie de rendu d'un état <a id="3.1"></a>
 
 Pour le rendu d'un état, nous créons un module dédié à l'affichage graphique à destination des utilisateurs (joueurs).
 Notre statégie de rendu est classique pour une application.
@@ -179,7 +184,7 @@ Nous en avons deux, un bouton d'aide pour afficher des informations sur l'applic
 Enfin, le centre de l'écran est utilisé pour afficher les cartes en grand quand on passe la sourie sur une carte.
 
 
-### Conception logiciel
+### 3.2 Conception logiciel <a id="3.2"></a>
 
 Pour le code, les boutons n’existant pas dans SMFL, nous proposons de les créer nous même.
 Nous concevons alors les éléments suivants :
