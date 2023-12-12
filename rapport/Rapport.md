@@ -2,7 +2,9 @@
 
 [TESTU Tristan](https://github.com/TestuTristan), [CHAIEB Ilias](https://github.com/Ilias1313), [BOUZIANE Imade](https://github.com/ImadeBouziane)
 
-## Présentation Générale
+## Présentation et indications
+
+## Présentation Générale du PLT
 
 ### Archétype
 **Type de jeu:**
