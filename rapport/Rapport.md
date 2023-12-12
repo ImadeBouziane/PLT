@@ -1,6 +1,6 @@
 # Rapport de Projet Logiciel Transversal "CLUEDO CONSPIRATON"
 
-![Plateau](ImagesRapport/Boitedejeu.png)
+![Boitedejeu](ImagesRapport/Boitedejeu.png)
 
 [TESTU Tristan](https://github.com/TestuTristan), [CHAIEB Ilias](https://github.com/Ilias1313), [BOUZIANE Imade](https://github.com/ImadeBouziane)
 
@@ -38,15 +38,15 @@ Mr. Corail est tué par les pièges , le jeu passe alors à l’accusation final
 
 **Role Secret:**
 
-![Plateau](ImagesRapport/RoleSecret.png)
+![RoleSecret](ImagesRapport/RoleSecret.png)
 
 **Les cartes Joueurs/Identités:**
 
-![Plateau](ImagesRapport/Identités.png)
+![Identités](ImagesRapport/Identités.png)
 
 **Les cartes indices:**
 
-![Plateau](ImagesRapport/Indices.png)
+![Indices](ImagesRapport/Indices.png)
 
 Elle détermine quel joueur choisit en premier son personnage au début du tour.
 ### Règles du jeu
