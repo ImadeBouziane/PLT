@@ -156,7 +156,7 @@ Les cartes : Les cartes seront constituées en 3 types. Les Équipements, les Tr
 
 à compléter
 
-![RenderDia](images/RenderDia.png)
+![RenderDia](ImagesRapport/RenderDia.png)
 
 ## 4. Règles de changement d'états et moteur de jeu <a id="4"></a>
 
@@ -172,7 +172,7 @@ Les changements d’état ne suivent pas d’horloge globale, chaque état sera 
 
 ### 4.3 Conception logiciel <a id="4.3"></a>
 
-![EngineDia](images/Engine.png)
+![EngineDia](ImagesRapport/Engine.png)
 
 ## 5. Intelligence Artificielle <a id="5"></a>
 
