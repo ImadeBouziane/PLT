@@ -164,77 +164,56 @@ Lorsqu’un joueur construit son huitième et dernier quartier, on termine le to
 
 
 
-## Description et conception des états
+# 2 Description et conception des états
 
-### Description des états
-Un état du jeu est formée par des éléments communs à tous les Players. Il est le même pour chaque joueur.
-Un unique état est créer et tient toutes les données de la partie.
+## 2.1. Description des états
 
-**2.1 Elements définissant les états**
+Notre état de jeu est notre état principal ,on y retrouve tous les éléments nécessaires au déroulement du jeu. Tout d'abord, on a le nombre de player avec la liste des players dans la partie. On a aussi besoin de savoir quel est le tour du joueur (Eclaireur). Ensuite on a des rôles publics et privés à distribuer. Il nous faut également un certain nombre de cartes, de lieux et d'armes. Un état est alors composé de différents éléments : 
 
-Tous les Players ont accès à une pioche. Cette pioche est représentée par un nombre de cartes piochées. Le server se chargera de traiter cette information afin d'ajouter le nombre de cartes correspondant à la main du Player qui pioche.
+### 2.1.1. Elément Places :
 
-Chaque joueur possède les éléments suivants.
+Une place (un lieu) est un endroit du board où les joueurs pourront aller a chaque tour, ils seront caractérisé par une ID. Il y aura des pièges, des indices et enfin dans certains cas, les lieux pourront être sûrs ou piégés.
 
-- Un nom qui est cosmétique.
-- Une playerId qui est unique et permet de différencier les joueurs au niveau de la partie.
-- Un board qui est une liste de cartes représentant les bâtiments construits.
-- Des pièces d'or.
-- Le personnage qu'il incarne pendant ce tour, lui permettant certaines interactions.
-- Une main qui correspond aux cartes en main.
+### 2.1.2. Elément Players :
 
-Voici la liste des différents personnages que le joueur peut incarner à chaque tour :
+Un Player est caractérisé par son ID, chaque joueur aura un RoleType qui peut changer à chaque tour. Chaque joueur aura un RoleSecret attribué au début de la partie. Son rôle privé ne change tout du long de la partie . Chaque players peut avoir des cartes équipements. Il a le droit de vote. De plus, il pourra annoncer (ou pas) les indices trouvés.
 
-- Assassin
-- Thief
-- Magician
-- King
-- Bishop
-- Merchant
-- Architect
-- Warlord
+ Dans les RoleType on retrouve :
+- SIMPLE: Un rôle sans importance qui pourra voter pour un lieu
+- SCOUT: Un rôle primaire qui change à chaque tour.
+- BODYGUARD: Un rôle choisi par le SCOUT
 
+### 2.1.3. Elément Cards :
 
+Chaque carte est caractérisée par une Id et un type. Il y a 3 types de cartes :
+ 
+ -Equipements : Ces cartes auront une valeur et deux signes possible, triangle,cercle, les deux ou rien qui influencera l'utilisation de cette dernière.
+ -Indices : Les cartes indices seront caractérisées par un type d'indice qui peuvent être : Rien, Désamorçage instantanées, un équipement ou un lieu (safe).
+ -Pièges : Les cartes pièges seront posées sur les lieux et ils auront une valeur, et comme les cartes indices, un signe ou deux (Cercle, Triangle). De plus, elles pourront être désamorcées par les joueurs allant dans ces lieux.
 
-Une carte est décrite par :
+### 2.1.4 Element Passives :
 
-- Son nom
-- Son coût (en pièce d'or)
-- Sa couleur, voici la liste des couleurs :
+L'état passif est l'ensemble des mécaniques du jeu automatique. C'est-à-dire c'est intrinsèque au jeu. Il y a les points de vie de Mr.Corail, l'activité de la tempête (int allant de 0 à 3 qui influencera les points de vie de Mr.Corail). Et enfin l'état de santé de Mr.Corail.
 
-	- Religious
-	- Military
-	- Commercial
-	- Noble
-	- Wonder
+### 2.1.5 Element Conspiracy :
 
-### Conception Logiciel
+Ce dernier caractérise un lieu, un joueur et une arme. Ce sont les  conditions d'activation du complot.
 
-Le diagramme des classes pour les états est présenté en Figure 1, dont nous pouvons mettre en évidence.
-les groupes de classes suivants :
+## 2.2. Conception logiciel : extension pour le rendu
 
-**La classe GameState** : La classe GameState est la classe principale pour décrire l'état du jeu.  Elle est composé de toutes les données pertinentes accessible :
-- Directement dans la classe.
-- Via l'appel de méthodes sur les objets qui la compose.
-Elle sert à regrouper tous les Players au sein d'une même classe afin de pouvoir y traiter les données propres et communes à chaque Players. 
+Le diagramme des classes pour les états est présenté ci-dessous, dont nous pouvons mettre en évidence les groupes de classes suivants :
 
-**La classe Player** : Elle contient les données liés aux différents joueurs. C'est une classe générique pour représenter toutes les données auxquels tous les joueurs ont accès.
+Game : Cette classe (En Bleu) constitue notre création de notre jeu. Dans laquelle se trouve tous les éléments indispensables à la création du jeu.
 
+Les éléments constituant le jeu : Que ce soit les passives, Conspiracy, Places, Weapons, players et cartes. tout ces éléments (En Jaune)  constitue le jeu et doivent être au même niveau hierarchique par rapport à game. Pour Players on aura une énumération RoleType afin de lui attribuer un TypeRole qui devrait changer à chaque tour.
 
-Nous avons utilisé les énumérations pour décrire les différents type de "GamePhase" (qui permet d'identifier les moments de la partie), "Character", "PlayerId" et de "couleur de bâtiments" car cela permet de rendre notre code plus lisible en donnant des noms significatifs aux valeurs possibles. Les énumérations limitent les valeurs possibles à celles que nous avons définies, offrant ainsi un meilleur contrôle sur les données que l'on manipule. Si on ajoute ou modifie un type de personnage ou une couleur de bâtiment, on devra simplement le faire dans l'énumération sans avoir à rechercher et à modifier chaque occurrence dans le code. 
-Nous ajoutons aussi dans tous les énums une valeur par défaut qui sert pour les initialisations et neutralisations.
+Les cartes : Les cartes seront constituées en 3 types. Les Équipements, les Traps et les Clues. Chaque type de cartes héritera d'une idée et d'un type.
 
-
-
-![StateDia](images/StateDia.png)
-
-
+![StateDia](ImagesRapport/StateDia.png)
 
 ## Rendu: Stratégie et Conception
 
-
 ### Stratégie de rendu d'un état
-
 
 Pour le rendu d'un état, nous créons un module dédié à l'affichage graphique à destination des utilisateurs (joueurs).
 Notre statégie de rendu est classique pour une application.
