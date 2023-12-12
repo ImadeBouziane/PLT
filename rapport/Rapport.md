@@ -1,4 +1,4 @@
-![image](https://github.com/ImadeBouziane/PLT/assets/105629167/7d9a0f14-56bc-48f5-87ff-41be4a82b7eb)# Rapport de Projet Logiciel Transversal "CLUEDO CONSPIRATON"
+# Rapport de Projet Logiciel Transversal "CLUEDO CONSPIRATON"
 
 ![Boitedejeu](ImagesRapport/Boitedejeu.png)
 
