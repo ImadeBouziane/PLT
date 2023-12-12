@@ -12,7 +12,7 @@
 ### [1.2 Règles du jeu](#1.2)
 ### [1.3 Ressources](#1.3)
 
-## [2 Description et conception des états](#2)
+## [2. Description et conception des états](#2)
 
 ### [2.1 Description des états](#2.1)
 
@@ -24,10 +24,26 @@
 
 ### [2.2 Conception logiciel : extension pour le rendu](#2.2)
 
-## [3 Rendu: Stratégie et Conception](#3)
+## [3. Rendu: Stratégie et Conception](#3)
 
 ### [3.1 Stratégie de rendu d'un état](#3.1)
 ### [3.2 Conception logiciel](#3.2)
+
+## [4. Règles de changement d'états et moteur de jeu](#4)
+
+### [4.1 Changements extérieurs](#4.1)
+### [4.2 Changements autonomes](#4.2)
+### [4.3 Conception logiciel](#4.3)
+
+## [5. Intelligence Artificielle](#5)
+
+### [5.1 Stratégies](#5.1)
+### [5.2 Conception logiciel](#5.2)
+
+## [6. Modularisation](#6)
+
+### [6.1 Organisation des modules](#6.1)
+### [6.2 Conception logiciel](#6.2)
 
 ## 1. Présentation Générale <a id="1"></a>
 
@@ -83,7 +99,7 @@ Mr. Corail est tué par les pièges , le jeu passe alors à l’accusation final
 ![Pieges](ImagesRapport/Pieges.png)
 
 
-# 2 Description et conception des états <a id="2"></a>
+# 2. Description et conception des états <a id="2"></a>
 
 ## 2.1 Description des états <a id="2.1"></a>
 
@@ -130,7 +146,7 @@ Les cartes : Les cartes seront constituées en 3 types. Les Équipements, les Tr
 
 ![StateDia](ImagesRapport/StateDia.png)
 
-## 3 Rendu: Stratégie et Conception <a id="3"></a>
+## 3. Rendu: Stratégie et Conception <a id="3"></a>
 
 ### 3.1 Stratégie de rendu d'un état <a id="3.1"></a>
 
@@ -199,12 +215,11 @@ Nous concevons alors les éléments suivants :
 
 ![RenderDia](images/RenderDia.png)
 
-## Règles de changement d'états et moteur de jeu
+## 4. Règles de changement d'états et moteur de jeu <a id="4"></a>
+
 Les changements d’état ne suivent pas d’horloge globale, chaque état sera mis à jour à l’issu d'exécutions de commandes par le joueur vers l’engine ou par l’engine vers le joueur.
 
-### Règles
-
-**4.1 Changements extérieurs**
+### 4.1 Changements extérieurs <a id="4.1"></a>
 
 Les changements extérieurs sont provoqués par des commandes extérieures, comme la pression sur une touche ou un ordre provenant du réseau :
 
@@ -215,7 +230,7 @@ Commande de Choix de personnage (ChooseCharacterCommand): Le joueur doit choisir
 Commande Pouvoir du personnage (UseCharacterAbilityCommand) : Le joueur utilise la capacité spéciale de son personnage.
 Commande récupréation de Gold des building (ClaimBuildingGold) : La joueur (si son personnage le lui permet) peut récupérer des Golds des Batiment qu'il a posés.
 
-**4.2 Changements autonomes**
+### 4.2 Changements autonomes <a id="4.2"></a>
 
 Le jeu s'articule en 2 pahses prinipales une phase de choix de personnage (le momoent où les joueur selectionne leur personnage pour préarer leur tour) et une phase d'appel des personnages (le momment où les joueurs jouent leur tours)
 
@@ -224,19 +239,19 @@ HandleChoosingCharacterPhaseCommand permet d'afficher à chaque joueur la liste 
 HandleCallingCharcaterPhaseCommand : L'engine va appeeler les personnages dans l'ordre. Si le personnage d'un joueur est appelé alors c'est à ce joueur de jouer son tour.
 ChangPhaseCommand : Une command de changemnt de phase.
 
-### Conception logiciel
+### 4.3 Conception logiciel <a id="4.3"></a>
 
 ![EngineDia](images/Engine.png)
 
-## Intelligence Artificielle
+## 5. Intelligence Artificielle <a id="5"></a>
 
-### Stratégies
+### 5.1 Stratégies <a id="5.1"></a>
 
-### Conception logiciel
+### 5.2 Conception logiciel <a id="5.2"></a>
 
 
-## Modularisation
+## 6. Modularisation <a id="6"></a>
 
-### Organisation des modules
+### 6.1 Organisation des modules <a id="6.1"></a>
 
-### Conception logiciel
+### 6.2 Conception logiciel <a id="6.2"></a>
