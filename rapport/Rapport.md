@@ -32,7 +32,7 @@ Mr. Corail est tué par les pièges , le jeu passe alors à l’accusation final
 
 **Le plateau de jeu:**
 
-![Plateau](images/Plateau.png)
+![Plateau](ImagesRapport/Plateau.png)
 
 **Les cartes quartier :**
 Chaque quartier a une gemme de couleur qui indique sa catégorie (Religion = bleu, Noblesse = jaune, Commerce = vert, Militaire = rouge, Merveille = violet). Chaque quartier a un coût de construction égal au nombre de pièces d’or figurant en haut à gauche de la carte. Chaque quartier violet (appelé Merveille) a un effet sur le jeu, en faveur du joueur dans la cité duquel il est construit, qui est décrit sur la carte.
