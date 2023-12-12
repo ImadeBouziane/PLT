@@ -7,8 +7,8 @@
 # Sommaire
 
 ## [1. Présentation Générale](#1)
-#### [1.1 Archétype](#1.1)
-##### [1.2 Archétype](#1.2)
+### [1.1 Archétype](#1.1)
+### [1.2 Archétype](#1.2)
 
 ## 1. Présentation Générale <a id="1"></a>
 
@@ -37,7 +37,7 @@ Les Amis se rendent dans tous les lieux et retirent tous les pièges avant que M
 Le complot est activé et Mr. Corail est assassiné => La conspiration gagne 
 Mr. Corail est tué par les pièges , le jeu passe alors à l’accusation finale. Pour les Amis ,c’est la dernière chance de découvrir la conspiration. Pour les conspirateurs c’est leur dernière chance d’échapper à la justice. Le nouvel Éclaireur choisit une équipe sans Garde du Corps ni Lieu et les joueurs passent au vote pour cette dernière. Si le vote n’est pas approuvé, on vote pour la prochaine équipe créée par l’Eclaireur suivant. Une fois le vote approuvé, l’ Eclaireur récupère toutes les cartes Indices restantes, les mélange et les distribue une à une aux joueurs choisis dans l’équipe. Les joueurs retournent ensuite sur le plateau et ils ont 5 minutes pour discuter et débattre de chaque élément du complot. Qui est le conspirateur en chef ? Où avait-il prévu de tuer Mr. Corail ? Quelle arme avait-il l’intention d’utiliser ? Une fois le temps écoulé, tous les joueurs votent et la majorité l’emporte. En cas d’égalité, l’Eclaireur tranche. Une fois l’accusation faite, le conspirateur en chef se dévoile et il dévoile le lieu et l’arme. Si tout était juste les Amis gagnent sinon c’est la conspiration qui gagne !
 
-### 1.3 Ressources
+### 1.3 Ressources <a id="1.3"></a>
 
 **Le plateau de jeu:**
 
@@ -64,17 +64,17 @@ Mr. Corail est tué par les pièges , le jeu passe alors à l’accusation final
 ![Pieges](ImagesRapport/Pieges.png)
 
 
-# 2 Description et conception des états
+# 2 Description et conception des états <a id="2"></a>
 
-## 2.1. Description des états
+## 2.1. Description des états <a id="2.1"></a>
 
 Notre état de jeu est notre état principal ,on y retrouve tous les éléments nécessaires au déroulement du jeu. Tout d'abord, on a le nombre de player avec la liste des players dans la partie. On a aussi besoin de savoir quel est le tour du joueur (Eclaireur). Ensuite on a des rôles publics et privés à distribuer. Il nous faut également un certain nombre de cartes, de lieux et d'armes. Un état est alors composé de différents éléments : 
 
-### 2.1.1. Elément Places :
+### 2.1.1. Elément Places : <a id="2.1.1"></a>
 
 Une place (un lieu) est un endroit du board où les joueurs pourront aller a chaque tour, ils seront caractérisé par une ID. Il y aura des pièges, des indices et enfin dans certains cas, les lieux pourront être sûrs ou piégés.
 
-### 2.1.2. Elément Players :
+### 2.1.2. Elément Players : <a id="2.1.2"></a>
 
 Un Player est caractérisé par son ID, chaque joueur aura un RoleType qui peut changer à chaque tour. Chaque joueur aura un RoleSecret attribué au début de la partie. Son rôle privé ne change tout du long de la partie . Chaque players peut avoir des cartes équipements. Il a le droit de vote. De plus, il pourra annoncer (ou pas) les indices trouvés.
 
@@ -83,7 +83,7 @@ Un Player est caractérisé par son ID, chaque joueur aura un RoleType qui peut 
 - SCOUT: Un rôle primaire qui change à chaque tour.
 - BODYGUARD: Un rôle choisi par le SCOUT
 
-### 2.1.3. Elément Cards :
+### 2.1.3. Elément Cards : <a id="2.1.3"></a>
 
 Chaque carte est caractérisée par une Id et un type. Il y a 3 types de cartes :
  
@@ -91,15 +91,15 @@ Chaque carte est caractérisée par une Id et un type. Il y a 3 types de cartes 
  -Indices : Les cartes indices seront caractérisées par un type d'indice qui peuvent être : Rien, Désamorçage instantanées, un équipement ou un lieu (safe).
  -Pièges : Les cartes pièges seront posées sur les lieux et ils auront une valeur, et comme les cartes indices, un signe ou deux (Cercle, Triangle). De plus, elles pourront être désamorcées par les joueurs allant dans ces lieux.
 
-### 2.1.4 Element Passives :
+### 2.1.4 Element Passives : <a id="2.1.4"></a>
 
 L'état passif est l'ensemble des mécaniques du jeu automatique. C'est-à-dire c'est intrinsèque au jeu. Il y a les points de vie de Mr.Corail, l'activité de la tempête (int allant de 0 à 3 qui influencera les points de vie de Mr.Corail). Et enfin l'état de santé de Mr.Corail.
 
-### 2.1.5 Element Conspiracy :
+### 2.1.5 Element Conspiracy : <a id="2.1.5"></a>
 
 Ce dernier caractérise un lieu, un joueur et une arme. Ce sont les  conditions d'activation du complot.
 
-## 2.2. Conception logiciel : extension pour le rendu
+## 2.2. Conception logiciel : extension pour le rendu <a id="2.2"></a>
 
 Le diagramme des classes pour les états est présenté ci-dessous, dont nous pouvons mettre en évidence les groupes de classes suivants :
 
