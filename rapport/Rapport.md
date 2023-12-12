@@ -1,8 +1,8 @@
-# Rapport de Projet Logiciel Transversal
+# Rapport de Projet Logiciel Transversal "CLUEDO CONSPIRATON"
 
 [TESTU Tristan](https://github.com/TestuTristan), [CHAIEB Ilias](https://github.com/Ilias1313), [BOUZIANE Imade](https://github.com/ImadeBouziane)
 
-## Présentation et indications
+# Présentation et indications
 
 ## Présentation Générale du PLT
 
