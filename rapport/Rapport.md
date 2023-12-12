@@ -8,7 +8,7 @@
 
 ## [1. Présentation Générale](#1)
 ### [1.1 Archétype](#1.1)
-### [1.2 Archétype](#1.2)
+### [1.2 Règles du jeu](#1.2)
 
 ## 1. Présentation Générale <a id="1"></a>
 
