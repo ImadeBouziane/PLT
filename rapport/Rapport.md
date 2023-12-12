@@ -6,11 +6,12 @@
 
 # Sommaire
 
-### [Présentation Générale](#1)
+## [1. Présentation Générale](#1)
+### [1.1 Archétype] (#1.1)
 
 ## 1. Présentation Générale <a id="1"></a>
 
-### 1.1 Archétype
+### 1.1 Archétype <a id="1.1"></a>
 
 L’objectif du projet est la réalisation du jeu « Cluedo : Conspiration» Il s’agit d’un jeu de rôle  qui mêle supercherie et déduction. C’est un jeu conçu pour 4 à 10 joueurs. Les joueurs incarnent des personnages du Cluedo classique et jouent des rôles secrets dans des équipes adverses. L’équipe des Amis cherchent à sauver M. Corail et à révéler le complot des conspirateurs. L’équipe des Conspirateurs tentent secrètement de saboter les plans des Amis et de mettre à exécution le complot de meurtre.
 
