@@ -1,5 +1,7 @@
 # Rapport de Projet Logiciel Transversal "CLUEDO CONSPIRATON"
 
+![Plateau](ImagesRapport/Boitedejeu.png)
+
 [TESTU Tristan](https://github.com/TestuTristan), [CHAIEB Ilias](https://github.com/Ilias1313), [BOUZIANE Imade](https://github.com/ImadeBouziane)
 
 ## 1. Présentation Générale 
@@ -32,15 +34,20 @@ Mr. Corail est tué par les pièges , le jeu passe alors à l’accusation final
 
 **Le plateau de jeu:**
 
-![Plateau](images/Plateau.png)
+![Plateau](ImagesRapport/Plateau.png)
 
-**Les cartes quartier :**
-Chaque quartier a une gemme de couleur qui indique sa catégorie (Religion = bleu, Noblesse = jaune, Commerce = vert, Militaire = rouge, Merveille = violet). Chaque quartier a un coût de construction égal au nombre de pièces d’or figurant en haut à gauche de la carte. Chaque quartier violet (appelé Merveille) a un effet sur le jeu, en faveur du joueur dans la cité duquel il est construit, qui est décrit sur la carte.
+**Role Secret:**
 
-**Les pièces d'or:**
-Il s'agit de la monnaie du jeu. Chaque joueur en reçoit 2 en début de partie. Il n'y a pas de limite de pièce d'or pouvant être possédé par un joueur, et la banque en possède une infinité.
+![Plateau](ImagesRapport/RoleSecret.png)
 
-**La couronne:**
+**Les cartes Joueurs/Identités:**
+
+![Plateau](ImagesRapport/Identités.png)
+
+**Les cartes indices:**
+
+![Plateau](ImagesRapport/Indices.png)
+
 Elle détermine quel joueur choisit en premier son personnage au début du tour.
 ### Règles du jeu
 **Mise en place:**
