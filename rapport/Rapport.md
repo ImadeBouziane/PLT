@@ -29,24 +29,10 @@ Le complot est activé et Mr. Corail est assassiné => La conspiration gagne
 Mr. Corail est tué par les pièges , le jeu passe alors à l’accusation finale. Pour les Amis ,c’est la dernière chance de découvrir la conspiration. Pour les conspirateurs c’est leur dernière chance d’échapper à la justice. Le nouvel Éclaireur choisit une équipe sans Garde du Corps ni Lieu et les joueurs passent au vote pour cette dernière. Si le vote n’est pas approuvé, on vote pour la prochaine équipe créée par l’Eclaireur suivant. Une fois le vote approuvé, l’ Eclaireur récupère toutes les cartes Indices restantes, les mélange et les distribue une à une aux joueurs choisis dans l’équipe. Les joueurs retournent ensuite sur le plateau et ils ont 5 minutes pour discuter et débattre de chaque élément du complot. Qui est le conspirateur en chef ? Où avait-il prévu de tuer Mr. Corail ? Quelle arme avait-il l’intention d’utiliser ? Une fois le temps écoulé, tous les joueurs votent et la majorité l’emporte. En cas d’égalité, l’Eclaireur tranche. Une fois l’accusation faite, le conspirateur en chef se dévoile et il dévoile le lieu et l’arme. Si tout était juste les Amis gagnent sinon c’est la conspiration qui gagne !
 
 ### 1.3 Ressources
-**Les cartes personnages:**
-Il existe 8 personnages ayant chacun un pouvoir et un ordre:
 
-1-Assassin
+**Le plateau de jeu:**
 
-2-Voleur
-
-3-Magicien
-
-4-Roi
-
-5-Evêque
-
-6-Marchand
-
-7-Architecte
-
-8-Condottière
+![Plateau](images/Plateau.png)
 
 **Les cartes quartier :**
 Chaque quartier a une gemme de couleur qui indique sa catégorie (Religion = bleu, Noblesse = jaune, Commerce = vert, Militaire = rouge, Merveille = violet). Chaque quartier a un coût de construction égal au nombre de pièces d’or figurant en haut à gauche de la carte. Chaque quartier violet (appelé Merveille) a un effet sur le jeu, en faveur du joueur dans la cité duquel il est construit, qui est décrit sur la carte.
