@@ -9,6 +9,16 @@
 ## [1. Présentation Générale](#1)
 ### [1.1 Archétype](#1.1)
 ### [1.2 Règles du jeu](#1.2)
+### [1.3 Ressources](#1.3)
+
+## [2 Description et conception des états](#2)
+### [2.1 Description des états](#2.1)
+#### [2.1.1 Élément Places :](#2.1.1)
+#### [2.1.2 Elément Players :](#2.1.2)
+#### [2.1.3 Elément Cards :](#2.1.3)
+#### [2.1.4 Élément Passives :](#2.1.4)
+#### [2.1.5 Element Conspiracy ](#2.1.5)
+
 
 ## 1. Présentation Générale <a id="1"></a>
 
@@ -66,15 +76,15 @@ Mr. Corail est tué par les pièges , le jeu passe alors à l’accusation final
 
 # 2 Description et conception des états <a id="2"></a>
 
-## 2.1. Description des états <a id="2.1"></a>
+## 2.1 Description des états <a id="2.1"></a>
 
 Notre état de jeu est notre état principal ,on y retrouve tous les éléments nécessaires au déroulement du jeu. Tout d'abord, on a le nombre de player avec la liste des players dans la partie. On a aussi besoin de savoir quel est le tour du joueur (Eclaireur). Ensuite on a des rôles publics et privés à distribuer. Il nous faut également un certain nombre de cartes, de lieux et d'armes. Un état est alors composé de différents éléments : 
 
-### 2.1.1. Elément Places : <a id="2.1.1"></a>
+### 2.1.1 Elément Places : <a id="2.1.1"></a>
 
 Une place (un lieu) est un endroit du board où les joueurs pourront aller a chaque tour, ils seront caractérisé par une ID. Il y aura des pièges, des indices et enfin dans certains cas, les lieux pourront être sûrs ou piégés.
 
-### 2.1.2. Elément Players : <a id="2.1.2"></a>
+### 2.1.2 Elément Players : <a id="2.1.2"></a>
 
 Un Player est caractérisé par son ID, chaque joueur aura un RoleType qui peut changer à chaque tour. Chaque joueur aura un RoleSecret attribué au début de la partie. Son rôle privé ne change tout du long de la partie . Chaque players peut avoir des cartes équipements. Il a le droit de vote. De plus, il pourra annoncer (ou pas) les indices trouvés.
 
@@ -83,7 +93,7 @@ Un Player est caractérisé par son ID, chaque joueur aura un RoleType qui peut 
 - SCOUT: Un rôle primaire qui change à chaque tour.
 - BODYGUARD: Un rôle choisi par le SCOUT
 
-### 2.1.3. Elément Cards : <a id="2.1.3"></a>
+### 2.1.3 Elément Cards : <a id="2.1.3"></a>
 
 Chaque carte est caractérisée par une Id et un type. Il y a 3 types de cartes :
  
@@ -99,7 +109,7 @@ L'état passif est l'ensemble des mécaniques du jeu automatique. C'est-à-dire 
 
 Ce dernier caractérise un lieu, un joueur et une arme. Ce sont les  conditions d'activation du complot.
 
-## 2.2. Conception logiciel : extension pour le rendu <a id="2.2"></a>
+## 2.2 Conception logiciel : extension pour le rendu <a id="2.2"></a>
 
 Le diagramme des classes pour les états est présenté ci-dessous, dont nous pouvons mettre en évidence les groupes de classes suivants :
 
