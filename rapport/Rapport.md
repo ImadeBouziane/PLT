@@ -2,13 +2,12 @@
 
 [TESTU Tristan](https://github.com/TestuTristan), [CHAIEB Ilias](https://github.com/Ilias1313), [BOUZIANE Imade](https://github.com/ImadeBouziane)
 
-# Présentation et indications
+## 1. Présentation Générale 
 
-## Présentation Générale du PLT
+### 1.1 Archétype
 
-### Archétype
 **Type de jeu:**
-Citadelles est un jeu de plateau au tour par tour avec gestion de ressources. Il implémente aussi un aspect à identité secret.
+L’objectif du projet est la réalisation du jeu « Cluedo : Conspiration» Il s’agit d’un jeu de rôle  qui mêle supercherie et déduction. C’est un jeu conçu pour 4 à 10 joueurs. Les joueurs incarnent des personnages du Cluedo classique et jouent des rôles secrets dans des équipes adverses. L’équipe des Amis cherchent à sauver M. Corail et à révéler le complot des conspirateurs. L’équipe des Conspirateurs tentent secrètement de saboter les plans des Amis et de mettre à exécution le complot de meurtre.
 
 **Nombre de joueurs:** 
 Le jeu se joue de 2 à 7 joueurs. Les règles n'étant pas les même selon le nombre de joueur, nous fixons la taille de la partie à 4 joueurs.
