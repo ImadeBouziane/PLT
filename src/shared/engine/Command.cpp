@@ -1,7 +1,8 @@
 // Command.cpp
 
-/*
+
 #include "Command.h"
+#include "state/PlayerID.h"
 
 
 namespace engine {
@@ -14,7 +15,7 @@ namespace engine {
 
     // Getter for CommandTypeId
     CommandTypeId Command::getCommandTypeId() {
-        return commandTypeId;
+        return CommandTypeId;
     }
 
     // Execute method
@@ -32,4 +33,3 @@ namespace engine {
 
 
 } // namespace engine*
-*/
