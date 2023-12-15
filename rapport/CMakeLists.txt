@@ -47,8 +47,8 @@ if(Ps2Pdf_FOUND AND Dia_FOUND)
   #generate_dia_pdf(ai)
   #generate_dia_pdf(module)
 
-else()
-  message(WARNING "Dia or ps2pdf not found! Rapport generation not available!")
+#else()
+#  message(WARNING "Dia or ps2pdf not found! Rapport generation not available!")
 endif()
 
 # vim: set sw=2 sts=2 et:
