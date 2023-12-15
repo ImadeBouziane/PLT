@@ -15,11 +15,11 @@ namespace engine {
 
     // Getter for CommandTypeId
     CommandTypeId Command::getCommandTypeId() {
-        return CommandTypeId;
+        return commandTypeId ;
     }
 
     // Execute method
-    void Command::execute(state::GameState &state) {
+    void Command::execute(state::Game &state) {
     }
 
     // Serialize method
@@ -28,7 +28,7 @@ namespace engine {
     }
 
     bool Command::check(state::Game &state) {
-        return authorPlayer==state.playing;
+        return authorPlayer==state.turnPlayer;
     }
 
 
