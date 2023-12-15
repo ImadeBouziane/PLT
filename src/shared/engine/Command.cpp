@@ -1,4 +1,6 @@
 // Command.cpp
+
+/*
 #include "Command.h"
 
 
@@ -29,4 +31,5 @@ namespace engine {
     }
 
 
-} // namespace engine
+} // namespace engine*
+*/
