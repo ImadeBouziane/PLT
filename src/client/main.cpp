@@ -4,27 +4,19 @@
 #include <SFML/Graphics.hpp>
 
 
+#include <SFML/Graphics.hpp>
+#include "render.h"
 
-// Fin test SFML
-#include <render.h>
-#include <state.h>
-#include <cstring>
+using namespace render;
 
-using namespace std;
-//using namespace client;
-using namespace render; 
 int main() {
-    // Créer une instance de GameBoard
-    GameBoard gameBoard;
+   sf::RenderWindow window(sf::VideoMode(1600, 900), "CLUDO CONSPIRACY");
 
-    // Créer une fenêtre SFML
-    sf::RenderWindow window(sf::VideoMode(GameBoard::WINDOW_WIDTH, GameBoard::WINDOW_HEIGHT), "Gamy");
+    GameBoard gameBoard(window);
+    CardsDisplay cardDisplay;
+    //Player player;
+    //player.setPlayerName("Nom du Joueur");
 
-
-  
-    window.setVerticalSyncEnabled(false);
-
-    // Boucle principale
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -33,24 +25,21 @@ int main() {
             }
         }
 
-        // Effacer l'écran
-        window.clear();
+        window.clear(sf::Color::Black);
 
-        // Dessiner le fond
-        window.draw(gameBoard.GetBackground());
+        // on dessine les composants du plateau de jeu 
+        gameBoard.draw(window);
+        cardDisplay.draw(window);
+        //player.draw(window);
 
-        // Dessiner les emplacements des cartes
-        for (const auto& cardSlot : gameBoard.getCardSlots()) {
-            window.draw(cardSlot);
-        }
+        gameBoard.drawTrap(window);
 
-        // Dessiner le titre
-        window.draw(gameBoard.getTitle());
+        
 
-        // Mettre à jour la fenêtre
         window.display();
     }
-
+    
     return 0;
 }
+
   
