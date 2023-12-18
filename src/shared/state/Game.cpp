@@ -10,7 +10,7 @@ using namespace state;
 Game::Game()  :
 nbPlayers(0) ,
 listPlayers({}) ,
-turnPlayer(0) ,
+turnPlayer(Player1),
 isEndGame(false),
 listWeapons({}) ,
 listPlaces({}) ,
@@ -36,7 +36,7 @@ std::vector<Players> Game::getListPlayer() {
     return listPlayers;
 }
 
-int* Game::getTurnPlayers() {
+PlayerID Game::getTurnPlayers() {
     return turnPlayer;
 }
 
