@@ -26,7 +26,7 @@ BOOST_AUTO_TEST_CASE(TestGameAttributes) {
 	Players myPlayer;
 
 
-	BOOST_CHECK_EQUAL(myPlayer.getIdPlayer(), "");
+	BOOST_CHECK_EQUAL(myPlayer.getIdPlayer(), Player1);
 	BOOST_CHECK_EQUAL(myPlayer.getplayerSecretRole(), "");
 	BOOST_CHECK_EQUAL(myPlayer.gethaveVoted(), false);
 	BOOST_CHECK_EQUAL(myPlayer.getvote(), false);
