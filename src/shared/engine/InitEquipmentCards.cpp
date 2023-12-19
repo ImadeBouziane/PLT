@@ -1,14 +1,14 @@
-// stackUtils.cpp
+/*
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <algorithm>
 #include <ctime>
-#include "InitCards.h"
+#include "InitEquipmentCards.h"
 
 namespace engine {
 
-  // Method to initialize the stack based on the csv file of all cards
+  
   std::vector<state::Card> StackUtils::initStack() {
     const std::string& filename = "cards.csv";
     std::vector<state::Card> cards;
@@ -20,7 +20,7 @@ namespace engine {
         }
 
         std::string line;
-        std::getline(file, line); // remove header
+        std::getline(file, line); 
 
         std::string id, name, multiplicity, type, cost;
         while (std::getline(file, line)) {
@@ -77,3 +77,5 @@ namespace engine {
     }
 
 } // namespace engine
+
+*/

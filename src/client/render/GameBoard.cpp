@@ -70,15 +70,7 @@ namespace render {
         
     }
 
-       /* sprite.setTexture(BackgroundTrapTexture) ; 
 
-        
-
-        // Ajustement de la position après la rotation
-        sf::Vector2u imageSize = BackgroundTexture.getSize();
-        sprite.setOrigin(0.5f * imageSize.x * 1, 0.5f * imageSize.y * 1);
-        sprite.setPosition(0.5f * imageSize.x * 1, 0.5f * imageSize.y * 1);
-*/
 
     void GameBoard::draw(sf::RenderWindow& window) {
         window.draw(Background);

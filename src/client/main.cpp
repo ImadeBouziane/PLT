@@ -1,19 +1,15 @@
 #include <iostream>
-
-
-#include <SFML/Graphics.hpp>
-
-
 #include <SFML/Graphics.hpp>
 #include "render.h"
 
 using namespace render;
 
 int main() {
-   sf::RenderWindow window(sf::VideoMode(1600, 900), "CLUDO CONSPIRACY");
+   sf::RenderWindow window(sf::VideoMode(1600, 900), "CLUEDO CONSPIRACY");
 
     GameBoard gameBoard(window);
     CardsDisplay cardDisplay;
+    GameStats gameStats; 
     //Player player;
     //player.setPlayerName("Nom du Joueur");
 
@@ -31,8 +27,8 @@ int main() {
         gameBoard.draw(window);
         cardDisplay.draw(window);
         //player.draw(window);
-
         gameBoard.drawTrap(window);
+        gameStats.drawStats(window);
 
         
 
