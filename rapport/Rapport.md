@@ -162,6 +162,7 @@ Nous prévoyons d'afficher les equipements du joueur dans le coin inférieur dro
 
 ### 3.2 Conception logiciel <a id="3.2"></a>
 
+On commencera par importer les classes nécessaire du state.dia et celles de la bibliothèque SFML.
 Nous disposerons de plusieus classes pour nous permettre de créer un affichage cohérent avec nos attentes : 
 
  -En vert, la classe "GameBoard" correspondant au plateau de jeu principal, commun à tous les joueurs. 
@@ -172,7 +173,7 @@ Nous disposerons de plusieus classes pour nous permettre de créer un affichage 
    
  -En rouge, "PlayerScreen" qui représente les éléments connus seulement par le joueur en lien avec la session.
     
- -Enfin en blanc, "PlayerID" qui concorde avec le joueur actuellement en possesion du rôle d'éclaireur, c'est à dire celui qui propose une composition d'équipe pour aborder un lieu.  
+ -Enfin en blanc, une énumération "PlayerID" qui concorde avec le joueur actuellement en possesion du rôle d'éclaireur, c'est à dire celui qui propose une composition d'équipe pour aborder un lieu.  
  
 ![RenderDia](ImagesRapport/RenderDia.png)
 
