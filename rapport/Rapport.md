@@ -154,6 +154,8 @@ Le but de notre affichage sera de représenter un état fixe de notre jeu. Ce de
 
 Nous ne nous aventurerons pas à vouloir faire marcher le jeu sous plusieurs résolutions et garderons celle d'origine. Pour la police de nos texte, nous en choisirrons une libre de droit: "04FONT".
 
+![Aperçu](ImagesRapport/Apercu.png)
+
 ### 3.2 Conception logiciel <a id="3.2"></a>
 
 Nous disposerons de plusieus classes pour nous permettre de créer un affichage cohérent avec nos attentes : 
