@@ -179,15 +179,21 @@ Nous disposerons de plusieus classes pour nous permettre de créer un affichage 
 
 ## 4. Règles de changement d'états et moteur de jeu <a id="4"></a>
 
-Les changements d’état ne suivent pas d’horloge globale, chaque état sera mis à jour à l’issu d'exécutions de commandes par le joueur vers l’engine ou par l’engine vers le joueur.
+La partie engine de de notre logiciel permettra de modifier nos données dans le state, et ainsi l'affichage du render. Ces changements d’état ne suivent pas d’horloge globale.
 
 ### 4.1 Changements extérieurs <a id="4.1"></a>
 
-à compléter
+Les changements extérieurs correspondent aux changements amenées par les différents joueurs suite à une action de leur part:
+ -"VoteCommand"
+ -"ShowCluesCommand"
+ -"GiveEquipment"
+ -Les initialisations de cartes
+ -"GetCardsCommand"
 
 ### 4.2 Changements autonomes <a id="4.2"></a>
 
-à compléter
+Ces changements sont, contrairement à ceux evoqués précédemment, automatiques, c'est à dire qu'ils s'effectuent tout seul sans besoin d'intervention des joueurs:
+ -"MoveCommand"
 
 ### 4.3 Conception logiciel <a id="4.3"></a>
 
