@@ -160,15 +160,15 @@ Nous ne nous aventurerons pas à vouloir faire marcher le jeu sous plusieurs ré
 
 Nous disposerons de plusieus classes pour nous permettre de créer un affichage cohérent avec nos attentes : 
 
-	-En vert, la classe "GameBoard" correspondant au plateau de jeu principal, commun à tous les joueurs. 
+ -En vert, la classe "GameBoard" correspondant au plateau de jeu principal, commun à tous les joueurs. 
  
- 	-En cyan, la classe "GameStats" contiendra toutes les données non fixes concernant la partie dont l'intégralité des joueurs peuvent avoir accès.
-  
-  	-En jaune, la classe "CardsDisplay" qui permet d'afficher les différentes cartes existant dans le jeu.
+ -En cyan, la classe "GameStats" contiendra toutes les données non fixes concernant la partie dont l'intégralité des joueurs peuvent avoir accès.
    
-   	-En rouge, "PlayerScreen" qui représente les éléments connus seulement par le joueur en lien avec la session.
+ -En jaune, la classe "CardsDisplay" qui permet d'afficher les différentes cartes existant dans le jeu.
+   
+ -En rouge, "PlayerScreen" qui représente les éléments connus seulement par le joueur en lien avec la session.
     
-	-Enfin en blanc, "PlayerID" qui concorde avec le joueur actuellement en possesion du rôle d'éclaireur, c'est à dire celui qui propose une composition d'équipe pour aborder un lieu.  
+ -Enfin en blanc, "PlayerID" qui concorde avec le joueur actuellement en possesion du rôle d'éclaireur, c'est à dire celui qui propose une composition d'équipe pour aborder un lieu.  
  
 ![RenderDia](ImagesRapport/RenderDia.png)
 
