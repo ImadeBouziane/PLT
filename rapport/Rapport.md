@@ -154,7 +154,9 @@ Le but de notre affichage sera de représenter un état fixe de notre jeu. Ce de
 
 Nous ne nous aventurerons pas à vouloir faire marcher le jeu sous plusieurs résolutions et garderons celle d'origine. Pour la police de nos texte, nous en choisirrons une libre de droit: "04FONT".
 
-Les cartes et le plateau seront conçu sous forme de rectangle.
+Les cartes et le plateau seront conçu sous forme de rectangle tandis que les pièges et les jetons auront leurs propres formes.
+
+Nous prévoyons d'afficher les equipements du joueur dans le coin inférieur droit et les informations concernant les autres joueurs sur le coté gauche.
 
 ![Aperçu](ImagesRapport/Apercu.png)
 
