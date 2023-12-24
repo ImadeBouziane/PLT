@@ -150,25 +150,50 @@ Les cartes : Les cartes seront constituées en 3 types. Les Équipements, les Tr
 
 ### 3.1 Stratégie de rendu d'un état <a id="3.1"></a>
 
-à compléter
+Le but de notre affichage sera de représenter un état fixe de notre jeu. Ce dernier dépendra du stade de la partie auquel on se trouve qui sera lui-même définit à l'aide des codes présents dans le répertoire src/render/state. 
+
+Nous ne nous aventurerons pas à vouloir faire marcher le jeu sous plusieurs résolutions et garderons celle d'origine. Pour la police de nos texte, nous en choisirrons une libre de droit: "04FONT".
+
+Les cartes et le plateau seront conçu sous forme de rectangle tandis que les pièges et les jetons auront leurs propres formes.
+
+Nous prévoyons d'afficher les equipements du joueur dans le coin inférieur droit et les informations concernant les autres joueurs sur le coté gauche.
+
+![Aperçu](ImagesRapport/Apercu.png)
 
 ### 3.2 Conception logiciel <a id="3.2"></a>
 
-à compléter
+On commencera par importer les classes nécessaire du state.dia et celles de la bibliothèque SFML.
+Nous disposerons de plusieus classes pour nous permettre de créer un affichage cohérent avec nos attentes : 
 
+ -En vert, la classe "GameBoard" correspondant au plateau de jeu principal, commun à tous les joueurs. 
+ 
+ -En cyan, la classe "GameStats" contiendra toutes les données non fixes concernant la partie dont l'intégralité des joueurs peuvent avoir accès.
+   
+ -En jaune, la classe "CardsDisplay" qui permet d'afficher les différentes cartes existant dans le jeu.
+   
+ -En rouge, "PlayerScreen" qui représente les éléments connus seulement par le joueur en lien avec la session.
+    
+ -Enfin en blanc, une énumération "PlayerID" qui concorde avec le joueur actuellement en possesion du rôle d'éclaireur, c'est à dire celui qui propose une composition d'équipe pour aborder un lieu.  
+ 
 ![RenderDia](ImagesRapport/RenderDia.png)
 
 ## 4. Règles de changement d'états et moteur de jeu <a id="4"></a>
 
-Les changements d’état ne suivent pas d’horloge globale, chaque état sera mis à jour à l’issu d'exécutions de commandes par le joueur vers l’engine ou par l’engine vers le joueur.
+La partie engine de de notre logiciel permettra de modifier nos données dans le state, et ainsi l'affichage du render. Ces changements d’état ne suivent pas d’horloge globale.
 
 ### 4.1 Changements extérieurs <a id="4.1"></a>
 
-à compléter
+Les changements extérieurs correspondent aux changements amenées par les différents joueurs suite à une action de leur part:
+ -"VoteCommand"
+ -"ShowCluesCommand"
+ -"GiveEquipment"
+ -Les initialisations de cartes
+ -"GetCardsCommand"
 
 ### 4.2 Changements autonomes <a id="4.2"></a>
 
-à compléter
+Ces changements sont, contrairement à ceux evoqués précédemment, automatiques, c'est à dire qu'ils s'effectuent tout seul sans besoin d'intervention des joueurs:
+ -"MoveCommand"
 
 ### 4.3 Conception logiciel <a id="4.3"></a>
 

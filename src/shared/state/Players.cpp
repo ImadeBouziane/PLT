@@ -8,7 +8,7 @@
 namespace state{
 
     Players::Players():
-    idPlayer(""),
+    idPlayer(Player1),
     role(SIMPLE),
     playerSecretRole(""),
     Equipments({}),
@@ -26,7 +26,7 @@ namespace state{
 
     void Players::giveEquipments() { return;}
 
-    std::string Players::getIdPlayer() {
+    PlayerID Players::getIdPlayer() {
         return idPlayer;
     }
 
