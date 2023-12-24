@@ -10,6 +10,7 @@ int main() {
     GameBoard gameBoard(window);
     CardsDisplay cardDisplay;
     GameStats gameStats; 
+    PlayerScreen playerScreen;
     //Player player;
     //player.setPlayerName("Nom du Joueur");
 
@@ -30,7 +31,7 @@ int main() {
         gameBoard.drawTrap(window);
         gameStats.drawStats(window);
 
-        
+        playerScreen.drawPlayer(window);
 
         window.display();
     }
