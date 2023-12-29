@@ -29,4 +29,13 @@ namespace state{
 
     }
 
+    void Cards::setIdcard(const std::string& id) {
+        idCard = id;
+    }
+
+    void Cards::setCardsTypes(const std::string& type) {
+        cardsType = type;
+    }
+
+
 }

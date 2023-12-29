@@ -34,4 +34,15 @@ namespace state{
         return isCircle;
     }
 
+    void Equipments::setEquipmentValue(int value) {
+    equipmentValue = value;
+    }
+
+    void Equipments::setIsTriangle(bool triangle) {
+        isTriangle = triangle;
+    }
+
+    void Equipments::setIsCircle(bool circle) {
+        isCircle = circle;
+    }
 }
