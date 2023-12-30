@@ -47,20 +47,20 @@ namespace state{
         idPlace = ID;
     }
 
-    void Places::setIsSafe(bool IsSafe) {
-        isSafe = IsSafe;
+    void Places::setIsSafe(bool Safe) {
+        isSafe = Safe;
     }
 
-    void Places::setIsTrapped(bool IsTrapped) {
-        isTrapped = IsTrapped;
+    void Places::setIsTrapped(bool Trapped) {
+        isTrapped = Trapped;
     }
 
-    void Places::setListClues(std::vector<Clues> ListClues) {
-        listClues = ListClues;
+    void Places::setListClues(std::vector<Clues> WhichClues) {
+        listClues = WhichClues;
     }
 
-    void Places::setPresentPlayers(std::vector<Players> PresentPlayers) {
-        presentPlayers = PresentPlayers;
+    void Places::setPresentPlayers(std::vector<Players> WhichPlayers) {
+        presentPlayers = WhichPlayers;
     }
 
     void Places::setTrap(std::string WhichTrap) {
