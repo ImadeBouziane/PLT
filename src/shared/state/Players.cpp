@@ -43,6 +43,12 @@ namespace state{
     std::vector<state::Cards> Players::getannouncedClues() {
         return announcedClues;
     }
+
+void Players::setEquipments(std::vector<Equipments> newEquipments) {
+    this->equipments = newEquipments;
+}
+
+
     bool Players::gethaveVoted() {
         return haveVoted;
     }
