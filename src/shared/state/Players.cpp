@@ -11,7 +11,7 @@ namespace state{
     idPlayer(Player1),
     role(SIMPLE),
     playerSecretRole(""),
-    Equipments({}),
+    equipments({}),
     realClues({}),
     announcedClues({}),
     haveVoted(false),
@@ -34,8 +34,8 @@ namespace state{
     std::string Players::getplayerSecretRole() {
         return playerSecretRole;
     }
-    std::vector<state::Cards> Players::getEquipments() {
-        return Equipments;
+    std::vector<state::Equipments> Players::getEquipments() {
+        return equipments;
     }
     std::vector<state::Cards> Players::getrealClues() {
         return realClues;

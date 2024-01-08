@@ -184,15 +184,21 @@ La partie engine de de notre logiciel permettra de modifier nos données dans le
 ### 4.1 Changements extérieurs <a id="4.1"></a>
 
 Les changements extérieurs correspondent aux changements amenées par les différents joueurs suite à une action de leur part:
+
  -"VoteCommand"
+ 
  -"ShowCluesCommand"
+ 
  -"GiveEquipment"
+ 
  -Les initialisations de cartes
+ 
  -"GetCardsCommand"
 
 ### 4.2 Changements autonomes <a id="4.2"></a>
 
 Ces changements sont, contrairement à ceux evoqués précédemment, automatiques, c'est à dire qu'ils s'effectuent tout seul sans besoin d'intervention des joueurs:
+ 
  -"MoveCommand"
 
 ### 4.3 Conception logiciel <a id="4.3"></a>
