@@ -5,8 +5,9 @@
 
 namespace engine {
 
-std::vector<state::Equipments> InitEquipmentCards::Init() {
+std::pair<std::vector<state::Equipments>, std::vector<state::Equipments>> InitEquipmentCards::Init() {
     std::vector<state::Equipments> equipmentDeck;
+    std::vector<state::Equipments> discardPile;
 
     // Ajouter les cartes d'équipement à la pioche
     for (int i = 0; i < 3; ++i) {
@@ -180,7 +181,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
 
     
 
-    return equipmentDeck;
+    return std::make_pair(equipmentDeck, discardPile);
 }
 
 } // namespace engine
