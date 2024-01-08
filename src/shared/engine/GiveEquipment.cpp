@@ -5,9 +5,17 @@
 #include "state/Game.h"
 #include "GiveEquipment.h"
 #include "Engine.cpp"
+#include "engine/InitEquipmentCards.h"
+#include "state/Equipments.h"
+#include <random>
+#include <ctime>
+
+
 
 
 namespace engine {
+    InitEquipmentCards initCards;
+    std::vector<state::Equipments> deck = initCards.Init();
 
     std::vector<state::PlayerID> recipientPlayerIds;
 
@@ -35,15 +43,24 @@ bool GiveEquipment::execute(state::PlayerID bodyguardId) {
             std::cout << "Entrée invalide. Veuillez réessayer.\n";
         }
     }
-
+     std::mt19937 rng(time(nullptr)); 
+     
     // Distribuer les cartes aux joueurs destinataires choisis
     for (auto recipientId : recipientPlayerIds) {
         state::Players recipient = myEngine.getPlayer(recipientId);
-        
-            // Logique de distribution des cartes
-            // Par exemple : recipient.addCard(card);
-        
-    }
+         // Initialise le générateur de nombres aléatoires
+         
+
+         // Crée une distribution pour l'index du tableau
+            std::uniform_int_distribution<std::mt19937::result_type> dist(0, deck.size() - 1);
+               
+
+            std::vector<state::Equipments> currentEquipments = recipient.getEquipments();
+             currentEquipments.push_back(deck[dist(rng)]);
+             recipient.setEquipments(currentEquipments);    
+            
+            
+                }
 
     // Mise à jour de l'état du jeu
     // Par exemple : bodyguard.removeCard(card);
