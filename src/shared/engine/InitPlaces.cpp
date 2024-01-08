@@ -1,10 +1,15 @@
 #include "engine/InitPlaces.h"
 #include "state/Places.h"
+#include "state/Traps.h"
 
 namespace engine {
 
 std::vector<state::Places> InitPlaces::Init() {
     std::vector<state::Places> placesDeck;
+
+    // Création des différents pièges
+
+        state::Traps trap1;
 
     // Création des différents lieux
 
