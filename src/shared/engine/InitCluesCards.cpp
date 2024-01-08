@@ -1,6 +1,6 @@
 // Dans le fichier InitClues.cpp
 
-#include "engine/InitClues.h"
+#include "engine/InitCluesCards.h"
 #include "state/Clues.h"
 
 namespace engine {

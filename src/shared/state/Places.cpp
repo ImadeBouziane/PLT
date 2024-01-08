@@ -18,8 +18,6 @@ namespace state{
 
     Places::~Places(){}
 
-
-
     std::string Places::getIdPlace() {
         return idPlace;
     }
@@ -43,5 +41,29 @@ namespace state{
 
     std::string Places::getTrap() {
         return Trap;
+    }
+
+    void Places::setIdPlace(std::string ID) {
+        idPlace = ID;
+    }
+
+    void Places::setIsSafe(bool Safe) {
+        isSafe = Safe;
+    }
+
+    void Places::setIsTrapped(bool Trapped) {
+        isTrapped = Trapped;
+    }
+
+    void Places::setListClues(std::vector<Clues> WhichClues) {
+        listClues = WhichClues;
+    }
+
+    void Places::setPresentPlayers(std::vector<Players> WhichPlayers) {
+        presentPlayers = WhichPlayers;
+    }
+
+    void Places::setTrap(std::string WhichTrap) {
+        Trap = WhichTrap;
     }
 }
