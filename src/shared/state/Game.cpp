@@ -14,9 +14,9 @@ turnPlayer(Player1),
 isEndGame(false),
 listWeapons({}) ,
 listPlaces({}) ,
-listCards({}) ,
-publicRole({}) ,
-secretRole({})
+listEquipments({}) ,
+GoodGuys({}) ,
+BadGuys({})
 {
 
 }
@@ -26,7 +26,6 @@ Game::~Game()
 {
 
 }
-
 
 int Game::getnbPlayers() {
     return nbPlayers;
@@ -48,19 +47,16 @@ std::vector<Places> Game::getListPlaces() {
     return listPlaces;
 }
 
-
-std::vector<Cards> Game::getListCards() {
-    return listCards;
+std::vector<Equipments> Game::getListEquipments() {
+    return listEquipments;
 }
 
-
-std::vector<Players> Game::getPublicRole() {
-    return publicRole;
+std::vector<Players> Game::getGoodGuys() {
+    return GoodGuys;
 }
 
-
-std::vector<Players> Game::getSecretRole() {
-    return secretRole;
+std::vector<Players> Game::getBadGuys() {
+    return BadGuys;
 }
 
 bool Game::getIsEndGame() {
@@ -70,32 +66,6 @@ bool Game::getIsEndGame() {
 
 
 
-void Game::endGame()
-{
-    return;
-}
-
-
-void Game::chooseCharacters()
-{
-    return;
-}
-
-
-void Game::changeScout()
-{
-    return; 
-}
-
-void Game::movePlayers()
-{
-    return; 
-}
-
-void Game::defuse()
-{
-    return;
-}
 
 
 
