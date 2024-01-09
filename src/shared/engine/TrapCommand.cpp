@@ -196,11 +196,12 @@ namespace engine {
         // Demander au joueur de choisir et contribuer avec des équipements
         std::vector<state::Equipments> contributedEquipments = chooseCommand(player.getIdPlayer(), player.getEquipments());
 
-        // Pour chaque équipement contribué, mettre à jour trapValue en conséquence
+        // Pour chaque équipement contribué, mettre à jour Value en conséquence
+        
         
         for (auto& contributedEquipment : contributedEquipments) {
             int equipmentValue = contributedEquipment.getEquipmentValue();
-            int trapValue = foundTrap->getTrapValue();
+            
 
             // Si les valeurs sont du même signe, les ajouter ; sinon, les soustraire
             if ((foundTrap->getIsCircle() && not(foundTrap->getIsTriangle()) && contributedEquipment.getIsTriangle()) || (foundTrap->getIsTriangle() && not(foundTrap->getIsCircle()) && contributedEquipment.getIsCircle()) ){
@@ -217,7 +218,7 @@ namespace engine {
     }
 
     // Vérifier si le piège est désamorcé ou activé en fonction de trapValue
-    if (value >= 0) {
+    if (value >= foundTrap->getTrapValue()) {
         std::cout << "Piège désamorcé !" << std::endl;
 
     } else {
