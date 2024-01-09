@@ -8,8 +8,8 @@
 #include "engine/InitCluesCards.h"
 
 namespace engine {
-    InitCluesCards InitClues;
-    std::vector<state::Equipments> deck = initCards.Init();
+    //InitCluesCards InitClues;
+    //std::vector<state::Equipments> deck = initCards.Init();
 
 
     TrapCommand::TrapCommand(state::PlayerID player) : place(place) {}
@@ -60,7 +60,7 @@ namespace engine {
     
     
 
-    
+    /*
     
     
     void TrapCommand::execute(state::PlayerID players) {
@@ -94,6 +94,6 @@ namespace engine {
         // TODO: Implémenter la logique pour un piège activé
     }
 }
-}
+}*/
     
 }
