@@ -1,5 +1,3 @@
-// Dans le fichier InitEquipmentCards.cpp
-
 #include "engine/InitEquipmentCards.h"
 #include "state/Equipments.h"
 
