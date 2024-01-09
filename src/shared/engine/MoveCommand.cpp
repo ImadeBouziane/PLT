@@ -1,6 +1,8 @@
 #include "MoveCommand.h"
 #include "state/Places.h"
 #include "state/Players.h"
+#include "InitPlaces.cpp"
+
 
 namespace engine {
 

@@ -12,6 +12,8 @@
 namespace engine {
 
     
+
+    
     Engine::Engine() {
         // Initialisation de l'Engine, si nécessaire
     }
@@ -49,4 +51,5 @@ namespace engine {
 
         throw std::runtime_error("Joueur non trouvé avec l'ID spécifié"); // ou retourner un joueur par défaut
     }
+    
 }
