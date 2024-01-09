@@ -15,8 +15,13 @@ isEndGame(false),
 listWeapons({}) ,
 listPlaces({}) ,
 listEquipments({}) ,
+listTraps({}),
+listClues({}),
 GoodGuys({}) ,
-BadGuys({})
+BadGuys({}),
+crimeWeapon(),
+crimePlace(),
+safePlace()
 {
 
 }
@@ -59,8 +64,27 @@ std::vector<Players> Game::getBadGuys() {
     return BadGuys;
 }
 
+std::vector<Traps> Game::getListTraps(){
+    return listTraps;
+}
+std::vector<Clues> Game::getListClues (){
+    return listClues;
+}
+
 bool Game::getIsEndGame() {
     return isEndGame;
+}
+
+Weapons Game::getCrimeWeapon(){
+    return crimeWeapon;
+}
+
+Places Game::getCrimePlace(){
+    return crimePlace;
+}
+
+Places Game::getSafePlace(){
+    return safePlace;
 }
 
 void Game::setnbPlayers(int nb){
@@ -99,6 +123,25 @@ void Game::setIsEndGame(bool end){
     isEndGame = end;
 }
 
+void Game::setListTraps (std::vector<Traps> List){
+    listTraps = List;
+}
+
+void Game::setListClues (std::vector<Clues> List){
+    listClues = List;
+}
+
+void Game::setCrimeWeapon (Weapons which){
+    crimeWeapon = which;
+}
+
+void Game::setCrimePlace (Places which){
+    crimePlace = which;
+}
+
+void Game::setSafePlace (Places which){
+    safePlace = which;
+}
 
 
 
