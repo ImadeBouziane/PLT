@@ -9,11 +9,6 @@ namespace state{
             listClues({}),
             presentPlayers({}),
             Trap("")
-
-
-
-
-
     {}
 
     Places::~Places(){}

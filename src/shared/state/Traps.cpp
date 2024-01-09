@@ -39,4 +39,20 @@ namespace state{
         return isCircle;
     }
 
+    void Traps::setTrapValue(int value){
+        trapValue = value;
+    }
+
+    void Traps::setIsDefused(bool defused){
+        isDefused = defused;
+    }
+
+    void Traps::setIsTriangle(bool istriangle){
+        isTriangle = istriangle;
+    }
+    
+    void Traps::setIsCircle(bool iscircle){
+        isCircle = iscircle;
+    }
+
 }
