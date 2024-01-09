@@ -14,7 +14,7 @@ namespace engine {
     std::vector<state::Equipments> chooseCommand (state::PlayerID player,std::vector<state::Equipments> availableEquipment){
         std::vector<state::Equipments> contributedEquipments;
         for (auto& equipment : availableEquipment) {
-            std::cout << "ID: " << equipment.getIdCard() << " | Valeur: " << equipment.getEquipementValue()
+            std::cout << "ID: " << equipment.getIdCard() << " | Valeur: " << equipment.getEquipmentValue()
                       << " | Triangle: " << equipment.getIsTriangle() << " | Circle: " << equipment.getIsCircle()
                       << std::endl;
     }
@@ -74,7 +74,7 @@ namespace engine {
 
         // Pour chaque équipement contribué, mettre à jour trapValue en conséquence
         for (const auto& contributedEquipment : contributedEquipments) {
-            int equipmentValue = contributedEquipment.getEquipementValue();
+            int equipmentValue = contributedEquipment.getEquipmentValue();
             int trapValue = place.getTrap().getTrapValue();
 
             // Si les valeurs sont du même signe, les ajouter ; sinon, les soustraire
