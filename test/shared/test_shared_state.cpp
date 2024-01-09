@@ -8,17 +8,7 @@ using namespace state;
 
 BOOST_AUTO_TEST_CASE(TestState) {
     
-	
-	Players myPlayer;
-
-	BOOST_CHECK_EQUAL(myPlayer.getIdPlayer(), Player1);
-	BOOST_CHECK_EQUAL(myPlayer.getplayerSecretRole(), "");
-	BOOST_CHECK_EQUAL(myPlayer.gethaveVoted(), false);
-	BOOST_CHECK_EQUAL(myPlayer.getvote(), false);
-	BOOST_CHECK_EQUAL(myPlayer.getrole(), state::RoleType::SIMPLE);
-	BOOST_CHECK(myPlayer.getEquipments().empty());
-	BOOST_CHECK(myPlayer.getrealClues().empty());
-	BOOST_CHECK(myPlayer.getannouncedClues().empty());
+	//Test de la classe Traps
 
 	Traps myTrap;
 
@@ -35,6 +25,8 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	BOOST_CHECK_EQUAL(myTrap.getIsTriangle(), false);
 	BOOST_CHECK_EQUAL(myTrap.getIsCircle(), true);
 
+	//Test de la classe Places
+
 	Places myPlace;
 
     myPlace.setIdPlace("Crique Secrète");
@@ -50,6 +42,8 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	BOOST_CHECK(myPlace.getPresentPlayers().empty());
 	BOOST_CHECK_EQUAL(myPlace.getTrap(), "Flaque de Pétrole");
 
+	//Test de la classe Equipments
+
 	Equipments myEquipment;
 
     myEquipment.setIdcard("allumette 1");
@@ -63,6 +57,8 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	BOOST_CHECK_EQUAL(myEquipment.getIsTriangle(), false);
 	BOOST_CHECK_EQUAL(myEquipment.getIsCircle(), false);
 
+	//Test de la classe Passives
+
 	Passives myPassive;
 
 	myPassive.setLifePoint(0);
@@ -71,6 +67,8 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	BOOST_CHECK_EQUAL(myPassive.getLifePoint(), 0);
 	BOOST_CHECK_EQUAL(myPassive.getTempestPoint(), 0);
 	BOOST_CHECK_EQUAL(myPassive.getIsAlive(), false);
+
+	//Test de la classe Conspiracy
 
 	Conspiracy myConspiracy;
 
@@ -81,10 +79,14 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	BOOST_CHECK_EQUAL(myConspiracy.getIdWeapon(), "Sabre");
 	BOOST_CHECK_EQUAL(myConspiracy.getIdPlayer(), "Player1");
 
+	//Test de la classe Weapons
+
 	Weapons myWeapon;
 
 	myWeapon.setIdWeapon("Pistolet");
 	BOOST_CHECK_EQUAL(myWeapon.getIdWeapon(), "Pistolet");
+
+	//Test de la classe Clues
 
 	Clues myClue;
 
@@ -96,6 +98,29 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	BOOST_CHECK_EQUAL(myClue.getCardsType(), "Clues");
 	BOOST_CHECK_EQUAL(myClue.getCluesType(), "Place");
 	BOOST_CHECK_EQUAL(myClue.getIsRevealed(), false);
+
+	//Test de la classe Players
+
+	Players myPlayer;
+
+	myPlayer.setIdPlayer(Player3);
+	myPlayer.setrole(SCOUT);
+	myPlayer.setplayerSecretRole("BadGuy");
+	myPlayer.setEquipments({myEquipment,myEquipment});
+	myPlayer.setRealClues({myClue,myClue});
+	myPlayer.setannouncedClues({myClue,myClue});
+	myPlayer.sethaveVoted(true);
+	myPlayer.setvote(true);
+	BOOST_CHECK_EQUAL(myPlayer.getIdPlayer(), Player3);
+	BOOST_CHECK_EQUAL(myPlayer.getrole(), state::RoleType::SCOUT);
+	BOOST_CHECK_EQUAL(myPlayer.getplayerSecretRole(), "BadGuy");
+	BOOST_CHECK_EQUAL(myPlayer.getEquipments().size(), 2);
+	BOOST_CHECK_EQUAL(myPlayer.getrealClues().size(), 2);
+	BOOST_CHECK_EQUAL(myPlayer.getannouncedClues().size(), 2);
+	BOOST_CHECK_EQUAL(myPlayer.gethaveVoted(), true);
+	BOOST_CHECK_EQUAL(myPlayer.getvote(), true);
+
+	//Test de la classe Game
 
 	Game myGame;
 
