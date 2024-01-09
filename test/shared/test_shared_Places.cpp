@@ -10,14 +10,13 @@ BOOST_AUTO_TEST_SUITE(PlacesTestSuite)
 
 
 BOOST_AUTO_TEST_CASE(TestPlacesAttributes) {
-	Places myPlayce;
+	Places myPlace;
 
 
 	BOOST_CHECK_EQUAL(myPlace.getIdPlace(), "");
 	BOOST_CHECK_EQUAL(myPlace.getIsSafe(), false);
 	BOOST_CHECK_EQUAL(myPlace.getIsTrapped(), true);
-	BOOST_CHECK_EQUAL(myPPlace.getTrap(), "");
-	BOOST_CHECK_EQUAL(myPlace.getvote(), "");
+	BOOST_CHECK_EQUAL(myPlace.getTrap(), "");
 
 
 

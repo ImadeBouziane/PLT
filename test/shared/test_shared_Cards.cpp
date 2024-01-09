@@ -4,13 +4,13 @@
 
 using namespace state;
 
-BOOST_AUTO_TEST_SUITE(PlayerTestSuite)
+BOOST_AUTO_TEST_SUITE(PlayersTestSuite)
 
 
 
 
 BOOST_AUTO_TEST_CASE(TestCardAttributes) {
-	Card myCard;
+	Cards myCard;
 
 
 	BOOST_CHECK_EQUAL(myCard.getIdCard(), "");
