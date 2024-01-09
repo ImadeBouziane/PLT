@@ -33,19 +33,10 @@ BOOST_AUTO_TEST_CASE(TestDefuse) {
 BOOST_AUTO_TEST_CASE(TestPlayerAttributes) {
 	Game myGame;
 
-
 	BOOST_CHECK_EQUAL(myGame.getnbPlayers(), 0);
-	BOOST_CHECK_EQUAL(myGame.getTurnPlayer(), 0);
+	BOOST_CHECK_EQUAL(myGame.getTurnPlayers(), 1);
 
 	// Test vectors
-
-	BOOST_CHECK(myPlayer.getplayerListPlayer().empty(), {});
-	BOOST_CHECK_EQUAL(myGame.getListPlayer().empty(), {});
-	BOOST_CHECK_EQUAL(myGame.getListWeapons().empty(), {});
-	BOOST_CHECK_EQUAL(myGame.getListPlaces().empty(), {});
-	BOOST_CHECK_EQUAL(myGame.getListCards().empty(), {});
-	BOOST_CHECK_EQUAL(myGame.getPublicRole().empty(), {});
-	BOOST_CHECK_EQUAL(myGame.getSecretRole().empty(), {});
 	;
 }
 

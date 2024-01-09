@@ -8,7 +8,7 @@ BOOST_AUTO_TEST_SUITE(WeaponTestSuite)
 
 
 BOOST_AUTO_TEST_CASE(TestWeaponAttributes) {
-	Weapon myWeapon;
+	Weapons myWeapon;
 
 
 	BOOST_CHECK_EQUAL(myWeapon.getIdWeapon(), "");
