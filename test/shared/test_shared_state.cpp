@@ -8,17 +8,14 @@ using namespace state;
 
 BOOST_AUTO_TEST_CASE(TestState) {
     
+	
 	Players myPlayer;
 
 	BOOST_CHECK_EQUAL(myPlayer.getIdPlayer(), Player1);
 	BOOST_CHECK_EQUAL(myPlayer.getplayerSecretRole(), "");
 	BOOST_CHECK_EQUAL(myPlayer.gethaveVoted(), false);
 	BOOST_CHECK_EQUAL(myPlayer.getvote(), false);
-
-	// Test role
 	BOOST_CHECK_EQUAL(myPlayer.getrole(), state::RoleType::SIMPLE);
-
-	// Test vectors
 	BOOST_CHECK(myPlayer.getEquipments().empty());
 	BOOST_CHECK(myPlayer.getrealClues().empty());
 	BOOST_CHECK(myPlayer.getannouncedClues().empty());
@@ -100,6 +97,30 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	BOOST_CHECK_EQUAL(myClue.getCluesType(), "Place");
 	BOOST_CHECK_EQUAL(myClue.getIsRevealed(), false);
 
+	Game myGame;
+
+	std::vector<state::Players> playerList;
+	playerList.push_back(myPlayer);
+	
+	myGame.setnbPlayers(5);
+	myGame.setListPlayer(playerList);
+	myGame.setTurnPlayers(Player2);
+	myGame.setListWeapons({myWeapon});
+	myGame.setListPlaces({myPlace});
+	myGame.setListEquipments({myEquipment});
+	myGame.setGoodGuys(playerList);
+	myGame.setBadGuys(playerList);
+	myGame.setIsEndGame(false);
+	BOOST_CHECK_EQUAL(myGame.getnbPlayers(), 5);
+	BOOST_CHECK_EQUAL(myGame.getListPlayer().size(), 1);
+	BOOST_CHECK_EQUAL(myGame.getTurnPlayers(), Player2);
+	BOOST_CHECK_EQUAL(myGame.getListWeapons().size(), 1);
+	BOOST_CHECK_EQUAL(myGame.getListPlaces().size(), 1);
+	BOOST_CHECK_EQUAL(myGame.getListEquipments().size(), 1);
+	BOOST_CHECK_EQUAL(myGame.getGoodGuys().size(), 1);
+	BOOST_CHECK_EQUAL(myGame.getBadGuys().size(), 1);
+	BOOST_CHECK_EQUAL(myGame.getIsEndGame(), false);
+	
 	;
 }
 

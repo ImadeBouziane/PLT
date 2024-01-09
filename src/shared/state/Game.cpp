@@ -63,8 +63,41 @@ bool Game::getIsEndGame() {
     return isEndGame;
 }
 
+void Game::setnbPlayers(int nb){
+    nbPlayers = nb;
+}
 
+void Game::setListPlayer(std::vector<Players> List){
+    listPlayers = List;
+}
 
+void Game::setTurnPlayers(PlayerID turn){
+    turnPlayer = turn;
+}
+
+void Game::setListWeapons(std::vector<Weapons> List){
+    listWeapons = List;
+}
+
+void Game::setListPlaces(std::vector<Places> List){
+    listPlaces = List;
+}
+
+void Game::setListEquipments(std::vector<Equipments> List){
+    listEquipments = List;
+}
+
+void Game::setGoodGuys(std::vector<Players> List){
+    GoodGuys = List;
+}
+
+void Game::setBadGuys(std::vector<Players> List){
+    BadGuys = List;
+}
+
+void Game::setIsEndGame(bool end){
+    isEndGame = end;
+}
 
 
 
