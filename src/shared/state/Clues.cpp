@@ -20,8 +20,6 @@ namespace state{
 
     }
 
-
-
     bool Clues::getIsRevealed() {
         return isRevealed;
     }
@@ -29,4 +27,13 @@ namespace state{
     std::string Clues::getCluesType() {
         return cluesType;
     }
+
+    void Clues::setIsRevealed (bool reveal){
+        isRevealed = reveal;
+    }
+
+    void Clues::setCluesTypes (std::string type){
+        cluesType = type;
+    }
+
 }

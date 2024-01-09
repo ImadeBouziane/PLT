@@ -21,7 +21,7 @@ namespace state{
 
     }
 
-    int Equipments::getEquipementValue() {
+    int Equipments::getEquipmentValue() {
         return equipmentValue;
     }
 

@@ -34,4 +34,16 @@ namespace state{
         return isAlive;
     }
 
+    void Passives::setLifePoint(int HP) {
+        lifePoint = HP;
+    }
+
+    void Passives::setTempestPoint(int TP) {
+        tempestPoint = TP;
+    }
+
+    void Passives::setIsAlive(bool Alive) {
+        isAlive = Alive;
+    }
+
 }

@@ -11,4 +11,8 @@ namespace state{
         return idWeapon;
     }
 
+    void Weapons::setIdWeapon(std::string ID){
+        idWeapon = ID;
+    }
+
 }

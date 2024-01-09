@@ -7,10 +7,6 @@ namespace state{
             idWeapon(""),
             idPlayer("")
 
-
-
-
-
     {}
 
     Conspiracy::~Conspiracy(){}
@@ -25,6 +21,18 @@ namespace state{
 
     std::string Conspiracy::getIdPlayer() {
         return idPlayer;
+    }
+
+    void Conspiracy::setIdPlace(std::string ID){
+        idPlace = ID;
+    }
+
+    void Conspiracy::setIdWeapon(std::string ID){
+        idWeapon = ID;
+    }
+
+    void Conspiracy::setIdPlayer(std::string ID){
+        idPlayer = ID;
     }
 
 }
