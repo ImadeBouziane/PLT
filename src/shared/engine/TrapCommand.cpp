@@ -5,9 +5,12 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-
+#include "engine/InitCluesCards.h"
 
 namespace engine {
+    InitCluesCards InitClues;
+    std::vector<state::Equipments> deck = initCards.Init();
+
 
     TrapCommand::TrapCommand(state::PlayerID player) : place(place) {}
 

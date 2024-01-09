@@ -14,9 +14,7 @@
 
 
 namespace engine {
-    InitEquipmentCards initCards;
-    std::vector<state::Equipments> deck = initCards.Init();
-
+    
     std::vector<state::PlayerID> recipientPlayerIds;
 
 bool GiveEquipment::execute(state::PlayerID bodyguardId) {
