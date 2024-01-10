@@ -132,7 +132,7 @@ std::vector<state::Clues> InitCluesCards::InitClues() {
     return cluesDeck;
 }
 
-    std::pair<state::Clues, std::vector<state::Clues>> InitCrimeWeapon(std::vector<state::Clues>& cluesList){
+    state::Clues InitCrimeWeapon(std::vector<state::Clues>& cluesList){
         
         std::vector<state::Clues> shuffledClues = cluesList;
 
@@ -150,13 +150,20 @@ std::vector<state::Clues> InitCluesCards::InitClues() {
        if (it != shuffledClues.end()) {
             state::Clues selectedClue = *it;
             shuffledClues.erase(it);
-            return std::make_pair(selectedClue, shuffledClues);
-        }
-
+            cluesList = shuffledClues; 
+            return selectedClue;
+       }
+       else{
         // Si aucune Clue n'est trouvée, retournez une paire par défaut
-        return std::make_pair(state::Clues(), shuffledClues);
-    }
-        std::pair<state::Clues, std::vector<state::Clues>> InitCrimePlace(std::vector<state::Clues>& cluesList){
+    
+        return state::Clues();}
+        
+
+        
+       
+}
+
+        state::Clues InitCrimePlace(std::vector<state::Clues>& cluesList){
         
         std::vector<state::Clues> shuffledClues = cluesList;
 
@@ -173,14 +180,17 @@ std::vector<state::Clues> InitCluesCards::InitClues() {
        // Si une Clue est trouvée, retirez-la du vecteur
        if (it != shuffledClues.end()) {
             state::Clues selectedClue = *it;
-            shuffledClues.erase(it);
-            return std::make_pair(selectedClue, shuffledClues);
-    }
+            cluesList = shuffledClues; 
+            return selectedClue;
+        
 
+         }
+       else{
         // Si aucune Clue n'est trouvée, retournez une paire par défaut
-        return std::make_pair(state::Clues(), shuffledClues);
+    
+        return state::Clues();}
 }
-    std::pair<state::Clues, std::vector<state::Clues>> InitSafePlace(std::vector<state::Clues>& cluesList){
+    state::Clues InitSafePlace(std::vector<state::Clues>& cluesList){
         
         std::vector<state::Clues> shuffledClues = cluesList;
 
@@ -197,13 +207,15 @@ std::vector<state::Clues> InitCluesCards::InitClues() {
        // Si une Clue est trouvée, retirez-la du vecteur
        if (it != shuffledClues.end()) {
             state::Clues selectedClue = *it;
-            shuffledClues.erase(it);
-            return std::make_pair(selectedClue, shuffledClues);
-    }
+            cluesList = shuffledClues; 
+            return selectedClue;
+        
 
+         }
+       else{
         // Si aucune Clue n'est trouvée, retournez une paire par défaut
-        return std::make_pair(state::Clues(), shuffledClues);
+    
+        return state::Clues();}
 }
-
-}
+    }
 // namespace engine
