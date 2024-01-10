@@ -62,8 +62,8 @@ bool GiveEquipment::execute(state::PlayerID bodyguardId) {
             
                 }
 
-    // Mise à jour de l'état du jeu
-    // Par exemple : bodyguard.removeCard(card);
+    
+    
 
     return true;
 }
