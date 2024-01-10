@@ -1,6 +1,5 @@
-#define BOOST_TEST_DYN_LINK
 #include <boost/test/unit_test.hpp>
-#include "../../src/shared/state.h"
+#include "state.h"
 
 // TEST DE LA PARTIE STATE
 
@@ -138,9 +137,9 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	myGame.setGoodGuys(playerList);
 	myGame.setBadGuys(playerList);
 	myGame.setIsEndGame(false);
-	myGame.setCrimeWeapon(myWeapon);
-	myGame.setCrimePlace(myPlace);
-	myGame.setSafePlace(myPlace);
+	myGame.setCrimeWeapon(myClue);
+	myGame.setCrimePlace(myClue);
+	myGame.setSafePlace(myClue);
 	BOOST_CHECK_EQUAL(myGame.getnbPlayers(), 5);
 	BOOST_CHECK_EQUAL(myGame.getListPlayer().size(), 1);
 	BOOST_CHECK_EQUAL(myGame.getTurnPlayers(), Player2);
@@ -152,12 +151,12 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	BOOST_CHECK_EQUAL(myGame.getGoodGuys().size(), 1);
 	BOOST_CHECK_EQUAL(myGame.getBadGuys().size(), 1);
 	BOOST_CHECK_EQUAL(myGame.getIsEndGame(), false);
-	Weapons crimeweapon = myGame.getCrimeWeapon();
-	BOOST_CHECK_EQUAL(crimeweapon.getIdWeapon(), "Hachette");
-	Places crimeplace = myGame.getCrimePlace();
-	BOOST_CHECK_EQUAL(crimeplace.getIdPlace(), "Crique Secrète");
-	Places safeplace = myGame.getSafePlace();
-	BOOST_CHECK_EQUAL(safeplace.getIdPlace(), "Crique Secrète");
+	Clues crimeweapon = myGame.getCrimeWeapon();
+	BOOST_CHECK_EQUAL(crimeweapon.getIdCard(), "Spa Botanique");
+	Clues crimeplace = myGame.getCrimePlace();
+	BOOST_CHECK_EQUAL(crimeplace.getIdCard(), "Spa Botanique");
+	Clues safeplace = myGame.getSafePlace();
+	BOOST_CHECK_EQUAL(safeplace.getIdCard(), "Spa Botanique");
 
 	;
 }
