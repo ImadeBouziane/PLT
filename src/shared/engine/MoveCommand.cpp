@@ -1,11 +1,11 @@
 #include "MoveCommand.h"
 #include "state/Places.h"
 #include "state/Players.h"
-#include "InitPlaces.cpp"
+#include "InitPlaces.h"
 
 
 namespace engine {
-
+    
     MoveCommand::MoveCommand(state::PlayerID player) {
         // Constructeur
     }
@@ -27,6 +27,6 @@ namespace engine {
         return true; // Retourner 'true' si l'exécution est réussie
     }
 
-    // ... autres méthodes de la classe MoveCommand ...
+    
 
 }
