@@ -6,14 +6,17 @@
 #include <vector>
 #include <algorithm>
 #include "engine/InitCluesCards.h"
+#include "Engine.h"
+#include "state/Passives.h"
 
 namespace engine {
     
     std::vector<state::Traps> ListTrap;
 
 
-    TrapCommand::TrapCommand(state::PlayerID player) : place(place) {}
+    //TrapCommand::TrapCommand(state::PlayerID player) : place(place) {}
 
+    
     std::vector<state::Equipments> chooseCommand (state::PlayerID player,std::vector<state::Equipments> availableEquipment){
         std::vector<state::Equipments> contributedEquipments;
         for (auto& equipment : availableEquipment) {
@@ -55,10 +58,10 @@ namespace engine {
         return contributedEquipments;
 
    
-    }
+    };
 
     
-    void TrapCommand::execute(state::PlayerID players) {
+    void TrapCommand::execute(state::PlayerID players, state::Game game) {
 
         std::vector<state::Traps> ListTrap;
 
@@ -219,11 +222,82 @@ namespace engine {
 
     // Vérifier si le piège est désamorcé ou activé en fonction de trapValue
     if (value >= foundTrap->getTrapValue()) {
-        std::cout << "Piège désamorcé !" << std::endl;
+      
+    std::vector<state::Clues> cluesList;
+    std::string cluesType;
+    bool isRevealed;
+
+    std::cout << "Entrez vos indices (tapez 'fin' pour le type d'indice pour terminer) : " << std::endl;
+    while (true) {
+        std::cout << "Entrez le type d'indice : ";
+        std::getline(std::cin, cluesType);
+        if (cluesType == "fin") {
+            break;
+        }
+
+        isRevealed = true;  // Supposons que l'indice n'est pas révélé initialement
+
+        state::Clues newClue;
+        newClue.setCluesTypes(cluesType);
+        newClue.setIsRevealed(isRevealed);
+        cluesList.push_back(newClue);
+
+        // Afficher l'indice ajouté
+        std::cout << "Indice ajouté : " << newClue.getCluesType() << std::endl;
+
+    }
+
+    for (auto& player : game.listPlayers) {
+        if (player.getrole() == 3) {
+            player.setannouncedClues(cluesList);
+            break; 
+        }
+    }
+
+    
+
+        
 
     } else {
         std::cout << "Piège activé !" << std::endl;
         // TODO: Implémenter la logique pour un piège activé
+
+         std::vector<state::Clues> cluesList;
+    std::string cluesType;
+    bool isRevealed;
+
+    std::cout << "Entrez vos indices (tapez 'fin' pour le type d'indice pour terminer) : " << std::endl;
+    while (true) {
+        std::cout << "Entrez le type d'indice : ";
+        std::getline(std::cin, cluesType);
+        if (cluesType == "fin") {
+            break;
+        }
+
+        isRevealed = true;  // Supposons que l'indice n'est pas révélé initialement
+
+        state::Clues newClue;
+        newClue.setCluesTypes(cluesType);
+        newClue.setIsRevealed(isRevealed);
+        cluesList.push_back(newClue);
+
+        // Afficher l'indice ajouté
+        std::cout << "Indice ajouté : " << newClue.getCluesType() << std::endl;
+
+    }
+
+    for (auto& player : myEngine.CurrentState.listPlayers) {
+        if (player.getrole() == state::RoleType::BODYGUARD) {
+            player.setannouncedClues(cluesList);
+            break; 
+        }
+    }
+
+    int currentlifePoint = state::passives.getLifePoint();
+        state::passives.setLifePoint(currentlifePoint - 1);
+
+
+
     }
 }
 }
