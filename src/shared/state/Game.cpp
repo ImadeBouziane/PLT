@@ -75,15 +75,15 @@ bool Game::getIsEndGame() {
     return isEndGame;
 }
 
-Weapons Game::getCrimeWeapon(){
+Clues Game::getCrimeWeapon(){
     return crimeWeapon;
 }
 
-Places Game::getCrimePlace(){
+Clues Game::getCrimePlace(){
     return crimePlace;
 }
 
-Places Game::getSafePlace(){
+Clues Game::getSafePlace(){
     return safePlace;
 }
 
@@ -131,15 +131,15 @@ void Game::setListClues (std::vector<Clues> List){
     listClues = List;
 }
 
-void Game::setCrimeWeapon (Weapons which){
+void Game::setCrimeWeapon (Clues which){
     crimeWeapon = which;
 }
 
-void Game::setCrimePlace (Places which){
+void Game::setCrimePlace (Clues which){
     crimePlace = which;
 }
 
-void Game::setSafePlace (Places which){
+void Game::setSafePlace (Clues which){
     safePlace = which;
 }
 

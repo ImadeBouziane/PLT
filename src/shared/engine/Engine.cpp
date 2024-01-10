@@ -1,10 +1,12 @@
 #include "Engine.h"
 #include "VoteCommand.h"
 #include "engine/InitEquipmentCards.h"
+#include "engine/InitPlaces.h"
+#include "InitCluesCards.h"
 #include "state.h"
 #include <iostream>
 #include <vector>
-#include <algorithm>  // Pour la fonction std::shuffle
+#include <algorithm>  
 #include <random>
 
 
@@ -129,7 +131,56 @@ namespace engine {
 
     void Engine::init() {
         state::Game newGame;
-        std::vector<state::Players> ListPlayer = initPlayer(newGame); 
+        std::vector<state::Players> ListPlayer = initPlayer(newGame);
+        newGame.setListPlayer(ListPlayer);
+
+
+        InitEquipmentCards initCards;
+        std::vector<state::Equipments> deck = initCards.Init();
+        newGame.setListEquipments(deck); 
+
+        InitPlaces initPlaces; 
+        std::vector<state::Places> places = initPlaces.Init(); 
+         
+
+        InitCluesCards initClues; 
+        std::vector<state::Clues> clues = initClues.InitClues();
+        std::pair<state::Clues , std::vector<state::Clues>> crime = initClues.InitCrimePlace(clues);
+        state::Clues crimePlace = crime.first; 
+        std::vector<state::Clues> clues1 = crime.second;
+        newGame.setCrimePlace(crimePlace); 
+
+
+        std::pair<state::Clues , std::vector<state::Clues>> crime1 = initClues.InitCrimeWeapon(clues1);
+        state::Clues weaponPlace = crime1.first; 
+        std::vector<state::Clues> clues2 = crime1.second;
+        newGame.setCrimePlace(weaponPlace); 
+
+        std::pair<state::Clues , std::vector<state::Clues>> crime2 = initClues.InitSafePlace(clues2);
+        state::Clues safePlace = crime2.first; 
+        std::vector<state::Clues> clues3 = crime2.second;
+        newGame.setCrimePlace(safePlace);
+
+        
+
+        newGame.setListClues(clues3);
+
+
+        
+        std::random_device rd;
+        std::mt19937 rng(rd());
+
+        // Mélangez le vecteur de clues
+        std::shuffle(clues3.begin(), clues3.end(), rng);
+        
+        for (size_t i = 0; i < 9; ++i) {
+        // Accédez à chaque équipement 
+            places[i].setListClues({clues3[2*i],clues3[2*i + 1]});
+    
+    }
+        
+        newGame.setListPlaces(places);
+
         state::Passives Passive;
 
 

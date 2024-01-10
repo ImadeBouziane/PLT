@@ -151,11 +151,11 @@ std::vector<state::Clues> InitCluesCards::InitClues() {
             state::Clues selectedClue = *it;
             shuffledClues.erase(it);
             return std::make_pair(selectedClue, shuffledClues);
-    }
+        }
 
         // Si aucune Clue n'est trouvée, retournez une paire par défaut
         return std::make_pair(state::Clues(), shuffledClues);
-}
+    }
         std::pair<state::Clues, std::vector<state::Clues>> InitCrimePlace(std::vector<state::Clues>& cluesList){
         
         std::vector<state::Clues> shuffledClues = cluesList;
