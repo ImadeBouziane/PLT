@@ -21,7 +21,8 @@ GoodGuys({}) ,
 BadGuys({}),
 crimeWeapon(),
 crimePlace(),
-safePlace()
+safePlace(),
+passif()
 {
 
 }
@@ -143,5 +144,12 @@ void Game::setSafePlace (Clues which){
     safePlace = which;
 }
 
+void Game::setPassif(Passives pass ){
+    passif = pass; 
+}
+
+Passives Game::getPassif(){
+    return passif;
+}
 
 

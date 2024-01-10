@@ -286,15 +286,17 @@ namespace engine {
 
     }
 
-    for (auto& player : myEngine.CurrentState.listPlayers) {
+    for (auto& player : game.listPlayers) {
         if (player.getrole() == state::RoleType::BODYGUARD) {
             player.setannouncedClues(cluesList);
             break; 
         }
     }
+        state::Passives passif = game.getPassif();
+        int currentlifePoint = passif.getLifePoint();
+        passif.setLifePoint(currentlifePoint - 1);
 
-    int currentlifePoint = state::passives.getLifePoint();
-        state::passives.setLifePoint(currentlifePoint - 1);
+        game.setPassif(passif);
 
 
 
