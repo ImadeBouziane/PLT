@@ -15,7 +15,7 @@ namespace engine {
 
     
     Engine::Engine() {
-        // Initialisation de l'Engine, si nécessaire
+        
     }
 
     Engine myEngine;
@@ -41,7 +41,7 @@ namespace engine {
 
         std::vector<state::Players> players;
         // Supposons que Game a une méthode ou un attribut pour accéder à la liste des joueurs
-         players = CurrentState.listPlayers; // Ou une autre manière d'accéder aux joueursauto&
+         players = CurrentState.listPlayers; 
 
         for (auto& player : players) {
             if (player.getIdPlayer() == id) {
