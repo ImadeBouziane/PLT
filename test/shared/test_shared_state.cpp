@@ -83,8 +83,8 @@ BOOST_AUTO_TEST_CASE(TestState) {
 
 	Weapons myWeapon;
 
-	myWeapon.setIdWeapon("Pistolet");
-	BOOST_CHECK_EQUAL(myWeapon.getIdWeapon(), "Pistolet");
+	myWeapon.setIdWeapon("Hachette");
+	BOOST_CHECK_EQUAL(myWeapon.getIdWeapon(), "Hachette");
 
 	//Test de la classe Clues
 
@@ -105,7 +105,7 @@ BOOST_AUTO_TEST_CASE(TestState) {
 
 	myPlayer.setIdPlayer(Player3);
 	myPlayer.setrole(SCOUT);
-	myPlayer.setplayerSecretRole("BadGuy");
+	myPlayer.setplayerSecretRole("Friend");
 	myPlayer.setEquipments({myEquipment,myEquipment});
 	myPlayer.setRealClues({myClue,myClue});
 	myPlayer.setannouncedClues({myClue,myClue});
@@ -113,7 +113,7 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	myPlayer.setvote(true);
 	BOOST_CHECK_EQUAL(myPlayer.getIdPlayer(), Player3);
 	BOOST_CHECK_EQUAL(myPlayer.getrole(), state::RoleType::SCOUT);
-	BOOST_CHECK_EQUAL(myPlayer.getplayerSecretRole(), "BadGuy");
+	BOOST_CHECK_EQUAL(myPlayer.getplayerSecretRole(), "Friend");
 	BOOST_CHECK_EQUAL(myPlayer.getEquipments().size(), 2);
 	BOOST_CHECK_EQUAL(myPlayer.getrealClues().size(), 2);
 	BOOST_CHECK_EQUAL(myPlayer.getannouncedClues().size(), 2);
@@ -153,12 +153,12 @@ BOOST_AUTO_TEST_CASE(TestState) {
 	BOOST_CHECK_EQUAL(myGame.getBadGuys().size(), 1);
 	BOOST_CHECK_EQUAL(myGame.getIsEndGame(), false);
 	Weapons crimeweapon = myGame.getCrimeWeapon();
-	BOOST_CHECK_EQUAL(crimeweapon.getIdWeapon(), "Pistolet");
+	BOOST_CHECK_EQUAL(crimeweapon.getIdWeapon(), "Hachette");
 	Places crimeplace = myGame.getCrimePlace();
 	BOOST_CHECK_EQUAL(crimeplace.getIdPlace(), "Crique Secrète");
 	Places safeplace = myGame.getSafePlace();
 	BOOST_CHECK_EQUAL(safeplace.getIdPlace(), "Crique Secrète");
-	
+
 	;
 }
 
