@@ -12,7 +12,6 @@
 
 
 
-
 // Inclure d'autres fichiers d'en-tête nécessaires, si besoin
 
 namespace engine {
@@ -27,7 +26,7 @@ namespace engine {
         // Nettoyage, si nécessaire
     }
 
-   
+   /*
 
     state::Game& Engine::getState() {
         // Retourner l'état actuel du jeu
@@ -189,4 +188,5 @@ namespace engine {
     }
 
 }
-    
+    */
+}
