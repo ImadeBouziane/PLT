@@ -20,16 +20,9 @@ namespace state{
 
     Players::~Players(){}
 
-    void Players::voteFinal() { return;}
-
-
-
-    void Players::giveEquipments() { return;}
-
     PlayerID Players::getIdPlayer() {
         return idPlayer;
     }
-
 
     std::string Players::getplayerSecretRole() {
         return playerSecretRole;
@@ -37,21 +30,17 @@ namespace state{
     std::vector<state::Equipments> Players::getEquipments() {
         return equipments;
     }
-    std::vector<state::Cards> Players::getrealClues() {
+    std::vector<state::Clues> Players::getrealClues() {
         return realClues;
     }
-    std::vector<state::Cards> Players::getannouncedClues() {
+    std::vector<state::Clues> Players::getannouncedClues() {
         return announcedClues;
     }
-
-void Players::setEquipments(std::vector<Equipments> newEquipments) {
-    this->equipments = newEquipments;
-}
-
 
     bool Players::gethaveVoted() {
         return haveVoted;
     }
+
     bool Players::getvote() {
         return vote;
     }
@@ -60,8 +49,37 @@ void Players::setEquipments(std::vector<Equipments> newEquipments) {
         return role;
     }
 
+    void Players::setIdPlayer (PlayerID ID){
+        idPlayer = ID;
+    }
 
+    void Players::setrole (RoleType roletype){
+        role = roletype;
+    }
 
+    void Players::setplayerSecretRole (std::string secretrole){
+        playerSecretRole = secretrole;
+    }
+
+    void Players::setEquipments(std::vector<Equipments> equip) {
+        equipments = equip;
+    }
+
+    void Players::setRealClues(std::vector<Clues> clues){
+        realClues = clues;
+    }
+
+    void Players::setannouncedClues(std::vector<Clues> clues){
+        announcedClues = clues;
+    }
+
+    void Players::sethaveVoted(bool voted){
+        haveVoted = voted;
+    }
+
+    void Players::setvote(bool whichvote){
+        vote = whichvote;
+    }
 
 
 }
