@@ -8,18 +8,16 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
     
 
     // Ajouter les cartes d'équipement à la pioche
-    for (int i = 0; i < 3; ++i) {
+    
         state::Equipments equipment;
         equipment.setIdcard("allumette 1");
         equipment.setCardsTypes("Equipment");
         equipment.setEquipmentValue(1);
         equipment.setIsTriangle(false);
         equipment.setIsCircle(false);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment);
-        equipmentDeck.push_back(equipment);
+        }
 
          state::Equipments equipment1;
         equipment1.setIdcard("allumette 2 bleu");
@@ -27,11 +25,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment1.setEquipmentValue(2);
         equipment1.setIsTriangle(true);
         equipment1.setIsCircle(false);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment1);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment1);
-        equipmentDeck.push_back(equipment1);
+        }
 
 
          state::Equipments equipment2;
@@ -40,11 +36,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment2.setEquipmentValue(1);
         equipment2.setIsTriangle(false);
         equipment2.setIsCircle(false);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment2);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment2);
-        equipmentDeck.push_back(equipment2);
+        }
 
 
          state::Equipments equipment3;
@@ -53,11 +47,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment3.setEquipmentValue(2);
         equipment3.setIsTriangle(false);
         equipment3.setIsCircle(true);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment3);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment3);
-        equipmentDeck.push_back(equipment3);
+        }
 
 
 
@@ -67,11 +59,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment4.setEquipmentValue(2);
         equipment4.setIsTriangle(true);
         equipment4.setIsCircle(false);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment4);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment4);
-        equipmentDeck.push_back(equipment4);
+        }
 
 
          state::Equipments equipment5;
@@ -80,11 +70,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment5.setEquipmentValue(2);
         equipment5.setIsTriangle(false);
         equipment5.setIsCircle(true);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment5);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment5);
-        equipmentDeck.push_back(equipment5);
+        }
 
 
          state::Equipments equipment6;
@@ -93,11 +81,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment6.setEquipmentValue(1);
         equipment6.setIsTriangle(false);
         equipment6.setIsCircle(false);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment6);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment6);
-        equipmentDeck.push_back(equipment6);
+        }
 
 
          state::Equipments equipment7;
@@ -106,11 +92,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment7.setEquipmentValue(2);
         equipment7.setIsTriangle(true);
         equipment7.setIsCircle(false);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment7);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment7);
-        equipmentDeck.push_back(equipment7);
+        }
 
 
          state::Equipments equipment8;
@@ -119,11 +103,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment8.setEquipmentValue(2);
         equipment8.setIsTriangle(true);
         equipment8.setIsCircle(false);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment8);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment8);
-        equipmentDeck.push_back(equipment8);
+        }
 
          state::Equipments equipment9;
         equipment9.setIdcard("lampe rose");
@@ -131,11 +113,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment9.setEquipmentValue(2);
         equipment9.setIsTriangle(false);
         equipment9.setIsCircle(true);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment9);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment9);
-        equipmentDeck.push_back(equipment9);
+        }
 
         state::Equipments equipment10;
         equipment10.setIdcard("lampe");
@@ -143,11 +123,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment10.setEquipmentValue(1);
         equipment10.setIsTriangle(false);
         equipment10.setIsCircle(false);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment10);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment10);
-        equipmentDeck.push_back(equipment10);
+        }
 
          state::Equipments equipment11;
         equipment11.setIdcard("scotch 1");
@@ -155,11 +133,9 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment11.setEquipmentValue(1);
         equipment11.setIsTriangle(false);
         equipment11.setIsCircle(false);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment11);
-
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment11);
-        equipmentDeck.push_back(equipment11);
+        }
 
 
          state::Equipments equipment12;
@@ -168,18 +144,14 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         equipment12.setEquipmentValue(1);
         equipment12.setIsTriangle(false);
         equipment12.setIsCircle(true);
+        for (int i = 0; i < 3; ++i) {
         equipmentDeck.push_back(equipment12);
+        }
 
-        // Ajouter deux copies supplémentaires de la même carte
-        equipmentDeck.push_back(equipment12);
-        equipmentDeck.push_back(equipment12);
-
+    return equipmentDeck;
         
     }
 
     
-
-    return equipmentDeck;
-}
 
 } // namespace engine
