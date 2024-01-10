@@ -1,8 +1,9 @@
 #include "Engine.h"
+#include "engine.h"
 #include "VoteCommand.h"
 #include "engine/InitEquipmentCards.h"
 #include "engine/InitPlaces.h"
-#include "InitCluesCards.h"
+#include "engine/InitCluesCards.h"
 #include "state.h"
 #include <iostream>
 #include <vector>
@@ -21,7 +22,7 @@ namespace engine {
         
     }
 
-    Engine myEngine;
+   
     
     Engine::~Engine() {
         // Nettoyage, si nécessaire
@@ -143,27 +144,21 @@ namespace engine {
         std::vector<state::Places> places = initPlaces.Init(); 
          
 
-        InitCluesCards initClues; 
-        std::vector<state::Clues> clues = initClues.InitClues();
-        std::pair<state::Clues , std::vector<state::Clues>> crime = initClues.InitCrimePlace(clues);
-        state::Clues crimePlace = crime.first; 
-        std::vector<state::Clues> clues1 = crime.second;
+        //InitCluesCards initClues; 
+        std::vector<state::Clues> clu = InitCluesCards::InitClues();
+
+
+        state::Clues crimePlace = InitCluesCards::InitCrimeWeapon(clu);
         newGame.setCrimePlace(crimePlace); 
 
+        state::Clues crimeWeapon = InitCluesCards::InitCrimeWeapon(clu);
+        newGame.setCrimePlace(crimeWeapon); 
 
-        std::pair<state::Clues , std::vector<state::Clues>> crime1 = initClues.InitCrimeWeapon(clues1);
-        state::Clues weaponPlace = crime1.first; 
-        std::vector<state::Clues> clues2 = crime1.second;
-        newGame.setCrimePlace(weaponPlace); 
-
-        std::pair<state::Clues , std::vector<state::Clues>> crime2 = initClues.InitSafePlace(clues2);
-        state::Clues safePlace = crime2.first; 
-        std::vector<state::Clues> clues3 = crime2.second;
+        state::Clues safePlace = InitCluesCards::InitCrimeWeapon(clu);
         newGame.setCrimePlace(safePlace);
-
         
 
-        newGame.setListClues(clues3);
+        newGame.setListClues(clu);
 
 
         
@@ -171,11 +166,11 @@ namespace engine {
         std::mt19937 rng(rd());
 
         // Mélangez le vecteur de clues
-        std::shuffle(clues3.begin(), clues3.end(), rng);
+        std::shuffle(clu.begin(), clu.end(), rng);
         
         for (size_t i = 0; i < 9; ++i) {
         // Accédez à chaque équipement 
-            places[i].setListClues({clues3[2*i],clues3[2*i + 1]});
+            places[i].setListClues({clu[2*i],clu[2*i + 1]});
     
     }
         
