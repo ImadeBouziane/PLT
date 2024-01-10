@@ -46,4 +46,6 @@ namespace state{
         isAlive = Alive;
     }
 
+    Passives passives = Passives();
+
 }
