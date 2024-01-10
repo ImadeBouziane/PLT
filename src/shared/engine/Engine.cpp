@@ -27,7 +27,7 @@ namespace engine {
         // Nettoyage, si nécessaire
     }
 
-   /*
+   
 
     state::Game& Engine::getState() {
         // Retourner l'état actuel du jeu
@@ -131,8 +131,14 @@ namespace engine {
 
     void Engine::init() {
         state::Game newGame;
+        newGame.setnbPlayers(5);//nb Players
+        
         std::vector<state::Players> ListPlayer = initPlayer(newGame);
-        newGame.setListPlayer(ListPlayer);
+        newGame.setListPlayer(ListPlayer);//ListPlayer
+
+        newGame.setTurnPlayers(state::Player1); //numero de tour 
+        
+        newGame.setIsEndGame(false);//end game
 
 
         InitEquipmentCards initCards;
@@ -143,7 +149,7 @@ namespace engine {
         std::vector<state::Places> places = initPlaces.Init(); 
          
 
-        //InitCluesCards initClues; 
+         
         std::vector<state::Clues> clu = InitCluesCards::InitClues();
 
 
@@ -151,10 +157,10 @@ namespace engine {
         newGame.setCrimePlace(crimePlace); 
 
         state::Clues crimeWeapon = InitCluesCards::InitCrimeWeapon(clu);
-        newGame.setCrimePlace(crimeWeapon); 
+        newGame.setCrimeWeapon(crimeWeapon); 
 
         state::Clues safePlace = InitCluesCards::InitCrimeWeapon(clu);
-        newGame.setCrimePlace(safePlace);
+        newGame.setSafePlace(safePlace);
         
 
         newGame.setListClues(clu);
@@ -183,5 +189,4 @@ namespace engine {
     }
 
 }
-    */
-}
+    
