@@ -4,7 +4,7 @@
 #include "Engine.h"
 #include "state/Game.h"
 #include "GiveEquipment.h"
-#include "Engine.cpp"
+
 #include "engine/InitEquipmentCards.h"
 #include "state/Equipments.h"
 #include <random>
@@ -19,7 +19,7 @@ namespace engine {
 
     std::vector<state::PlayerID> recipientPlayerIds;
 
-bool GiveEquipment::execute(state::PlayerID bodyguardId) {
+bool GiveEquipment::execute(state::PlayerID bodyguardId , engine::Engine myEngine) {
     std::vector<state::PlayerID> recipientPlayerIds;
 
     // Demander au BODYGUARD de sélectionner les destinataires
