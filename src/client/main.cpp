@@ -1,10 +1,51 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "render.h"
+#include "engine.h"
+#include <iostream>
+#include <vector>
+#include <algorithm>  
+#include <random>
 
 using namespace render;
 
-int main() {
+int main(int argc, char* argv[]) {
+
+    if (argc > 1 && std::string(argv[1]) == "engine") {
+        // Code spécifique pour tester le moteur de jeu
+
+        engine::Engine engine;
+        int i = 0;     
+        engine.init();
+
+        //!engine.CurrentState.getIsEndGame()
+
+        // Main game loop
+       while (i != 4) {
+        
+            state::PlayerID currentPlayer = engine.CurrentState.getTurnPlayers();
+
+        
+            std::cout << "Joueur qui joue: " << currentPlayer << std::endl;
+            //std::cout << "Game State: on va reussir" << std::endl;
+       
+            engine::VoteCommand::execute(currentPlayer, engine);
+        
+
+            state::Places currentPlace = engine.CurrentState.getCurrentPlace();
+
+            engine::TrapCommand::execute(currentPlayer, engine , currentPlace);
+
+
+
+            engine::GiveEquipment::execute(currentPlayer, engine );
+
+        i = i +1; 
+        
+    }}
+    else{
+
+        std::cout << "Engine testing complete." << std::endl;
    sf::RenderWindow window(sf::VideoMode(1600, 900), "CLUEDO CONSPIRACY");
 
     GameBoard gameBoard(window);
@@ -35,8 +76,6 @@ int main() {
 
         window.display();
     }
-    
+    }
     return 0;
 }
-
-  

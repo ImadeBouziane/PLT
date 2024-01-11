@@ -208,7 +208,7 @@ std::vector<state::Clues> InitCluesCards::InitClues() {
        if (it != shuffledClues.end()) {
             state::Clues selectedClue = *it;
             cluesList = shuffledClues; 
-            return selectedClue;
+            
         
 
          }
@@ -218,4 +218,9 @@ std::vector<state::Clues> InitCluesCards::InitClues() {
         return state::Clues();}
 }
     }
+
+
+
+    
+
 // namespace engine

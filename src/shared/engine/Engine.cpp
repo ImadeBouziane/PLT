@@ -19,6 +19,7 @@ namespace engine {
 
     Engine::Engine() :
     CurrentState(){
+  
         
     }
 
@@ -147,14 +148,75 @@ namespace engine {
         //ListWEAPON à faire
 
         std::vector<state::Clues> clu = InitCluesCards::InitClues();
+        state::Clues crimePlace;
 
-        state::Clues crimePlace = InitCluesCards::InitCrimeWeapon(clu);
+        std::vector<state::Clues> shuffledClues = clu;
+
+        // Mélanger le vecteur shuffledClues
+        std::random_device rd;
+        std::mt19937 g(rd());
+        std::shuffle(shuffledClues.begin(), shuffledClues.end(), g);
+
+        // Recherchez la première Clue dans le vecteur mélangé
+       auto it = std::find_if(shuffledClues.begin(), shuffledClues.end(), [](state::Clues& clue) {
+            return clue.getCluesType() == "Place";
+        });
+
+       // Si une Clue est trouvée, retirez-la du vecteur
+       if (it != shuffledClues.end()) {
+            state::Clues selectedClue = *it;
+            clu = shuffledClues;
+            crimePlace = selectedClue; 
+
+         }
+       
         newGame.setCrimePlace(crimePlace); //CrimePlace 
 
-        state::Clues crimeWeapon = InitCluesCards::InitCrimeWeapon(clu);
+        
+
+        state::Clues crimeWeapon ;
+        std::vector<state::Clues> shuffledClues1 = clu;
+
+        // Mélanger le vecteur shuffledClues
+        
+        std::shuffle(shuffledClues1.begin(), shuffledClues1.end(), g);
+
+        // Recherchez la première Clue dans le vecteur mélangé
+       auto it2 = std::find_if(shuffledClues1.begin(), shuffledClues1.end(), [](state::Clues& clue) {
+            return clue.getCluesType() == "Weapon";
+        });
+
+       // Si une Clue est trouvée, retirez-la du vecteur
+       if (it2 != shuffledClues1.end()) {
+            state::Clues selectedClue = *it2;
+            clu = shuffledClues1;
+            crimeWeapon = selectedClue; 
+
+         }
+
         newGame.setCrimeWeapon(crimeWeapon); //CrimeWeapon
 
-        state::Clues safePlace = InitCluesCards::InitCrimeWeapon(clu);
+        state::Clues safePlace;
+        std::vector<state::Clues> shuffledClues2 = clu;
+
+        // Mélanger le vecteur shuffledClues
+        
+        std::shuffle(shuffledClues2.begin(), shuffledClues2.end(), g);
+
+        // Recherchez la première Clue dans le vecteur mélangé
+       auto it3 = std::find_if(shuffledClues2.begin(), shuffledClues2.end(), [](state::Clues& clue) {
+            return clue.getCluesType() == "Place";
+        });
+
+       // Si une Clue est trouvée, retirez-la du vecteur
+       if (it3 != shuffledClues.end()) {
+            state::Clues selectedClue = *it3;
+            clu = shuffledClues2;
+            safePlace = selectedClue; 
+
+         }
+
+
         newGame.setSafePlace(safePlace); //safePlace
         
 
@@ -163,7 +225,7 @@ namespace engine {
         InitPlaces initPlaces; 
         std::vector<state::Places> places = initPlaces.Init();
 
-        std::random_device rd;
+        
         std::mt19937 rng(rd());
 
         // Mélangez le vecteur de clues
@@ -191,41 +253,7 @@ namespace engine {
 
 
 
-int main() {
-    
-    engine::Engine engine;
 
-    
-    engine.init();
-
-    // Main game loop
-    while (!engine.CurrentState.getIsEndGame()) {
-        
-        state::PlayerID currentPlayer = engine.CurrentState.getTurnPlayers();
-
-        
-        std::cout << "Joueur qui joue: " << currentPlayer << std::endl;
-        std::cout << "Game State: on va reussir" << std::endl;
-       
-        engine::VoteCommand::execute(currentPlayer, engine);
-        
-
-        state::Places currentPlace = engine.CurrentState.getCurrentPlace();
-
-        engine::TrapCommand::execute(currentPlayer, engine , currentPlace);
-
-
-
-        engine::GiveEquipment::execute(currentPlayer, engine );
-
-        
-        //state::PlayerID nextPlayer = engi;
-    }
-
-    
-
-    return 0;
-}
 
 
 
