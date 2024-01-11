@@ -8,6 +8,7 @@
 #include "engine/InitCluesCards.h"
 #include "Engine.h"
 #include "state/Passives.h"
+#include "state/Places.h"
 
 namespace engine {
     
@@ -61,7 +62,7 @@ namespace engine {
     };
 
     
-    void TrapCommand::execute(state::PlayerID players, state::Game game) {
+    void TrapCommand::execute(state::PlayerID players, Engine engine, state::Places place) {
 
         std::vector<state::Traps> ListTrap;
 
@@ -158,8 +159,8 @@ namespace engine {
 
         std::cout << "Piège activé : " << place.getTrap() << std::endl;
         // Utiliser la fonction find_if pour rechercher le piège correspondant à l'ID
-        auto foundTrap = std::find_if(ListTrap.begin(), ListTrap.end(), [this](state::Traps& trap) {
-        return trap.getIdCard() == this->place.getTrap();
+        auto foundTrap = std::find_if(ListTrap.begin(), ListTrap.end(), [&place](state::Traps& trap) {
+        return trap.getIdCard() == place.getTrap();
     });
 
         // Vérifier si le piège correspondant a été trouvé
@@ -247,7 +248,7 @@ namespace engine {
 
     }
 
-    for (auto& player : game.listPlayers) {
+    for (auto& player : engine.CurrentState.listPlayers) {
         if (player.getrole() == 3) {
             player.setannouncedClues(cluesList);
             break; 
@@ -260,7 +261,7 @@ namespace engine {
 
     } else {
         std::cout << "Piège activé !" << std::endl;
-        // TODO: Implémenter la logique pour un piège activé
+        
 
          std::vector<state::Clues> cluesList;
     std::string cluesType;
@@ -286,17 +287,19 @@ namespace engine {
 
     }
 
-    for (auto& player : game.listPlayers) {
+    for (auto& player : engine.CurrentState.listPlayers) {
         if (player.getrole() == state::RoleType::BODYGUARD) {
             player.setannouncedClues(cluesList);
             break; 
         }
     }
-        state::Passives passif = game.getPassif();
+        state::Passives passif = engine.CurrentState.getPassif();
         int currentlifePoint = passif.getLifePoint();
         passif.setLifePoint(currentlifePoint - 1);
 
-        game.setPassif(passif);
+        engine.CurrentState.setPassif(passif);
+
+        
 
 
 

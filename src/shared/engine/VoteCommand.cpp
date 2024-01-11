@@ -35,7 +35,7 @@ namespace engine {
        }
 
         
-   void VoteCommand::PropositionVote (state::PlayerID &scout, state::Game game) {
+   void VoteCommand::execute(state::PlayerID &scout, Engine engine) {
 
     
     std::string placeName;
@@ -83,7 +83,7 @@ for  (auto& place : places) { // Remplacez listPlaces par votre liste de lieux
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 
-    for (auto& Players : game.listPlayers) {
+    for (auto& Players : engine.CurrentState.listPlayers) {
         // Supposons que PlayerID est accessible pour chaque objet player
         state::PlayerID playerID = Players.getIdPlayer(); // Méthode fictive pour obtenir PlayerID
         if (Vote(playerID)) {
@@ -97,7 +97,7 @@ for  (auto& place : places) { // Remplacez listPlaces par votre liste de lieux
 
         state::Players bodyguardPlayer;
     
-    for (auto& player : game.listPlayers) {
+    for (auto& player : engine.CurrentState.listPlayers) {
     if (player.getIdPlayer() == bodyguardId) {
         bodyguardPlayer = player;
         player.setrole(state::BODYGUARD);
@@ -115,7 +115,7 @@ std::vector<state::Players> selectedPlayers; // Nouvelle liste pour les objets P
 
 // Supposons que listPlayers est votre liste de tous les joueurs
     for (auto& playerId : playerIds) { 
-        for (auto& player :  game.listPlayers) {
+        for (auto& player :  engine.CurrentState.listPlayers) {
             if (player.getIdPlayer() == playerId) {
              selectedPlayers.push_back(player);
                 break; // Arrêtez la boucle interne une fois que vous avez trouvé le joueur correspondant

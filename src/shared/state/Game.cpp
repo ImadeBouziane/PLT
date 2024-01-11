@@ -93,12 +93,12 @@ Passives Game::getPassif(){
     return passif;
 }
 
-int Game::getbnPlaces(){
+int Game::getnbPlaces(){
     return nbPlaces;
 }
 
 Places Game::getCurrentPlace(){
-    return currentPlace
+    return currentPlace;
 }
 
 void Game::setnbPlayers(int nb){
@@ -161,7 +161,7 @@ void Game::setPassif(Passives pass ){
     passif = pass; 
 }
 
-void Game::setCurrentPlace(Places place){
+void Game::setCurrentPlaces(Places place){
     currentPlace = place;
 }
 

@@ -17,7 +17,8 @@
 
 namespace engine {
 
-    Engine::Engine() {
+    Engine::Engine() :
+    CurrentState(){
         
     }
 
@@ -30,9 +31,13 @@ namespace engine {
    
 
     state::Game& Engine::getState() {
-        // Retourner l'état actuel du jeu
         return CurrentState;
     }
+
+    void Engine::setCurrentState(state::Game game){
+        CurrentState = game;
+    }    
+
 
     void Engine::getRecord() {
         // Implémentation de la récupération d'enregistrement, si nécessaire
@@ -41,7 +46,6 @@ namespace engine {
     state::Players Engine::getPlayer(state::PlayerID id) {
 
         std::vector<state::Players> players;
-        // Supposons que Game a une méthode ou un attribut pour accéder à la liste des joueurs
          players = CurrentState.listPlayers; 
 
         for (auto& player : players) {
@@ -140,33 +144,25 @@ namespace engine {
         
         newGame.setIsEndGame(false);//end game
 
+        //ListWEAPON à faire
 
-        InitEquipmentCards initCards;
-        std::vector<state::Equipments> deck = initCards.Init();
-        newGame.setListEquipments(deck); 
-
-        InitPlaces initPlaces; 
-        std::vector<state::Places> places = initPlaces.Init(); 
-         
-
-         
         std::vector<state::Clues> clu = InitCluesCards::InitClues();
 
-
         state::Clues crimePlace = InitCluesCards::InitCrimeWeapon(clu);
-        newGame.setCrimePlace(crimePlace); 
+        newGame.setCrimePlace(crimePlace); //CrimePlace 
 
         state::Clues crimeWeapon = InitCluesCards::InitCrimeWeapon(clu);
-        newGame.setCrimeWeapon(crimeWeapon); 
+        newGame.setCrimeWeapon(crimeWeapon); //CrimeWeapon
 
         state::Clues safePlace = InitCluesCards::InitCrimeWeapon(clu);
-        newGame.setSafePlace(safePlace);
+        newGame.setSafePlace(safePlace); //safePlace
         
 
-        newGame.setListClues(clu);
+        newGame.setListClues(clu); //listClues
 
+        InitPlaces initPlaces; 
+        std::vector<state::Places> places = initPlaces.Init();
 
-        
         std::random_device rd;
         std::mt19937 rng(rd());
 
@@ -179,14 +175,59 @@ namespace engine {
     
     }
         
-        newGame.setListPlaces(places);
+        newGame.setListPlaces(places);//listPlace
+
+
+        InitEquipmentCards initCards;
+        std::vector<state::Equipments> deck = initCards.Init();
+        newGame.setListEquipments(deck);  //listEquipements
 
         state::Passives Passive;
+        newGame.setPassif(Passive);
 
-
-        
+        CurrentState = newGame; 
 
     }
+
+
+
+int main() {
+    
+    engine::Engine engine;
+
+    
+    engine.init();
+
+    // Main game loop
+    while (!engine.CurrentState.getIsEndGame()) {
+        
+        state::PlayerID currentPlayer = engine.CurrentState.getTurnPlayers();
+
+        
+        std::cout << "Joueur qui joue: " << currentPlayer << std::endl;
+        std::cout << "Game State: on va reussir" << std::endl;
+       
+        engine::VoteCommand::execute(currentPlayer, engine);
+        
+
+        state::Places currentPlace = engine.CurrentState.getCurrentPlace();
+
+        engine::TrapCommand::execute(currentPlayer, engine , currentPlace);
+
+
+
+        engine::GiveEquipment::execute(currentPlayer, engine );
+
+        
+        //state::PlayerID nextPlayer = engi;
+    }
+
+    
+
+    return 0;
+}
+
+
 
 }
     
