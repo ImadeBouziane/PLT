@@ -176,3 +176,31 @@ Nous disposerons de plusieus classes pour nous permettre de créer un affichage 
  -Enfin en blanc, une énumération "PlayerID" qui concorde avec le joueur actuellement en possesion du rôle d'éclaireur, c'est à dire celui qui propose une composition d'équipe pour aborder un lieu.  
  
 ![RenderDia](ImagesRapport/RenderDia.png)
+
+## 4. Règles de changement d'états et moteur de jeu <a id="4"></a>
+
+La partie engine de de notre logiciel permettra de modifier nos données dans le state, et ainsi l'affichage du render. Ces changements d’état ne suivent pas d’horloge globale.
+
+### 4.1 Changements extérieurs <a id="4.1"></a>
+
+Les changements extérieurs correspondent aux changements amenées par les différents joueurs suite à une action de leur part:
+
+ -"VoteCommand"
+ 
+ -"ShowCluesCommand"
+ 
+ -"GiveEquipment"
+ 
+ -Les initialisations de cartes
+ 
+ -"GetCardsCommand"
+
+### 4.2 Changements autonomes <a id="4.2"></a>
+
+Ces changements sont, contrairement à ceux evoqués précédemment, automatiques, c'est à dire qu'ils s'effectuent tout seul sans besoin d'intervention des joueurs:
+ 
+ -"MoveCommand"
+
+### 4.3 Conception logiciel <a id="4.3"></a>
+
+![EngineDia](ImagesRapport/EngineDia.png)
