@@ -22,7 +22,8 @@ BadGuys({}),
 crimeWeapon(),
 crimePlace(),
 safePlace(),
-passif()
+passif(),
+currentPlace()
 {
 
 }
@@ -150,6 +151,14 @@ void Game::setPassif(Passives pass ){
 
 Passives Game::getPassif(){
     return passif;
+}
+
+Places Game::getCurrentPlace(){
+    return currentPlace
+}
+
+void Game::setCurrentPlace(Places place){
+    currentPlace = place;
 }
 
 
