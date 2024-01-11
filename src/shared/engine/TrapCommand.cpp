@@ -22,7 +22,7 @@ namespace engine {
     
 
     
-    void TrapCommand::execute(state::PlayerID players, Engine engine, state::Places place) {
+    void TrapCommand::execute(state::PlayerID players, Engine& engine, state::Places place) {
 
         std::vector<state::Traps> ListTrap;
 
@@ -117,7 +117,7 @@ namespace engine {
 
     
 
-        std::cout << "Piège activé : " << place.getTrap() << std::endl;
+        std::cout << "Piège activé : " << engine.CurrentState.getCurrentPlace().getTrap() << std::endl;
         // Utiliser la fonction find_if pour rechercher le piège correspondant à l'ID
         auto foundTrap = std::find_if(ListTrap.begin(), ListTrap.end(), [&place](state::Traps& trap) {
         return trap.getIdCard() == place.getTrap();
@@ -128,7 +128,7 @@ namespace engine {
         // Accéder aux informations du piège trouvé
             if (foundTrap->getIsCircle() && foundTrap->getIsTriangle()){
                 std::cout << "Le Piège est de signe triangle et cercle : " << std::endl;
-                std::cout << "Sa valeur vaut : " << foundTrap->getTrapValue() << std::endl;
+                std::cout << "Sa valeur vaut : " << foundTrap -> getTrapValue() << std::endl;
             }
             else if (foundTrap->getIsCircle()){
                 std::cout << "Le Piège est de signe Cercle : " << std::endl;
@@ -158,17 +158,14 @@ namespace engine {
         std::cout << "Joueur " << player.getIdPlayer() << ", utilisez vos équipements." << std::endl;
 
         // Demander au joueur de choisir et contribuer avec des équipements
-
-
-
-
-
-       
-
         // Pour chaque équipement contribué, mettre à jour Value en conséquence
-
         std::vector<state::Equipments> contributedEquipments;
+        for (auto& equip : player.getEquipments()) {
+                    std::cout << "Joueur " << equip.getIdCard() << ", utilisez vos équipements." << std::endl;
+
+                }
         for (auto& equipment : player.getEquipments()) {
+            
             std::cout << "ID: " << equipment.getIdCard() << " | Valeur: " << equipment.getEquipmentValue()
                       << " | Triangle: " << equipment.getIsTriangle() << " | Circle: " << equipment.getIsCircle()
                       << std::endl;
@@ -184,7 +181,7 @@ namespace engine {
         // Demander au joueur de choisir les équipements à contribuer
         for (int i = 0; i < numContributedEquipments; ++i) {
             std::string equipmentId;
-            std::cout << "Entrez le nombre d'équipements voulu " << i + 1 << ": ";
+            std::cout << "Quel équipement voulez-vous jouez ?" << ": ";
             std::cin >> equipmentId;
 
             // Rechercher l'équipement dans la liste des équipements disponibles
@@ -230,7 +227,7 @@ namespace engine {
     std::string cluesType;
     bool isRevealed;
 
-    std::cout << "Entrez vos indices (tapez 'fin' pour le type d'indice pour terminer) : " << std::endl;
+    /*std::cout << "Entrez vos indices (tapez 'fin' pour le type d'indice pour terminer) : " << std::endl;
     while (true) {
         std::cout << "Entrez le type d'indice : ";
         std::getline(std::cin, cluesType);
@@ -248,7 +245,7 @@ namespace engine {
         // Afficher l'indice ajouté
         std::cout << "Indice ajouté : " << newClue.getCluesType() << std::endl;
 
-    }
+    }*/
 
     for (auto& player : engine.CurrentState.listPlayers) {
         if (player.getrole() == 3) {

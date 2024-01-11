@@ -179,6 +179,6 @@ std::vector<state::Places> InitPlaces::Init() {
 
 }
 
-std::vector<state::Places>  places = InitPlaces::Init();
+//std::vector<state::Places>  places = InitPlaces::Init();
 
 } // namespace engine

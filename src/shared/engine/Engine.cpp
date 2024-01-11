@@ -63,8 +63,9 @@ namespace engine {
 
         state::Players player1;
         player1.setIdPlayer(state::Player1);
-        player1.setrole(state::SCOUT);
+        player1.setrole(state::SIMPLE);
         ListPlayer.push_back(player1);
+        
         
 
 
@@ -112,15 +113,17 @@ namespace engine {
 
         std::shuffle(deck.begin(), deck.end(), rng1);
         
-        for (auto& player : ListPlayer) {
+        for (int    i = 0; i<5 ; i++) {
             // Vérifier si le vecteur mélangé contient suffisamment d'équipements
             if (deck.size() >= 3) {
+                 
                 // Prendre les trois premiers équipements du vecteur mélangé
                 std::vector<state::Equipments> selectedEquipments(deck.begin(), deck.begin() + 3);
 
                 // Attribuer les équipements au joueur
-                player.setEquipments(selectedEquipments);
-
+                ListPlayer[i].setEquipments(selectedEquipments);
+                
+                
             //Remelanger les equipements
                 std::shuffle(deck.begin(), deck.end(), rng);
             }
@@ -129,9 +132,9 @@ namespace engine {
             break;
             }
 
-
+        }
         return ListPlayer;
-    }
+    
         }
 
     void Engine::init() {

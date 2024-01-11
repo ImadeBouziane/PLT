@@ -29,15 +29,10 @@ int main(int argc, char* argv[]) {
             std::cout << "Joueur qui joue: " << currentPlayer << std::endl;
             //std::cout << "Game State: on va reussir" << std::endl;
        
-            engine::VoteCommand::execute(currentPlayer, engine);
-        
-
+            engine = engine::VoteCommand::execute(currentPlayer, engine);
             state::Places currentPlace = engine.CurrentState.getCurrentPlace();
-
+            
             engine::TrapCommand::execute(currentPlayer, engine , currentPlace);
-
-
-
             engine::GiveEquipment::execute(currentPlayer, engine );
 
         i = i +1; 

@@ -35,7 +35,7 @@ namespace engine {
        }
 
         
-   void VoteCommand::execute(state::PlayerID &scout, Engine engine) {
+   Engine VoteCommand::execute(state::PlayerID &scout, Engine engine) {
 
     
     std::string placeName;
@@ -132,6 +132,14 @@ namespace engine {
         
         //MoveCommand::execute(chosenPlace,selectedPlayers);
         chosenPlace.setPresentPlayers(selectedPlayers);
+
+        std::cout<<chosenPlace.getIdPlace()<<std::endl;
+        engine.CurrentState.setCurrentPlaces(chosenPlace);
+
+        std::cout << "Piège activé : " << engine.CurrentState.getCurrentPlace().getTrap() << std::endl;
+
+        
+
         
 
 
@@ -141,31 +149,45 @@ namespace engine {
             std::cout<<Players.getIdPlayer()<<std::endl;
             } 
         
+
+        
+        
     } else {
         int currentTempestPoints = engine.CurrentState.getPassif().getTempestPoint();
+        std::cout<<currentTempestPoints<<std::endl ;
+        
+        
 
         
     // Diminution des points de Tempest de 1
-            engine.CurrentState.getPassif().setTempestPoint(currentTempestPoints - 1);
-            std::cout<<"La tempête se rapproche : elle est à :"<<engine.CurrentState.getPassif().getTempestPoint()<<std::endl ;
+            currentTempestPoints = currentTempestPoints - 1; 
+            std::cout<<currentTempestPoints<<std::endl ;
+            state::Passives passif = engine.CurrentState.getPassif();
+            passif.setTempestPoint(currentTempestPoints);
+            engine.CurrentState.setPassif(passif);
+            
+            std::cout<<"La tempête se rapproche : elle est à "<<engine.CurrentState.getPassif().getTempestPoint()<<std::endl ;
             
         
             if (engine.CurrentState.getPassif().getTempestPoint() <= 0) {
                 int currentlifePoint = engine.CurrentState.getPassif().getLifePoint();
                 std::cout<<"La tempête a frappé . Mr Corail perd un point de Vie"<<std::endl ;
-                engine.CurrentState.getPassif().setLifePoint(currentlifePoint - 1);
-                engine.CurrentState.getPassif().setTempestPoint(3);
+                state::Passives passif1 = engine.CurrentState.getPassif();
+                passif1.setLifePoint(currentlifePoint - 1);
+                passif1.setTempestPoint(3);
+
+                engine.CurrentState.setPassif(passif1);
+
+
+            
 
 
 
     }
 
     }
-
-
-        
-        
-     }
+     return engine;
     }
+};
 
 
