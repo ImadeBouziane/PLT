@@ -1,4 +1,4 @@
-# Rapport de Projet Logiciel Transversal "CLUEDO CONSPIRATON"
+# Rapport de Projet Logiciel Transversal "CLUEDO CONSPIRATION"
 
 ![Boitedejeu](ImagesRapport/Boitedejeu.png)
 
