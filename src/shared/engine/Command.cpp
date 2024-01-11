@@ -18,13 +18,8 @@ namespace engine {
         return commandTypeId ;
     }
 
-    // Execute method
-    void Command::execute(state::Game &state) {
-    }
-
     // Serialize method
     void Command::serialize() {
-
     }
 
     bool Command::check(state::Game &state) {

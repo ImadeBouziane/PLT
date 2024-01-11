@@ -2,6 +2,7 @@
 #include "state.h"
 #include "engine.h"
 
+
 // TEST DE LA PARTIE ENGINE
 
 using namespace engine;
@@ -22,6 +23,10 @@ BOOST_AUTO_TEST_CASE(TestEngine) {
     InitCluesCards clues;
     myGame.setListClues(clues.InitClues());
     BOOST_CHECK_EQUAL(myGame.getListClues().size(), 21);
+    
+    //std::vector<state::Clues> clu = InitCluesCards::InitClues();
+    //InitCluesCards::InitCrimeWeapon(clu);
+
     //myGame.setCrimePlace(clues.InitCrimePlace(myGame.getListClues()));
     //BOOST_CHECK_EQUAL(myGame.getListClues().size(), 20);
     //myGame.setCrimeWeapon(clues.InitCrimeWeapon(myGame.getListClues()));
@@ -31,7 +36,7 @@ BOOST_AUTO_TEST_CASE(TestEngine) {
 
     //InitCluesCards giveEquip;
     //GiveEquipment giveEquip;
-    //TrapCommand trap;
+    //TrapCommand test02;
     //InitCluesCards clues;
     //giveEquip.execute(Player1,myGame.getListEquipments());
 
