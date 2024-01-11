@@ -205,25 +205,25 @@ Ces changements sont, contrairement à ceux evoqués précédemment, automatique
 
 ### 4.3 Conception logiciel <a id="4.3"></a>
 
-Le diagramme des classes pour le moteur du jeu est présenté ci-dessous. L’ensemble du moteur de jeu repose sur un patron de conception de type Command, et a pour but la mise en œuvre différée de commandes extérieures sur l’état du jeu.
+Le diagramme des classes pour le moteur du jeu est présenté ci-dessous. L’ensemble du moteur de jeu repose sur un patron de type Command, et a pour but la mise en œuvre de commandes extérieures sur l’état du jeu.
 
+Les différentes commandes du jeu sont les suivantes.
 
- -"VoteCommand"
+ -"VoteCommand" : permet la création de vote ainsi que leurs résolution
 
- -"TrapCommand"
+ -"TrapCommand" : gère tout ce qui est en rapport avec le désamorçage des pièges
  
- -"GiveEquipment"
+ -"GiveEquipment" : permet de choisir qui reçoit des équipements à la suite d'une tentative de désamorçage
+
+ -"VerifyConspiracy" : vérifie si les conditions d'activations du complot sont réunis ou si tous les lieux ont été visité et peut mettre fin à la partie
  
- -"InitCluesCards"
+ -"MoveCommand" : déplace les joueurs sur les différents lieux du plateau
 
- -"InitPlaces"
+ -"InitCluesCards" : Initialise le paquet d'indices
 
- -"InitEquipmentCards"
+ -"InitPlaces" : Initialise la liste des lieux
 
- -"VerifyConspiracy"
- 
- -"MoveCommand"
-
+ -"InitEquipmentCards" : Initialise le deck d'équipement
  
 
 ![EngineDia](ImagesRapport/EngineDia.png)
