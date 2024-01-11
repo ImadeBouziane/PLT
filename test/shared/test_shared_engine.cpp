@@ -23,9 +23,6 @@ BOOST_AUTO_TEST_CASE(TestEngine) {
     InitCluesCards clues;
     myGame.setListClues(clues.InitClues());
     BOOST_CHECK_EQUAL(myGame.getListClues().size(), 21);
-    
-    //std::vector<state::Clues> clu = InitCluesCards::InitClues();
-    //InitCluesCards::InitCrimeWeapon(clu);
 
     //myGame.setCrimePlace(clues.InitCrimePlace(myGame.getListClues()));
     //BOOST_CHECK_EQUAL(myGame.getListClues().size(), 20);

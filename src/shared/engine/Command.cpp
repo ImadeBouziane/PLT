@@ -13,11 +13,6 @@ namespace engine {
     // Destructor
     Command::~Command() = default;
 
-    // Getter for CommandTypeId
-    CommandTypeId Command::getCommandTypeId() {
-        return commandTypeId ;
-    }
-
     // Serialize method
     void Command::serialize() {
     }
