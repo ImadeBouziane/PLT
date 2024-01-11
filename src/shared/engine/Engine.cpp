@@ -19,6 +19,35 @@ namespace engine {
 
     Engine::Engine() :
     CurrentState(){
+         engine::Engine engine;
+        int i = 0;     
+        engine.init();
+
+        //!engine.CurrentState.getIsEndGame()
+
+        // Main game loop
+       while (i != 4) {
+        
+            state::PlayerID currentPlayer = engine.CurrentState.getTurnPlayers();
+
+        
+           std::cout << "Joueur qui joue: " << currentPlayer << std::endl;
+           std::cout << "Game State: on va reussir" << std::endl;
+       
+         engine::VoteCommand::execute(currentPlayer, engine);
+        
+
+         state::Places currentPlace = engine.CurrentState.getCurrentPlace();
+
+         engine::TrapCommand::execute(currentPlayer, engine , currentPlace);
+
+
+
+        engine::GiveEquipment::execute(currentPlayer, engine );
+
+        i = i +1; 
+        
+    }
         
     }
 
@@ -134,6 +163,7 @@ namespace engine {
         }
 
     void Engine::init() {
+        
         state::Game newGame;
         newGame.setnbPlayers(5);//nb Players
         
@@ -191,43 +221,13 @@ namespace engine {
 
 
 
-int main() {
-    
-    engine::Engine engine;
 
     
-    engine.init();
-
-    // Main game loop
-    while (!engine.CurrentState.getIsEndGame()) {
-        
-        state::PlayerID currentPlayer = engine.CurrentState.getTurnPlayers();
-
-        
-        std::cout << "Joueur qui joue: " << currentPlayer << std::endl;
-        std::cout << "Game State: on va reussir" << std::endl;
-       
-        engine::VoteCommand::execute(currentPlayer, engine);
-        
-
-        state::Places currentPlace = engine.CurrentState.getCurrentPlace();
-
-        engine::TrapCommand::execute(currentPlayer, engine , currentPlace);
-
-
-
-        engine::GiveEquipment::execute(currentPlayer, engine );
-
-        
-        //state::PlayerID nextPlayer = engi;
-    }
+   
 
     
 
-    return 0;
+    
 }
 
-
-
-}
     
