@@ -19,8 +19,10 @@ namespace engine {
     }
 
     // Execute method
-    void Command::execute(state::Game &state) {
-    }
+   /* void Command::executeCommand(Command command) {
+
+        this->execute();
+    }*/
 
     // Serialize method
     void Command::serialize() {
