@@ -185,22 +185,45 @@ La partie engine de de notre logiciel permettra de modifier nos données dans le
 
 Les changements extérieurs correspondent aux changements amenées par les différents joueurs suite à une action de leur part:
 
- -"VoteCommand"
- 
- -"ShowCluesCommand"
- 
- -"GiveEquipment"
- 
- -Les initialisations de cartes
- 
- -"GetCardsCommand"
+- Les différentes actions de votes.
+
+- Le choix des différents équipements à donner pour tenter de désamorçer les pièges.
+
+- Le choix des joueurs à qui distribuer des équipements.
 
 ### 4.2 Changements autonomes <a id="4.2"></a>
 
 Ces changements sont, contrairement à ceux evoqués précédemment, automatiques, c'est à dire qu'ils s'effectuent tout seul sans besoin d'intervention des joueurs:
+
+- Le déplacement des joueurs qui est automatique après qu'un choix d'équipe a été effectué.
+
+- Les initialisations de tous les éléments du jeu.
+
+- La mise à jour des point de vies de Mr Corail et des points de tempêtes.
+
+- La déclaration de la fin de partie, que les conspirateurs ait réussi leur assassinat ou non. 
+
+### 4.3 Conception logiciel <a id="4.3"></a>
+
+Le diagramme des classes pour le moteur du jeu est présenté ci-dessous. L’ensemble du moteur de jeu repose sur un patron de conception de type Command, et a pour but la mise en œuvre différée de commandes extérieures sur l’état du jeu.
+
+
+ -"VoteCommand"
+
+ -"TrapCommand"
+ 
+ -"GiveEquipment"
+ 
+ -"InitCluesCards"
+
+ -"InitPlaces"
+
+ -"InitEquipmentCards"
+
+ -"VerifyConspiracy"
  
  -"MoveCommand"
 
-### 4.3 Conception logiciel <a id="4.3"></a>
+ 
 
 ![EngineDia](ImagesRapport/EngineDia.png)
