@@ -22,8 +22,7 @@ namespace engine {
         // Mettre à jour la liste des joueurs présents dans 'place'
         place.setPresentPlayers(players);
 
-        // Vous pouvez ajouter d'autres logiques ici si nécessaire
-
+       
         return true; // Retourner 'true' si l'exécution est réussie
     }
 

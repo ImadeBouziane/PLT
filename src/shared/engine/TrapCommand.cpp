@@ -15,51 +15,11 @@ namespace engine {
     std::vector<state::Traps> ListTrap;
 
 
-    //TrapCommand::TrapCommand(state::PlayerID player) : place(place) {}
+    TrapCommand::TrapCommand(state::PlayerID player, state::Game game) {}
 
     
-    std::vector<state::Equipments> chooseCommand (state::PlayerID player,std::vector<state::Equipments> availableEquipment){
-        std::vector<state::Equipments> contributedEquipments;
-        for (auto& equipment : availableEquipment) {
-            std::cout << "ID: " << equipment.getIdCard() << " | Valeur: " << equipment.getEquipmentValue()
-                      << " | Triangle: " << equipment.getIsTriangle() << " | Circle: " << equipment.getIsCircle()
-                      << std::endl;
-    }
-
-        // Demander au joueur de choisir le nombre d'équipements à contribuer (entre 0 et 3)
-        int numContributedEquipments;
-        do {
-        std::cout << "Choisir un nombre d'équipments à jouer(0-3): ";
-        std::cin >> numContributedEquipments;
-        } while (numContributedEquipments < 0 || numContributedEquipments > 3);
-
-        // Demander au joueur de choisir les équipements à contribuer
-        for (int i = 0; i < numContributedEquipments; ++i) {
-            std::string equipmentId;
-            std::cout << "Entrez le nombre d'équipements voulu " << i + 1 << ": ";
-            std::cin >> equipmentId;
-
-            // Rechercher l'équipement dans la liste des équipements disponibles
-            auto foundEquipment = std::find_if(availableEquipment.begin(), availableEquipment.end(),
-                                               [equipmentId](state::Equipments& equipment) {
-                                                   return equipment.getIdCard() == equipmentId;
-                                               });
-
-            // Si l'équipement est trouvé, l'ajouter à la liste des équipements contribués
-            if (foundEquipment != availableEquipment.end()) {
-                contributedEquipments.push_back(*foundEquipment);
-            } else {
-                std::cout << "L'ID de l'equipement est invalide , veuillez en choisir un autre." << std::endl;
-                --i;  // Décrémenter i pour que le joueur choisisse à nouveau cet équipement
-            }   
-        }
-
-        std::cout << "Vous avez bien choisi vos équipements" << std::endl;
-
-        return contributedEquipments;
-
-   
-    };
+    
+    
 
     
     void TrapCommand::execute(state::PlayerID players, Engine engine, state::Places place) {
@@ -198,9 +158,51 @@ namespace engine {
         std::cout << "Joueur " << player.getIdPlayer() << ", utilisez vos équipements." << std::endl;
 
         // Demander au joueur de choisir et contribuer avec des équipements
-        std::vector<state::Equipments> contributedEquipments = chooseCommand(player.getIdPlayer(), player.getEquipments());
+
+
+
+
+
+       
 
         // Pour chaque équipement contribué, mettre à jour Value en conséquence
+
+        std::vector<state::Equipments> contributedEquipments;
+        for (auto& equipment : player.getEquipments()) {
+            std::cout << "ID: " << equipment.getIdCard() << " | Valeur: " << equipment.getEquipmentValue()
+                      << " | Triangle: " << equipment.getIsTriangle() << " | Circle: " << equipment.getIsCircle()
+                      << std::endl;
+    }
+
+        // Demander au joueur de choisir le nombre d'équipements à contribuer (entre 0 et 3)
+        int numContributedEquipments;
+        do {
+        std::cout << "Choisir un nombre d'équipments à jouer(0-3): ";
+        std::cin >> numContributedEquipments;
+        } while (numContributedEquipments < 0 || numContributedEquipments > 3);
+
+        // Demander au joueur de choisir les équipements à contribuer
+        for (int i = 0; i < numContributedEquipments; ++i) {
+            std::string equipmentId;
+            std::cout << "Entrez le nombre d'équipements voulu " << i + 1 << ": ";
+            std::cin >> equipmentId;
+
+            // Rechercher l'équipement dans la liste des équipements disponibles
+            auto foundEquipment = std::find_if(player.getEquipments().begin(), player.getEquipments().end(),
+                                               [equipmentId](state::Equipments& equipment) {
+                                                   return equipment.getIdCard() == equipmentId;
+                                               });
+
+            // Si l'équipement est trouvé, l'ajouter à la liste des équipements contribués
+            if (foundEquipment != player.getEquipments().end()) {
+                contributedEquipments.push_back(*foundEquipment);
+            } else {
+                std::cout << "L'ID de l'equipement est invalide , veuillez en choisir un autre." << std::endl;
+                --i;  // Décrémenter i pour que le joueur choisisse à nouveau cet équipement
+            }   
+        }
+
+        std::cout << "Vous avez bien choisi vos équipements" << std::endl;
         
         
         for (auto& contributedEquipment : contributedEquipments) {
