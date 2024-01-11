@@ -1,25 +1,42 @@
 #include <iostream>
-
-// Les lignes suivantes ne servent qu'à vérifier que la compilation avec SFML fonctionne
 #include <SFML/Graphics.hpp>
+#include "render.h"
 
-void testSFML() {
-    sf::Texture texture;
-}
+using namespace render;
 
-// Fin test SFML
+int main() {
+   sf::RenderWindow window(sf::VideoMode(1600, 900), "CLUEDO CONSPIRACY");
 
-#include <state.h>
+    GameBoard gameBoard(window);
+    CardsDisplay cardDisplay;
+    GameStats gameStats; 
+    PlayerScreen playerScreen;
+    //Player player;
+    //player.setPlayerName("Nom du Joueur");
 
-using namespace std;
-using namespace state;
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                window.close();
+            }
+        }
 
-int main(int argc,char* argv[])
-{
-    //Exemple exemple;
-    //exemple.setX(53);
+        window.clear(sf::Color::Black);
 
-    //cout << "It works !" << endl;
+        // on dessine les composants du plateau de jeu 
+        gameBoard.draw(window);
+        cardDisplay.draw(window);
+        //player.draw(window);
+        gameBoard.drawTrap(window);
+        gameStats.drawStats(window);
 
+        playerScreen.drawPlayer(window);
+
+        window.display();
+    }
+    
     return 0;
 }
+
+  
