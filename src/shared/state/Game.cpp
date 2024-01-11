@@ -89,6 +89,18 @@ Clues Game::getSafePlace(){
     return safePlace;
 }
 
+Passives Game::getPassif(){
+    return passif;
+}
+
+int Game::getbnPlaces(){
+    return nbPlaces;
+}
+
+Places Game::getCurrentPlace(){
+    return currentPlace
+}
+
 void Game::setnbPlayers(int nb){
     nbPlayers = nb;
 }
@@ -149,16 +161,11 @@ void Game::setPassif(Passives pass ){
     passif = pass; 
 }
 
-Passives Game::getPassif(){
-    return passif;
-}
-
-Places Game::getCurrentPlace(){
-    return currentPlace
-}
-
 void Game::setCurrentPlace(Places place){
     currentPlace = place;
 }
 
+void Game::setnbPlaces(int nb){
+    nbPlaces = nb;
+}
 
