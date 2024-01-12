@@ -14,7 +14,7 @@ namespace render {
         std::vector<sf::RectangleShape> equipmentSprites = {CardsSpritesEquipment ,CardsSpritesEquipment2 ,CardsSpritesEquipment3};
         std::vector<sf::Texture> equipmentTexture = {CardsTexturesEquipment ,CardsTexturesEquipment2 ,CardsTexturesEquipment3};
 
-       
+       std::cout<<player.getIdPlayer()<<std::endl ; 
 
         // Si le joueur a des équipements, utilisez-les
 

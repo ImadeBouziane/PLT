@@ -86,7 +86,7 @@ int main(int argc, char* argv[]) {
                 window.display();
                 
                 engine::TrapCommand::execute(currentPlayer, engine , currentPlace);
-                //engine::GiveEquipment::execute(currentPlayer, engine );
+                engine::GiveEquipment::execute(currentPlayer, engine );
 
                         state::Players currentPlayersss;
             for (auto& player : engine.CurrentState.getListPlayer()) {
