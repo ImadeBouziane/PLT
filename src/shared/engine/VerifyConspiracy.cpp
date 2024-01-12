@@ -6,7 +6,7 @@
 
 using namespace engine;
 
-Engine VerifyConspiracy::execute(Engine engine) {
+Engine EndGame::execute(Engine engine) {
     
     state::Game myGame = engine.getState();
 

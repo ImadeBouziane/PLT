@@ -25,7 +25,7 @@ BOOST_AUTO_TEST_CASE(TestEngine) {
     myGame.setListClues(clues.InitClues());
     BOOST_CHECK_EQUAL(myGame.getListClues().size(), 21);
 
-    VerifyConspiracy verify;
+    EndGame verify;
 
     myGame.setnbPlaces(9);
     //myGame = engine.getState();
@@ -38,7 +38,6 @@ BOOST_AUTO_TEST_CASE(TestEngine) {
     engine = verify.execute(engine);
 
     BOOST_CHECK_EQUAL(engine.getState().getIsEndGame(), true);
-
     myGame.setIsEndGame(false);
 
     Passives passif;
@@ -61,7 +60,7 @@ BOOST_AUTO_TEST_CASE(TestEngine) {
     state::Players player2;
     player2.setIdPlayer(state::Player2);
     player2.setrole(state::BODYGUARD);
-    player1.setplayerSecretRole("Chief Conspirator");
+    player2.setplayerSecretRole("Chief Conspirator");
     ListPlayer.push_back(player2);
 
     place.setPresentPlayers(ListPlayer);
@@ -79,6 +78,9 @@ BOOST_AUTO_TEST_CASE(TestEngine) {
     BOOST_CHECK_EQUAL(engine.getState().getPassif().getLifePoint(), 2);
     BOOST_CHECK_EQUAL(engine.getState().getCurrentPlace().getIdPlace(), myGame.getCrimePlace().getIdCard());
     BOOST_CHECK_EQUAL(engine.getState().getIsEndGame(), true);
+    myGame.setIsEndGame(false);
+
+    
     //myGame.setIsEndGame(false);
 
     //InitCluesCards giveEquip;
