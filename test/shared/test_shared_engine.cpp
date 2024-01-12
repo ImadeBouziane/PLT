@@ -87,6 +87,8 @@ BOOST_AUTO_TEST_CASE(TestEngine) {
     engine = verify.execute(engine);
     BOOST_CHECK_EQUAL(engine.getState().getIsEndGame(), true);
 
+    
+
 
     //myGame.setIsEndGame(false);
 
