@@ -6,14 +6,17 @@
 
 using namespace engine;
 
-void VerifyConspiracy::execute(Engine engine, state::Places currentplace) {
-    if(engine.getState().getnbPlaces() == 9){
-        engine.getState().setIsEndGame(true);
+Engine VerifyConspiracy::execute(Engine engine) {
+    
+    state::Game myGame = engine.getState();
+
+    if(myGame.getnbPlaces() == 9){
+        myGame.setIsEndGame(true);
         std::cout << "Tous les pièges ont été désactivés. Les amis ont gagnés !" << std::endl;
     }
-    if(engine.getState().getPassif().getLifePoint()!=3){
-        if(currentplace.getIdPlace() == engine.getState().getCrimePlace().getIdCard()){
-            std::vector<state::Players> list = currentplace.getPresentPlayers();
+    if(myGame.getPassif().getLifePoint()!=3){
+        if(myGame.getCurrentPlace().getIdPlace() == myGame.getCrimePlace().getIdCard()){
+            std::vector<state::Players> list = myGame.getCurrentPlace().getPresentPlayers();
             for (auto& player : list) {
                 if (player.getrole() == 3) {
                     if (player.getplayerSecretRole() == "Chief Conspirator"){
@@ -24,4 +27,6 @@ void VerifyConspiracy::execute(Engine engine, state::Places currentplace) {
             }
         }
     }
+    engine.setCurrentState(myGame);
+    return engine;
 }
