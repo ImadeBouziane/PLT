@@ -21,6 +21,7 @@ namespace engine {
 
 Engine GiveEquipment::execute(state::PlayerID bodyguardId , engine::Engine myEngine) {
     std::vector<state::PlayerID> recipientPlayerIds;
+    state::Game myGame = myEngine.getState();
 
     // Demander au BODYGUARD de sélectionner les destinataires
     std::cout << "BODYGUARD, veuillez sélectionner les joueurs à qui vous souhaitez donner des cartes.\n";
@@ -52,7 +53,7 @@ Engine GiveEquipment::execute(state::PlayerID bodyguardId , engine::Engine myEng
    
 
     // Parcourir la liste des joueurs et mettre à jour les équipements si nécessaire
-    for (auto& playerInList : myEngine.CurrentState.listPlayers) {
+    for (auto& playerInList : myGame.listPlayers) {
         if (std::find(recipientPlayerIds.begin(), recipientPlayerIds.end(), playerInList.getIdPlayer()) != recipientPlayerIds.end()) {
             // Le joueur est un destinataire, mettre à jour ses équipements
             std::vector<state::Equipments> currentEquipments = playerInList.getEquipments();
@@ -63,7 +64,7 @@ Engine GiveEquipment::execute(state::PlayerID bodyguardId , engine::Engine myEng
 
   
     
-    
+    myEngine.setCurrentState(myGame);
 
     return myEngine;
 }

@@ -12,7 +12,6 @@ namespace engine {
 std::vector<state::Clues> InitCluesCards::InitClues() {
     std::vector<state::Clues> cluesDeck;
 
-    
     state::Clues clue;
     clue.setIdcard("Spa Botanique");
     clue.setCardsTypes("Clues");
@@ -127,8 +126,7 @@ std::vector<state::Clues> InitCluesCards::InitClues() {
         cluesDeck.push_back(clue15);
         }
        
-    
-    
+       
     return cluesDeck;
 }
 
