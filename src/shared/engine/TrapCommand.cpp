@@ -137,7 +137,7 @@ namespace engine {
             }
 
             else if (foundTrap->getIsTriangle()){
-                std::cout << "Le Piège est de signe Cercle : " << std::endl;
+                std::cout << "Le Piège est de signe Triangle : " << std::endl;
                 std::cout << "Sa valeur vaut : " << foundTrap->getTrapValue() << std::endl;
                 
             }
@@ -221,15 +221,16 @@ namespace engine {
 
     // Vérifier si le piège est désamorcé ou activé en fonction de trapValue
     if (value >= foundTrap->getTrapValue()) {
+        std::cout<<"Le piège a été désamorcé"<<std::endl; 
       
     std::vector<state::Clues> cluesList = place.getListClues();
     cluesList[0].setIsRevealed(true);
     cluesList[1].setIsRevealed(true);
 
-    //std::string cluesType;
-    //bool isRevealed;
+    std::string cluesType;
+    bool isRevealed;
 
-    /*std::cout << "Entrez vos indices (tapez 'fin' pour le type d'indice pour terminer) : " << std::endl;
+    std::cout << "Entrez vos indices (tapez 'fin' pour le type d'indice pour terminer) : " << std::endl;
     while (true) {
         std::cout << "Entrez le type d'indice : ";
         std::getline(std::cin, cluesType);
@@ -247,8 +248,8 @@ namespace engine {
         // Afficher l'indice ajouté
         std::cout << "Indice ajouté : " << newClue.getCluesType() << std::endl;
 
-    }*/
-    std::cout<<"Le piège a été désamorcé"<<std::endl; 
+    }
+    
 
     for (auto& player : engine.CurrentState.listPlayers) {
         if (player.getrole() == 3) {
@@ -268,26 +269,26 @@ namespace engine {
         std::vector<state::Clues> cluesList1 = place.getListClues();
         cluesList1[0].setIsRevealed(true);
         cluesList1[1].setIsRevealed(true);
-
-        /*std::cout << "Entrez vos indices (tapez 'fin' pour le type d'indice pour terminer) : " << std::endl;
+        std::string cluesType;
+        std::cout << "Entrez vos indices (tapez 'fin' pour le type d'indice pour terminer) : " << std::endl;
         while (true) {
             std::cout << "Entrez le type d'indice : ";
             std::getline(std::cin, cluesType);
             if (cluesType == "fin") {
                 break;
             }
-
+            bool isRevealed;
             isRevealed = true;  // Supposons que l'indice n'est pas révélé initialement
 
             state::Clues newClue;
             newClue.setCluesTypes(cluesType);
             newClue.setIsRevealed(isRevealed);
-            cluesList.push_back(newClue);
+            cluesList1.push_back(newClue);
 
             // Afficher l'indice ajouté
             std::cout << "Indice ajouté : " << newClue.getCluesType() << std::endl;
 
-    }*/
+    }
 
     for (auto& player : engine.CurrentState.listPlayers) {
         if (player.getrole() == state::RoleType::BODYGUARD) {
