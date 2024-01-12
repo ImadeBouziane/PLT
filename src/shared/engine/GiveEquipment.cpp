@@ -4,7 +4,7 @@
 #include "Engine.h"
 #include "state/Game.h"
 #include "GiveEquipment.h"
-
+#include <algorithm>
 #include "engine/InitEquipmentCards.h"
 #include "state/Equipments.h"
 #include <random>
@@ -19,7 +19,7 @@ namespace engine {
 
     std::vector<state::PlayerID> recipientPlayerIds;
 
-bool GiveEquipment::execute(state::PlayerID bodyguardId , engine::Engine myEngine) {
+Engine GiveEquipment::execute(state::PlayerID bodyguardId , engine::Engine myEngine) {
     std::vector<state::PlayerID> recipientPlayerIds;
 
     // Demander au BODYGUARD de sélectionner les destinataires
@@ -43,29 +43,36 @@ bool GiveEquipment::execute(state::PlayerID bodyguardId , engine::Engine myEngin
             std::cout << "Entrée invalide. Veuillez réessayer.\n";
         }
     }
-     std::mt19937 rng(time(nullptr)); 
+   
      
+    // Distribuer les cartes aux joueurs destinataires choisis
+    std::mt19937 rng(time(nullptr));
+    std::uniform_int_distribution<std::mt19937::result_type> dist(0, deck.size() - 1); // Déplacer ici
+
     // Distribuer les cartes aux joueurs destinataires choisis
     for (auto recipientId : recipientPlayerIds) {
         state::Players recipient = myEngine.getPlayer(recipientId);
-         // Initialise le générateur de nombres aléatoires
-         
+        std::vector<state::Equipments> currentEquipments = recipient.getEquipments();
+        currentEquipments.push_back(deck[dist(rng)]);
+        recipient.setEquipments(currentEquipments);
+    }
 
-         // Crée une distribution pour l'index du tableau
-            std::uniform_int_distribution<std::mt19937::result_type> dist(0, deck.size() - 1);
-               
+    // Parcourir la liste des joueurs et mettre à jour les équipements si nécessaire
+    for (auto& playerInList : myEngine.CurrentState.listPlayers) {
+        if (std::find(recipientPlayerIds.begin(), recipientPlayerIds.end(), playerInList.getIdPlayer()) != recipientPlayerIds.end()) {
+            // Le joueur est un destinataire, mettre à jour ses équipements
+            std::vector<state::Equipments> currentEquipments = playerInList.getEquipments();
+            currentEquipments.push_back(deck[dist(rng)]); // Utiliser dist ici
+            playerInList.setEquipments(currentEquipments);
+        }
+    }
 
-            std::vector<state::Equipments> currentEquipments = recipient.getEquipments();
-             currentEquipments.push_back(deck[dist(rng)]);
-             recipient.setEquipments(currentEquipments);    
-            
-            
-                }
-
+  
     
     
 
-    return true;
+    return myEngine;
 }
 
 }  // namespace engine
+
