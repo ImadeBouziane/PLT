@@ -18,9 +18,9 @@ Engine VerifyConspiracy::execute(Engine engine) {
         if(myGame.getCurrentPlace().getIdPlace() == myGame.getCrimePlace().getIdCard()){
             std::vector<state::Players> list = myGame.getCurrentPlace().getPresentPlayers();
             for (auto& player : list) {
-                if (player.getrole() == 3) {
+                if (player.getrole() == state::BODYGUARD) {
                     if (player.getplayerSecretRole() == "Chief Conspirator"){
-                        engine.getState().setIsEndGame(true);
+                        myGame.setIsEndGame(true);
                         std::cout << "Le complot s'est activé. Les conspirateurs ont gagnés !" << std::endl;
                     }
                 }
