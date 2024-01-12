@@ -17,33 +17,107 @@ int main(int argc, char* argv[]) {
         engine::Engine engine;
         int i = 0;     
         engine.init();
+        state::PlayerID currentPlayer = engine.CurrentState.getTurnPlayers();
+        state::Players currentPlayersss;
+        for (auto& player : engine.CurrentState.getListPlayer()) {
+                if (player.getIdPlayer() == currentPlayer){
+                    currentPlayersss = player ;
+                    break;
+                    }
+        }
+        
+        
 
         //!engine.CurrentState.getIsEndGame()
-
+        
+        sf::RenderWindow window(sf::VideoMode(1600, 900), "CLUEDO CONSPIRACY");
+        GameBoard gameBoard(window);
+        CardsDisplay cardDisplay(currentPlayersss);
+        for (auto& player : engine.CurrentState.getListPlayer()) {
+                if (player.getIdPlayer() == currentPlayer){
+                    currentPlayersss = player ;
+                    break;
+                    }
+        }
+        
+        state::Passives passif = engine.CurrentState.getPassif();
+        GameStats gameStats(passif); 
+        PlayerScreen playerScreen;
+        
         // Main game loop
-       while (i != 4) {
+        while (window.isOpen()) {
+            sf::Event event;
+            while (i != 4) {
+                window.clear(sf::Color::Black);
+                state::PlayerID currentPlayer = engine.CurrentState.getTurnPlayers();
+                gameBoard.draw(window);
+                cardDisplay.draw(window);
+                gameBoard.drawTrap(window);
+                gameStats.drawStats(window);
+                playerScreen.drawPlayer(window);
+                window.display();
         
-            state::PlayerID currentPlayer = engine.CurrentState.getTurnPlayers();
 
-        
-            std::cout << "Joueur qui joue: " << currentPlayer << std::endl;
-            //std::cout << "Game State: on va reussir" << std::endl;
+
+                std::cout << "Joueur qui joue: " << currentPlayer << std::endl;
+                //std::cout << "Game State: on va reussir" << std::endl;
        
-            engine = engine::VoteCommand::execute(currentPlayer, engine);
-            state::Places currentPlace = engine.CurrentState.getCurrentPlace();
+                engine = engine::VoteCommand::execute(currentPlayer, engine);
+
+                gameBoard.draw(window);
+                cardDisplay.draw(window);
+                //player.draw(window);
+                gameBoard.drawTrap(window);
+                gameStats.drawStats(window);
+
+                playerScreen.drawPlayer(window);
+                window.display();
+                
+                
+                state::Places currentPlace = engine.CurrentState.getCurrentPlace();
+
+                gameBoard.draw(window);
+                cardDisplay.draw(window);
+                //player.draw(window);
+                gameBoard.drawTrap(window);
+                gameStats.drawStats(window);
+
+                playerScreen.drawPlayer(window);
+                window.display();
+                
+                engine::TrapCommand::execute(currentPlayer, engine , currentPlace);
+                //engine::GiveEquipment::execute(currentPlayer, engine );
+
+                        state::Players currentPlayersss;
+            for (auto& player : engine.CurrentState.getListPlayer()) {
+                    if (player.getIdPlayer() == currentPlayer){
+                        currentPlayersss = player ;
+                        break;
+                        }
             
-            engine::TrapCommand::execute(currentPlayer, engine , currentPlace);
-            //engine::GiveEquipment::execute(currentPlayer, engine );
 
-            i = i +1;
+            while (window.pollEvent(event)) {
+                if (event.type == sf::Event::Closed) {
+                    window.close();
+                }
+            }
 
-            currentPlayer = static_cast<state::PlayerID>(static_cast<int>(currentPlayer) + 1);  
+            
+
+            // on dessine les composants du plateau de jeu 
+            
+        }
+
+            currentPlayer = static_cast<state::PlayerID>(static_cast<int>(currentPlayer) + 1); 
+
+
+
+
         
-    }}
+    }}}
     else{
 
-        engine::Engine engine;
-        int i = 0;     
+        engine::Engine engine;    
         engine.init();
         state::PlayerID currentPlayer = engine.CurrentState.getTurnPlayers();
         state::Players currentPlayersss;
@@ -60,7 +134,7 @@ int main(int argc, char* argv[]) {
         GameBoard gameBoard(window);
         CardsDisplay cardDisplay(currentPlayersss);
         state::Passives passif = engine.CurrentState.getPassif();
-        passif.setTempestPoint(2);
+        
         
         GameStats gameStats(passif); 
         PlayerScreen playerScreen;
