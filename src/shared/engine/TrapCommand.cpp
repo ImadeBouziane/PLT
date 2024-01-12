@@ -22,7 +22,7 @@ namespace engine {
     
 
     
-    void TrapCommand::execute(state::PlayerID players, Engine& engine, state::Places place) {
+    Engine TrapCommand::execute(state::PlayerID players, Engine& engine, state::Places place) {
 
         std::vector<state::Traps> ListTrap;
 
@@ -307,6 +307,7 @@ namespace engine {
 
 
     }
-
+    
+    return engine;
 }
 }    
