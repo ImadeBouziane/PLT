@@ -49,13 +49,7 @@ Engine GiveEquipment::execute(state::PlayerID bodyguardId , engine::Engine myEng
     std::mt19937 rng(time(nullptr));
     std::uniform_int_distribution<std::mt19937::result_type> dist(0, deck.size() - 1); // Déplacer ici
 
-    // Distribuer les cartes aux joueurs destinataires choisis
-    for (auto recipientId : recipientPlayerIds) {
-        state::Players recipient = myEngine.getPlayer(recipientId);
-        std::vector<state::Equipments> currentEquipments = recipient.getEquipments();
-        currentEquipments.push_back(deck[dist(rng)]);
-        recipient.setEquipments(currentEquipments);
-    }
+   
 
     // Parcourir la liste des joueurs et mettre à jour les équipements si nécessaire
     for (auto& playerInList : myEngine.CurrentState.listPlayers) {
