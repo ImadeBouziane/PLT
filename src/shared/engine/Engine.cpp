@@ -116,7 +116,7 @@ namespace engine {
         for (int    i = 0; i<5 ; i++) {
             // Vérifier si le vecteur mélangé contient suffisamment d'équipements
             if (deck.size() >= 3) {
-                 
+                std::cout<<i<<std::endl; 
                 // Prendre les trois premiers équipements du vecteur mélangé
                 std::vector<state::Equipments> selectedEquipments(deck.begin(), deck.begin() + 3);
 

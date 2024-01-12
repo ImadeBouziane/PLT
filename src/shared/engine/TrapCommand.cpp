@@ -127,7 +127,7 @@ namespace engine {
         if (foundTrap != ListTrap.end()) {
         // Accéder aux informations du piège trouvé
             if (foundTrap->getIsCircle() && foundTrap->getIsTriangle()){
-                std::cout << "Le Piège est de signe triangle et cercle : " << std::endl;
+                std::cout << "Le Piège est de signe triangle et cercle !!! " << std::endl;
                 std::cout << "Sa valeur vaut : " << foundTrap -> getTrapValue() << std::endl;
             }
             else if (foundTrap->getIsCircle()){
@@ -156,15 +156,13 @@ namespace engine {
     int i = 0; 
     for (auto& player : place.getPresentPlayers()) {
         i = i + 1;
+        std::cout <<"Joueur "<< player.getIdPlayer()<< std::endl;
         
 
         // Demander au joueur de choisir et contribuer avec des équipements
         // Pour chaque équipement contribué, mettre à jour Value en conséquence
         std::vector<state::Equipments> contributedEquipments;
-        for (auto& equip : player.getEquipments()) {
-                    std::cout << "Joueur " << equip.getIdCard() << ", utilisez vos équipements." << std::endl;
-
-                }
+        
         for (auto& equipment : player.getEquipments()) {
             
             std::cout << "ID: " << equipment.getIdCard() << " | Valeur: " << equipment.getEquipmentValue()
@@ -192,18 +190,13 @@ namespace engine {
             for (auto& equipment : player.getEquipments()) {
                 if (equipment.getIdCard() == equipmentId){
                     state::Equipments foundEquipment = equipment ;
+
                     // Si l'équipement est trouvé, l'ajouter à la liste des équipements contribués
                     contributedEquipments.push_back(foundEquipment);
-                    }
-                else {
-                    std::cout << "L'ID de l'equipement est invalide , veuillez en choisir un autre." << std::endl;
-                    --i;  // Décrémenter i pour que le joueur choisisse à nouveau cet équipement
                     break;
-            }   
+                    }
         }
-
-        std::cout << "Vous avez bien choisi vos équipements" << std::endl;
-        
+  
         
         for (auto& contributedEquipment : contributedEquipments) {
             int equipmentValue = contributedEquipment.getEquipmentValue();
@@ -222,6 +215,9 @@ namespace engine {
             
         }
     }
+    }
+
+
 
     // Vérifier si le piège est désamorcé ou activé en fonction de trapValue
     if (value >= foundTrap->getTrapValue()) {
@@ -310,6 +306,6 @@ namespace engine {
 
 
     }
-}
+
 }
 }    

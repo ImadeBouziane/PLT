@@ -1,19 +1,20 @@
 // GameStats.cpp
 #include "GameStats.h"
+#include "state.h"
 
 
 
 namespace render {
 
 
-    GameStats::GameStats(){
+    GameStats::GameStats(state::Passives passif){
     
         if (!font.loadFromFile("../police_ecriture/04b_20/04B_20__.TTF")) {
             printf("error");
         }
 
-        monsieurCorailLives = 3;  
-        stormLives = 3;          
+        monsieurCorailLives = passif.getLifePoint();  
+        stormLives = passif.getTempestPoint();          
 
     
         textCorail.setFont(font);
