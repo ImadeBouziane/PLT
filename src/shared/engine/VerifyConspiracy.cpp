@@ -6,7 +6,7 @@
 
 using namespace engine;
 
-Engine VerifyConspiracy::execute(Engine engine) {
+Engine EndGame::execute(Engine engine) {
     
     state::Game myGame = engine.getState();
 
@@ -26,6 +26,10 @@ Engine VerifyConspiracy::execute(Engine engine) {
                 }
             }
         }
+    }
+    if(myGame.getPassif().getLifePoint()==0){
+        myGame.setIsEndGame(true);
+        std::cout << "Mr.Corail est mort :( . Les conspirateurs ont gagnés !" << std::endl;
     }
     engine.setCurrentState(myGame);
     return engine;
