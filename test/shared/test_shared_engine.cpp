@@ -80,7 +80,14 @@ BOOST_AUTO_TEST_CASE(TestEngine) {
     BOOST_CHECK_EQUAL(engine.getState().getIsEndGame(), true);
     myGame.setIsEndGame(false);
 
-    
+    passif.setLifePoint(2);
+    myGame.setPassif(passif);
+    engine.setCurrentState(myGame);
+
+    engine = verify.execute(engine);
+    BOOST_CHECK_EQUAL(engine.getState().getIsEndGame(), true);
+
+
     //myGame.setIsEndGame(false);
 
     //InitCluesCards giveEquip;
