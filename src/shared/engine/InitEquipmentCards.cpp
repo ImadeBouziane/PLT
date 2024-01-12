@@ -10,7 +10,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
     // Ajouter les cartes d'équipement à la pioche
     
         state::Equipments equipment;
-        equipment.setIdcard("allumette 1");
+        equipment.setIdcard("allumette");
         equipment.setCardsTypes("Equipment");
         equipment.setEquipmentValue(1);
         equipment.setIsTriangle(false);
@@ -20,7 +20,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         }
 
          state::Equipments equipment1;
-        equipment1.setIdcard("allumette 2 bleu");
+        equipment1.setIdcard("allumette2");
         equipment1.setCardsTypes("Equipment");
         equipment1.setEquipmentValue(2);
         equipment1.setIsTriangle(true);
@@ -31,7 +31,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
 
 
          state::Equipments equipment2;
-        equipment2.setIdcard("corde 1");
+        equipment2.setIdcard("corde");
         equipment2.setCardsTypes("Equipment");
         equipment2.setEquipmentValue(1);
         equipment2.setIsTriangle(false);
@@ -42,7 +42,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
 
 
          state::Equipments equipment3;
-        equipment3.setIdcard("corde rose");
+        equipment3.setIdcard("corde2");
         equipment3.setCardsTypes("Equipment");
         equipment3.setEquipmentValue(2);
         equipment3.setIsTriangle(false);
@@ -54,7 +54,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
 
 
         state::Equipments equipment4;
-        equipment4.setIdcard("couteau suisse bleu");
+        equipment4.setIdcard("couteauSuisse");
         equipment4.setCardsTypes("Equipment");
         equipment4.setEquipmentValue(2);
         equipment4.setIsTriangle(true);
@@ -65,7 +65,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
 
 
          state::Equipments equipment5;
-        equipment5.setIdcard("couteau suisse rose");
+        equipment5.setIdcard("CouteauSuisse2");
         equipment5.setCardsTypes("Equipment");
         equipment5.setEquipmentValue(2);
         equipment5.setIsTriangle(false);
@@ -87,7 +87,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
 
 
          state::Equipments equipment7;
-        equipment7.setIdcard("extincteur bleu");
+        equipment7.setIdcard("extincteur2");
         equipment7.setCardsTypes("Equipment");
         equipment7.setEquipmentValue(2);
         equipment7.setIsTriangle(true);
@@ -98,7 +98,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
 
 
          state::Equipments equipment8;
-        equipment8.setIdcard("lampe bleu");
+        equipment8.setIdcard("lampe");
         equipment8.setCardsTypes("Equipment");
         equipment8.setEquipmentValue(2);
         equipment8.setIsTriangle(true);
@@ -108,7 +108,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         }
 
          state::Equipments equipment9;
-        equipment9.setIdcard("lampe rose");
+        equipment9.setIdcard("lampe2");
         equipment9.setCardsTypes("Equipment");
         equipment9.setEquipmentValue(2);
         equipment9.setIsTriangle(false);
@@ -118,7 +118,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         }
 
         state::Equipments equipment10;
-        equipment10.setIdcard("lampe");
+        equipment10.setIdcard("lampe3");
         equipment10.setCardsTypes("Equipment");
         equipment10.setEquipmentValue(1);
         equipment10.setIsTriangle(false);
@@ -128,7 +128,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
         }
 
          state::Equipments equipment11;
-        equipment11.setIdcard("scotch 1");
+        equipment11.setIdcard("scotch");
         equipment11.setCardsTypes("Equipment");
         equipment11.setEquipmentValue(1);
         equipment11.setIsTriangle(false);
@@ -139,7 +139,7 @@ std::vector<state::Equipments> InitEquipmentCards::Init() {
 
 
          state::Equipments equipment12;
-        equipment12.setIdcard("Scotch 2 rose");
+        equipment12.setIdcard("Scotch2");
         equipment12.setCardsTypes("Equipment");
         equipment12.setEquipmentValue(1);
         equipment12.setIsTriangle(false);

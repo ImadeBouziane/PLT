@@ -128,12 +128,11 @@ namespace engine {
         }
     }
 }
-        std::cout<<chosenPlace.getIdPlace()<<"1"<<std::endl;
+        
         
         //MoveCommand::execute(chosenPlace,selectedPlayers);
         chosenPlace.setPresentPlayers(selectedPlayers);
 
-        std::cout<<chosenPlace.getIdPlace()<<std::endl;
         engine.CurrentState.setCurrentPlaces(chosenPlace);
 
         std::cout << "Piège activé : " << engine.CurrentState.getCurrentPlace().getTrap() << std::endl;
@@ -143,7 +142,7 @@ namespace engine {
         
 
 
-        std::cout<<"Les Joueurs présents à la Place:"<<chosenPlace.getIdPlace()<<"sont "<<std::endl ;
+        std::cout<<"Les Joueurs présents à la Place "<<chosenPlace.getIdPlace()<<" sont "<<std::endl ;
         for (auto& Players : chosenPlace.getPresentPlayers()) {
             
             std::cout<<Players.getIdPlayer()<<std::endl;

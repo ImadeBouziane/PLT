@@ -33,44 +33,62 @@ int main(int argc, char* argv[]) {
             state::Places currentPlace = engine.CurrentState.getCurrentPlace();
             
             engine::TrapCommand::execute(currentPlayer, engine , currentPlace);
-            engine::GiveEquipment::execute(currentPlayer, engine );
+            //engine::GiveEquipment::execute(currentPlayer, engine );
 
-        i = i +1; 
+            i = i +1;
+
+            currentPlayer = static_cast<state::PlayerID>(static_cast<int>(currentPlayer) + 1);  
         
     }}
     else{
 
-        std::cout << "Engine testing complete." << std::endl;
-   sf::RenderWindow window(sf::VideoMode(1600, 900), "CLUEDO CONSPIRACY");
-
-    GameBoard gameBoard(window);
-    CardsDisplay cardDisplay;
-    GameStats gameStats; 
-    PlayerScreen playerScreen;
-    //Player player;
-    //player.setPlayerName("Nom du Joueur");
-
-    while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                window.close();
-            }
+        engine::Engine engine;
+        int i = 0;     
+        engine.init();
+        state::PlayerID currentPlayer = engine.CurrentState.getTurnPlayers();
+        state::Players currentPlayersss;
+        for (auto& player : engine.CurrentState.getListPlayer()) {
+                if (player.getIdPlayer() == currentPlayer){
+                    currentPlayersss = player ;
+                    break;
+                    }
         }
 
-        window.clear(sf::Color::Black);
+        std::cout << "Engine testing complete." << std::endl;
+        sf::RenderWindow window(sf::VideoMode(1600, 900), "CLUEDO CONSPIRACY");
 
-        // on dessine les composants du plateau de jeu 
-        gameBoard.draw(window);
-        cardDisplay.draw(window);
-        //player.draw(window);
-        gameBoard.drawTrap(window);
-        gameStats.drawStats(window);
+        GameBoard gameBoard(window);
+        CardsDisplay cardDisplay(currentPlayersss);
+        state::Passives passif = engine.CurrentState.getPassif();
+        passif.setTempestPoint(2);
+        
+        GameStats gameStats(passif); 
+        PlayerScreen playerScreen;
+        
+        
 
-        playerScreen.drawPlayer(window);
+        while (window.isOpen()) {
+            sf::Event event;
+            while (window.pollEvent(event)) {
+                if (event.type == sf::Event::Closed) {
+                    window.close();
+                }
+            }
 
-        window.display();
-    }
-    }
+            window.clear(sf::Color::Black);
+
+            // on dessine les composants du plateau de jeu 
+            gameBoard.draw(window);
+            cardDisplay.draw(window);
+            //player.draw(window);
+            gameBoard.drawTrap(window);
+            gameStats.drawStats(window);
+
+            playerScreen.drawPlayer(window);
+
+            window.display();
+        }
+        }
     return 0;
 }
+
