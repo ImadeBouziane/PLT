@@ -185,21 +185,21 @@ La partie engine de de notre logiciel permettra de modifier nos données dans le
 
 Les changements extérieurs correspondent aux changements amenées par les différents joueurs suite à une action de leur part:
 
- -"VoteCommand"
+ - "VoteCommand" : permet la création du vote pour une équipe ainsi que son déroulement.
  
- -"ShowCluesCommand"
+ - "TrapCommand" : gère tout ce qui est lien avec la tentative de désamorçage du piège assigné à un lieu.
  
- -"GiveEquipment"
+ - "GiveEquipment" : permet au joueur en charge de la distribution de choisir le nombre d'équipement à donner à chaque autre joueurs.
  
- -Les initialisations de cartes
- 
- -"GetCardsCommand"
-
 ### 4.2 Changements autonomes <a id="4.2"></a>
 
 Ces changements sont, contrairement à ceux evoqués précédemment, automatiques, c'est à dire qu'ils s'effectuent tout seul sans besoin d'intervention des joueurs:
  
- -"MoveCommand"
+ - "MoveCommand" : permet le déplacement des joueurs d'un lieu à un autre.
+ 
+ - Les fonctions d'initialisations : crée les decks d'indices et d'équipements ainsi que la liste des lieux.
+ 
+ - "EndGame" : vérifie si l'une des conditions de fin de partie est remplie.
 
 ### 4.3 Conception logiciel <a id="4.3"></a>
 
