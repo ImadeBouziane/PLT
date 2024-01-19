@@ -40,10 +40,6 @@
 ### [5.1 Stratégies](#5.1)
 ### [5.2 Conception logiciel](#5.2)
 
-## [6. Modularisation](#6)
-
-### [6.1 Organisation des modules](#6.1)
-### [6.2 Conception logiciel](#6.2)
 
 ## 1. Présentation Générale <a id="1"></a>
 
