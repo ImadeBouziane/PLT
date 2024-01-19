@@ -132,13 +132,15 @@ Ce dernier caractérise un lieu, un joueur et une arme. Ce sont les  conditions 
 
 ## 2.2 Conception logiciel : extension pour le rendu <a id="2.2"></a>
 
-Le diagramme des classes pour les états est présenté ci-dessous, dont nous pouvons mettre en évidence les groupes de classes suivants :
+Le diagramme des classes pour les états est présenté ci-dessous.
 
-Game : Cette classe (En Bleu) constitue notre création de notre jeu. Dans laquelle se trouve tous les éléments indispensables à la création du jeu.
+Nous pouvons mettre en évidence les groupes de classes suivants :
 
-Les éléments constituant le jeu : Que ce soit les passives, Conspiracy, Places, Weapons, players et cartes. tout ces éléments (En Jaune)  constitue le jeu et doivent être au même niveau hierarchique par rapport à game. Pour Players on aura une énumération RoleType afin de lui attribuer un TypeRole qui devrait changer à chaque tour.
+Game : Cette classe (en Bleu) constitue la création de notre jeu. Dans laquelle se trouve tous les éléments indispensables à la création du jeu.
 
-Les cartes : Les cartes seront constituées en 3 types. Les Équipements, les Traps et les Clues. Chaque type de cartes héritera d'une idée et d'un type.
+Les éléments constituant le jeu : Tout les éléments en vert constitue le jeu et seront utilisé pour decrire l'état de la partie. Pour Players on aura une énumération RoleType afin de lui attribuer un TypeRole qui pourra changer à chaque tour.
+
+Les cartes : Les cartes seront partagées en 3 types, les Équipements, les Pièges et les Indices. 
 
 ![StateDia](ImagesRapport/StateDia.png)
 
@@ -153,6 +155,8 @@ Nous ne nous aventurerons pas à vouloir faire marcher le jeu sous plusieurs ré
 Les cartes et le plateau seront conçu sous forme de rectangle tandis que les pièges et les jetons auront leurs propres formes.
 
 Nous prévoyons d'afficher les equipements du joueur dans le coin inférieur droit et les informations concernant les autres joueurs sur le coté gauche.
+
+De plus, cette affichage est dynamique et se met à jour automatiquement quand un élément de notre state est modifié.
 
 ![Aperçu](ImagesRapport/Apercu.png)
 
