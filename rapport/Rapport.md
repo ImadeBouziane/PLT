@@ -209,18 +209,17 @@ Ces changements sont, contrairement à ceux evoqués précédemment, automatique
 
 ### 5.1 Stratégies <a id="5.1"></a>
 
-à compléter
+### Intelligence aléatoire 
+
+Pour réaliser l'intelligence aléatoire, nous avons prévu de la programmer de façon à ce qu'elle renvoie un choix prix au hasard dans une liste d'action possible correspondant à l'étape de la partie. 
+Par exemple, si elle est l'éclaireur elle aura à proposer une équipe et pour ce faire elle commencera par déclarer un Garde du Corps parmi les 4 autre joueurs puis à indiquer pour chaque autre joueur si elle souhaite l'ajouter à l'équipe.
 
 ### 5.2 Conception logiciel <a id="5.2"></a>
 
-à compléter
+Les classes filles de la classe AI implante différentes stratégies d’IA, que l’on peut appliquer pour un des joueurs :
 
-## 6. Modularisation <a id="6"></a>
+- RandomAI : Intelligence aléatoire
+- HeuristicAI : Intelligence heuristique
+- advancedAI : Intelligence artificielle avancé
 
-### 6.1 Organisation des modules <a id="6.1"></a>
-
-à compléter
-
-### 6.2 Conception logiciel <a id="6.2"></a>
-
-à compléter
+![AiDia](ImagesRapport/AiDia.png)
