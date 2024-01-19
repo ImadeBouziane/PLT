@@ -18,6 +18,6 @@ We continue to improve it over time. I can therefore only recommend favoring the
 
 This project came with a CMake which generate the headers from dia2code.
 
-Code coverage is ensure with BOOST.
+Code coverage is ensured with BOOST.
 
 A Github action is setup to validate builds.
