@@ -118,9 +118,9 @@ Un Player est caractérisé par son ID, chaque joueur aura un RoleType qui peut 
 
 Chaque carte est caractérisée par une Id et un type. Il y a 3 types de cartes :
  
- -Equipements : Ces cartes auront une valeur et deux signes possible, triangle,cercle, les deux ou rien qui influencera l'utilisation de cette dernière.
- -Indices : Les cartes indices seront caractérisées par un type d'indice qui peuvent être : Rien, Désamorçage instantanées, un équipement ou un lieu (safe).
- -Pièges : Les cartes pièges seront posées sur les lieux et ils auront une valeur, et comme les cartes indices, un signe ou deux (Cercle, Triangle). De plus, elles pourront être désamorcées par les joueurs allant dans ces lieux.
+ - Equipements : Ces cartes auront une valeur et deux signes possible, triangle,cercle, les deux ou rien qui influencera l'utilisation de cette dernière.
+ - Indices : Les cartes indices seront caractérisées par un type d'indice qui peuvent être : Rien, Désamorçage instantanées, un équipement ou un lieu (safe).
+ - Pièges : Les cartes pièges seront posées sur les lieux et ils auront une valeur, et comme les cartes indices, un signe ou deux (Cercle, Triangle). De plus, elles pourront être désamorcées par les joueurs allant dans ces lieux.
 
 ### 2.1.4 Element Passives : <a id="2.1.4"></a>
 
