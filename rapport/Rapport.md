@@ -185,21 +185,45 @@ La partie engine de de notre logiciel permettra de modifier nos données dans le
 
 Les changements extérieurs correspondent aux changements amenées par les différents joueurs suite à une action de leur part:
 
- - "VoteCommand" : permet la création du vote pour une équipe ainsi que son déroulement.
- 
- - "TrapCommand" : gère tout ce qui est lien avec la tentative de désamorçage du piège assigné à un lieu.
- 
- - "GiveEquipment" : permet au joueur en charge de la distribution de choisir le nombre d'équipement à donner à chaque autre joueurs.
- 
+- Les différentes actions de votes.
+
+- Le choix des différents équipements à donner pour tenter de désamorçer les pièges.
+
+- Le choix des joueurs à qui distribuer des équipements.
+
 ### 4.2 Changements autonomes <a id="4.2"></a>
 
 Ces changements sont, contrairement à ceux evoqués précédemment, automatiques, c'est à dire qu'ils s'effectuent tout seul sans besoin d'intervention des joueurs:
+
+- Le déplacement des joueurs qui est automatique après qu'un choix d'équipe a été effectué.
+
+- Les initialisations de tous les éléments du jeu.
+
+- La mise à jour des point de vies de Mr Corail et des points de tempêtes.
+
+- La déclaration de la fin de partie, que les conspirateurs ait réussi leur assassinat ou non. 
+
+### 4.3 Conception logiciel <a id="4.3"></a>
+
+Le diagramme des classes pour le moteur du jeu est présenté ci-dessous. L’ensemble du moteur de jeu repose sur un patron de type Command, et a pour but la mise en œuvre de commandes extérieures sur l’état du jeu.
+
+Les différentes commandes du jeu sont les suivantes.
+
+ -"VoteCommand" : permet la création de vote ainsi que leurs résolution
+
+ -"TrapCommand" : gère tout ce qui est en rapport avec le désamorçage des pièges
  
- - "MoveCommand" : permet le déplacement des joueurs d'un lieu à un autre.
+ -"GiveEquipment" : permet de choisir qui reçoit des équipements à la suite d'une tentative de désamorçage
+
+ -"EndGame" : vérifie si les conditions d'activations du complot sont réunis ou si tous les lieux ont été visité et peut mettre fin à la partie
  
- - Les fonctions d'initialisations : crée les decks d'indices et d'équipements ainsi que la liste des lieux.
- 
- - "EndGame" : vérifie si l'une des conditions de fin de partie est remplie.
+ -"MoveCommand" : déplace les joueurs sur les différents lieux du plateau
+
+ -"InitCluesCards" : Initialise le paquet d'indices
+
+ -"InitPlaces" : Initialise la liste des lieux
+
+ -"InitEquipmentCards" : Initialise le deck d'équipement
 
 ### 4.3 Conception logiciel <a id="4.3"></a>
 
